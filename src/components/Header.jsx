@@ -1,15 +1,17 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <div>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            Navbar
-          </a>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top py-3">
+        <div className="container">
+          <NavLink to="/" className="navbar-brand  fs-2 " href="#">
+            <span className="brown">SarMalTwrMal</span>
+          </NavLink>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -17,67 +19,52 @@ const Header = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Link
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <NavLink
+                  to="/home"
+                  className="nav-link active me-3 "
+                  aria-current="page"
                 >
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      Action
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <hr class="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      Something else here
-                    </a>
-                  </li>
-                </ul>
+                  <span className="brown">Home</span>
+                </NavLink>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">
-                  Disabled
-                </a>
+              <li className="nav-item">
+                <NavLink to="/street_food_list" className="nav-link me-3 ">
+                  <span className="brown">Street Food</span>
+                </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink to="/coffee_shop_list" className="nav-link me-3 ">
+                  <span className="brown">Coffee Shop</span>
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/place_list" className="nav-link me-3 ">
+                  <span className="brown">Place</span>
+                </NavLink>
+              </li>
+              {/* <li className="nav-item">
+                <NavLink to="" className="nav-link me-2 ">
+                  <span className="brown">Contact</span>
+                </NavLink>
+              </li> */}
             </ul>
-            <form class="d-flex" role="search">
+            <form className="d-flex">
               <input
-                class="form-control me-2"
+                className="form-control me-2 fw-semibold"
                 type="search"
-                placeholder="Search"
+                placeholder="Search . . . "
                 aria-label="Search"
               />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
+              <Link to="/detail">
+                <button className=" btn-brown rounded-3  me-2" type="submit">
+                  <span>Login</span>
+                </button>
+              </Link>
             </form>
           </div>
         </div>
