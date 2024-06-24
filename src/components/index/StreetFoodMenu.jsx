@@ -1,7 +1,72 @@
 import React from "react";
 
 const StreetFoodMenu = () => {
-  return <div>Please write code here between the div</div>;
+  return <div>
+    <div className="container my-5">
+      <p class="fs-4"><span className="brown">STREET FOOD MENU</span></p>
+
+      <div className="row my-3">
+        <div className="col-sm-6 col-md-4 col-lg-3">
+          <div class="">
+            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="img" />
+            <div class="card-body">
+              <p class="card-title mt-2 mb-5 brown"><span className="brown">Street food</span></p>  </div>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3">
+          <div class="" >
+            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="img" />
+            <div class="card-body">
+              <p class="card-title mt-2 mb-5 brown"><span className="brown">Street food</span></p>
+            </div>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3">
+          <div class="" >
+            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="img" />
+            <div class="card-body">
+              <p class="card-title mt-2 mb-5 brown"><span className="brown">Street food</span></p>  </div>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3">
+          <div class="" >
+            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="img" />
+            <div class="card-body">
+              <p class="card-title mt-2 mb-5 brown"><span className="brown">Street food</span></p>  </div>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3">
+          <div class="" >
+            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="img" />
+            <div class="card-body">
+              <p class="card-title mt-2 mb-5 brown"><span className="brown">Street food</span></p>  </div>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3">
+          <div class="" >
+            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="img" />
+            <div class="card-body">
+              <p class="card-title mt-2 mb-5 brown"><span className="brown">Street food</span></p>  </div>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3">
+          <div class="" >
+            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="img" />
+            <div class="card-body">
+              <p class="card-title mt-2 mb-5 brown"><span className="brown">Street food</span></p>  </div>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-4 col-lg-3">
+          <div class="" >
+            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="img" />
+            <div class="card-body">
+              <p class="card-title mt-2 mb-5 brown"><span className="brown">Street food</span></p>  </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>;
 };
 
 export default StreetFoodMenu;
