@@ -4,8 +4,8 @@ import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top py-3">
+    <div className="mb-5">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top py-3 ">
         <div className="container">
           <NavLink to="/" className="navbar-brand  fs-2 " href="#">
             <span className="brown">SarMalTwrMal</span>
@@ -61,7 +61,7 @@ const Header = () => {
                 aria-label="Search"
               />
               <Link to="/detail">
-                <button className=" btn-brown rounded-3  me-2" type="submit">
+                <button className=" btn-brown rounded-3" type="submit">
                   <span>Login</span>
                 </button>
               </Link>
@@ -69,6 +69,10 @@ const Header = () => {
           </div>
         </div>
       </nav>
+      <div className="row my-5">
+        <div className="col"></div>
+        <div className="col"></div>
+      </div>
     </div>
   );
 };
