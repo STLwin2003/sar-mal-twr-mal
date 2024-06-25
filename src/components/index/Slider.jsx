@@ -8,7 +8,7 @@ const Slider = () => {
           id="carouselExample"
           className="carousel slide mb-6"
           data-bs-ride="carousel"
-          data-bs-interval = "1000"
+         
         >
           <div class="carousel-indicators">
             <button
@@ -16,18 +16,20 @@ const Slider = () => {
               data-bs-target="#carouselExample"
               data-bs-slide-to="0"
               className="active"
+               data-bs-interval = "50000"
             ></button>
             <button
               type="button"
               data-bs-target="#carouselExample"
               data-bs-slide-to="1"
-             
+              data-bs-interval = "50000"
              
             ></button>
             <button
               type="button"
               data-bs-target="#carouselExample"
               data-bs-slide-to="2"
+               data-bs-interval = "50000"
                
             ></button>
           </div>
@@ -35,9 +37,9 @@ const Slider = () => {
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img
-                src="https://www.theroadtrip.co.nz/wp-content/uploads/2017/10/best-restaurants-new-zealand-960x636.jpg"
+                src="https://images.unsplash.com/photo-1475090169767-40ed8d18f67d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 className=" w-100 d-block"
-                height="650"
+               
                 alt=""
               />
                <div class="container">
@@ -49,9 +51,9 @@ const Slider = () => {
             </div>
             <div className="carousel-item">
               <img
-                src="https://blog.swiggy.com/wp-content/uploads/2024/02/Mutton-Rolls-1024x538.jpg"
+                src="https://images.unsplash.com/photo-1558163250-62987a71f81a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 className=" w-100 d-block"
-                height="650"
+                
                 alt=""
               />
               <div class="container">
@@ -64,9 +66,9 @@ const Slider = () => {
             </div>
             <div className="carousel-item">
               <img
-                src="https://siamais.co.uk/wp-content/uploads/2023/07/tom-yum-1024x771.jpeg"
+                src="https://images.unsplash.com/photo-1511421585906-57a6e6dc3a2f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 className="w-100 d-block"
-                height="650"
+               
                 alt=""
               />
               <div class="container">
@@ -102,6 +104,8 @@ const Slider = () => {
             <span className="visually-hidden">Next</span>
           </button>
         </div>
+      </div>
+      <div className="row  mb-6">
       </div>
     </div>
   );
