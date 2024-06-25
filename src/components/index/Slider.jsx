@@ -8,7 +8,7 @@ const Slider = () => {
           id="carouselExample"
           className="carousel slide mb-6"
           data-bs-ride="carousel"
-          data-bs-interval = "1000"
+         
         >
           <div class="carousel-indicators">
             <button
@@ -16,18 +16,20 @@ const Slider = () => {
               data-bs-target="#carouselExample"
               data-bs-slide-to="0"
               className="active"
+               data-bs-interval = "50000"
             ></button>
             <button
               type="button"
               data-bs-target="#carouselExample"
               data-bs-slide-to="1"
-             
+              data-bs-interval = "50000"
              
             ></button>
             <button
               type="button"
               data-bs-target="#carouselExample"
               data-bs-slide-to="2"
+               data-bs-interval = "50000"
                
             ></button>
           </div>
