@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer className="text-center text-lg-start bg-body-tertiary position-absolute bottom-0 end-0 w-100 shadow-lg ">
+      <footer className="text-center text-lg-start bg-body-tertiary  w-100  ">
         <div className="">
           <section className="pt-1 brown">
             <div className="container text-center text-md-start mt-5">
@@ -85,7 +85,9 @@ const Footer = () => {
             </div>
           </section>
 
-          <div className="text-center brown p-4">© 2024 Copyright:</div>
+          <div className="text-center brown p-4">
+            © 2024 Copyright: SarMalTwrMal
+          </div>
         </div>
       </footer>
     </div>
