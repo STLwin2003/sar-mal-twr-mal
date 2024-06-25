@@ -35,6 +35,9 @@ const StreetFoodMenu = () => {
             <StreetFoodCard />
           </div>
         </div>
+        <div className="d-grid gap-2 d-md-flex justify-content-md-end " >
+           <button className="btn" type="button" style={{background:"#b46c14",color:"white"}}>See More</button>
+        </div>
       </div>
     </div>
   );
