@@ -6,7 +6,7 @@ const StreetFoodList = () => {
   return (
     <div>
       <div className="container my-5">
-        <p class="fs-2 text-center my-4">
+        <p className="fs-2 text-center my-4">
           <span className="brown hind-siliguri-semibold">STREET FOOD MENU</span>
         </p>
 

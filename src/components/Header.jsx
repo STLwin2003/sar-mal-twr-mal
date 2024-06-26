@@ -14,7 +14,6 @@ const Header = () => {
           <div
             className="offcanvas offcanvas-end  "
             id="offcanvasRight"
-            tabindex="-1"
             aria-labelledby="offcanvasRightLabel"
           >
             <div className="offcanvas-header">
@@ -68,7 +67,7 @@ const Header = () => {
 
             {/* offcanvas end */}
 
-            <Link to="/detail">
+            <Link to="">
               <button className=" btn-brown rounded-3" type="submit">
                 <span>Login/Signup</span>
               </button>

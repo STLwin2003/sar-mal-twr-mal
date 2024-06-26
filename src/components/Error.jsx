@@ -5,7 +5,7 @@ const Error = () => {
   return (
     <div>
       <h1>
-        <section className="py-3 py-md-5 min-vh-100 d-flex justify-content-center align-items-center">
+        <section className="py-3 py-md-5  d-flex justify-content-center align-items-center">
           <div className="container">
             <div className="row">
               <div className="col-12">
