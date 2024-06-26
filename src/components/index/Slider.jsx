@@ -44,8 +44,8 @@ const Slider = () => {
               />
                <div class="container">
                <div class="carousel-caption text-center">
-               <h1><i><b>TWR MAL SAR MAL</b></i></h1>
-               <p class="opacity-75"><b><h2><i>People who loves to eat are always the best people</i></h2></b></p>
+               <p className="opacity-75 fs-3 fw-bold"><i>
+               "One cannot think well, love well, sleep well, if one has not dined well"</i></p>
         </div>
       </div>
             </div>
@@ -58,7 +58,7 @@ const Slider = () => {
               />
               <div class="container">
              <div class="carousel-caption  text-top">
-            <p><h2><i>Just one word ,YUMMMM......</i></h2></p>
+            <p className="fs-3 fw-bold"><i>Every dish is a work of art; choose your masterpiece.</i></p>
         
             </div>
       </div>
@@ -73,7 +73,7 @@ const Slider = () => {
               />
               <div class="container">
              <div class="carousel-caption text-end">
-              <p><h1><i>In awe of this culinary masterpiece.</i></h1></p>
+              <p className="fs-3 fw-bold"><i>Food is symbolic of love when words are inadequate</i></p>
         
         </div>
       </div>
