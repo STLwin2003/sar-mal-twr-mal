@@ -5,7 +5,7 @@ const StreetFoodMenu = () => {
   return (
     <div>
       <div className="container my-5">
-        <p class="fs-4">
+        <p class="fs-3 fw-semibold">
           <span className="brown">STREET FOOD MENU</span>
         </p>
 

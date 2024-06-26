@@ -6,8 +6,8 @@ const StreetFoodList = () => {
   return (
     <div>
       <div className="container my-5">
-        <p class="fs-2 text-center my-5">
-          <span className="brown">STREET FOOD MENU</span>
+        <p class="fs-2 text-center my-4">
+          <span className="brown hind-siliguri-semibold">STREET FOOD MENU</span>
         </p>
 
         {/* card area start */}
@@ -60,22 +60,22 @@ const StreetFoodList = () => {
             <ul className="pagination  justify-content-center ">
               <li className="page-item ">
                 <a className="page-link  px-4 py-3" href="#">
-                  <span className="brown fs-6">1</span>
+                  <span className="brown fs-5">1</span>
                 </a>
               </li>
               <li className="page-item">
                 <a className="page-link  px-4 py-3" href="#">
-                  <span className="brown fs-6">2</span>
+                  <span className="brown fs-5">2</span>
                 </a>
               </li>
               <li className="page-item">
                 <a className="page-link  px-4 py-3" href="#">
-                  <span className="brown fs-6">3</span>
+                  <span className="brown fs-5">3</span>
                 </a>
               </li>
               <li className="page-item">
-                <a className="page-link  px-4 py-3" href="#">
-                  <span className="brown fs-6">Next</span>
+                <a className="page-link  px-2 py-3" href="#">
+                  <span className="brown fs-5">Next</span>
                 </a>
               </li>
             </ul>
