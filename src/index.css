@@ -26,3 +26,8 @@
   font-weight: 600;
   font-style: normal;
 }
+
+
+.bg-light-gray{
+  background-color: rgb(201, 201, 201);
+}
