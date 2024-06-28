@@ -3,34 +3,34 @@ import React from "react";
 const PlaceMenu = () => {
   return <div>
     <div className="container mt-5">
-    <h3><p className="brown">PLACE LIST</p></h3>
+    <p className="brown fs-3 fw-semibold">PLACE LIST</p>
   <div className="row">
     <div className="col-sm-6 col-md-4 col-lg-3">
       
-    <img src="https://media.istockphoto.com/id/1134159071/photo/empty-cafeteria.jpg?s=1024x1024&w=is&k=20&c=FBg6g4CvuWzbAWi_fgaPxPUTXsmk_dQJdhe4_8aqNbk=" className="rounded mb-3" alt="Cinque Terre" width="300" height="300" row-gap="10px" column-gap="15px"/> 
-      <p className="fs-5"><span class="brown">Pathein Park</span></p>
+    <img src="https://jayscotts.com/wp-content/uploads/2022/03/restaurant-patio-design-6-821x1024.jpg" className="rounded mb-3 card-img-top" alt="Cinque Terre"/> 
+      <p className="fs-5 fw-medium"><span class="brown">Pathein Park</span></p>
       
     </div>
       
     <div className="col-sm-6 col-md-4 col-lg-3">
-    <img src="https://media.istockphoto.com/id/1134159071/photo/empty-cafeteria.jpg?s=1024x1024&w=is&k=20&c=FBg6g4CvuWzbAWi_fgaPxPUTXsmk_dQJdhe4_8aqNbk=" className="rounded mb-3" alt="Cinque Terre" width="300" height="300" row-gap="10px" column-gap="15px"/> 
-    <p className="fs-5"><span class="brown">Pathein Park</span></p>
+    <img src="https://jayscotts.com/wp-content/uploads/2022/03/restaurant-patio-design-6-821x1024.jpg" className="rounded mb-3 card-img-top" alt="Cinque Terre"/> 
+    <p className="fs-5 fw-medium"><span class="brown">Pathein Park</span></p>
       
     </div>
     <div className="col-sm-6 col-md-4 col-lg-3">
-    <img src="https://media.istockphoto.com/id/1134159071/photo/empty-cafeteria.jpg?s=1024x1024&w=is&k=20&c=FBg6g4CvuWzbAWi_fgaPxPUTXsmk_dQJdhe4_8aqNbk=" className="rounded mb-3" alt="Cinque Terre" width="300" height="300" row-gap="10px" column-gap="15px"/> 
-    <p className="fs-5"><span class="brown">Pathein Park</span></p>
+    <img src="https://jayscotts.com/wp-content/uploads/2022/03/restaurant-patio-design-6-821x1024.jpg" className="rounded mb-3 card-img-top" alt="Cinque Terre"/> 
+    <p className="fs-5 fw-medium"><span class="brown">Pathein Park</span></p>
      
     </div>
     <div className="col-sm-6 col-md-4 col-lg-3">
-    <img src="https://media.istockphoto.com/id/1134159071/photo/empty-cafeteria.jpg?s=1024x1024&w=is&k=20&c=FBg6g4CvuWzbAWi_fgaPxPUTXsmk_dQJdhe4_8aqNbk=" className="rounded mb-3" alt="Cinque Terre" width="300" height="300" row-gap="10px" column-gap="15px"/> 
-    <p className="fs-5"><span class="brown">Pathein Park</span></p>     
+    <img src="https://jayscotts.com/wp-content/uploads/2022/03/restaurant-patio-design-6-821x1024.jpg" className="rounded mb-3 card-img-top" alt="Cinque Terre"/> 
+    <p className="fs-5 fw-medium"><span class="brown">Pathein Park</span></p>     
       
     </div>
   </div>
-  <div className="pb-5">
-<button type="button" class="btn-brown float-end">See More</button>
-</div>
+  <div className="d-grid gap-2 d-md-flex justify-content-md-end " >
+           <button className="btn" type="button" style={{background:"#b46c14",color:"white"}}>See More</button>
+        </div>
 </div> 
 
   </div>;
