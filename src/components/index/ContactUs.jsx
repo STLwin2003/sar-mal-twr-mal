@@ -23,13 +23,13 @@ const ContactUs = () => {
                   // src="https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D"
                 //  src="https://plus.unsplash.com/premium_photo-1691948105877-766dd9604d57?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGZvb2QlMjBwb3J0cmFpdHxlbnwwfHwwfHx8MA%3D%3D"
                   src="https://images.unsplash.com/photo-1654166597239-616b92051fd9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fGZvb2QlMjBwb3J0cmFpdHxlbnwwfHwwfHx8MA%3D%3D"
-                className="img-fluid w-75 rounded-3"
+                className="img-fluid w-75 rounded-3 "
                   alt="Cinque Terre"
                 ></img>
               </div>
             </div>
 
-            <div className="col-lg-6 col-sm-12 my-5">
+            <div className="col-lg-6 col-sm-12 my-5 pt-5">
               <form className="w-75 mx-auto text-center ">
                 <div className="form-floating ">
                   <input
