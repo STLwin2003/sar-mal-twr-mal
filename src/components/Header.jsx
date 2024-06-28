@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <div className="mb-5">
-      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top py-3 ">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top py-2 ">
         <div className="container">
           <NavLink to="/" className="navbar-brand  fs-1 " href="#">
             <span className="brown lobster-regular">SarMalTwrMal</span>
@@ -68,9 +68,33 @@ const Header = () => {
             {/* offcanvas end */}
 
             <Link to="">
-              <button className=" btn-brown rounded-3" type="submit">
-                <span>Login/Signup</span>
-              </button>
+              <div className="dropdown">
+                <button
+                  className=" btn-brown rounded-3 dropdown-toggle"
+                  type="submit"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <span>Login/Signup</span>
+                </button>
+                <ul class="dropdown-menu bg-secondary">
+                  <li>
+                    <button class="dropdown-item" type="button">
+                      Your Activity
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item" type="button">
+                      Your Bookmark
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item" type="button">
+                      Sign Out
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </Link>
           </form>
           <button
