@@ -1,5 +1,6 @@
 import React from "react";
 import StreetFoodCard from "../card/StreetFoodCard";
+import { Link } from "react-router-dom";
 
 const StreetFoodMenu = () => {
   return (
@@ -35,8 +36,15 @@ const StreetFoodMenu = () => {
             <StreetFoodCard />
           </div>
         </div>
-        <div className="d-grid gap-2 d-md-flex justify-content-md-end " >
-           <button className="btn" type="button" style={{background:"#b46c14",color:"white"}}>See More</button>
+        <div className="d-grid  d-md-flex justify-content-md-end ">
+          <Link
+            to="/street_food_list"
+            className="btn brown px-4"
+            type="button"
+            style={{ background: "#b46c14", color: "white" }}
+          >
+            See More
+          </Link>
         </div>
       </div>
     </div>
