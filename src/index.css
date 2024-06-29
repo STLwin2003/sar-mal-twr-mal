@@ -5,7 +5,6 @@
 .brown-bg {
   background-color: #b46c14;
 }
- 
 
 .btn-brown {
   background-color: #b46c14;
@@ -22,13 +21,31 @@
   font-style: normal;
 }
 
+.dancing-script-main {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
 .hind-siliguri-semibold {
   font-family: "Hind Siliguri", sans-serif;
   font-weight: 600;
   font-style: normal;
 }
 
+.gfs-didot-regular {
+  font-family: "GFS Didot", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-.bg-light-gray{
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bg-light-gray {
   background-color: rgb(229, 228, 228);
 }
