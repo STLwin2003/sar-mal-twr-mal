@@ -6,7 +6,7 @@ const PlaceMenu = () => {
   return (
     <div>
       <div className="container mt-5">
-        <p className="brown fs-3 fw-semibold">PLACE LIST</p>
+        <p className="brown fs-3 fw-semibold gfs-didot-regular">Place Menu</p>
         <div className="row">
           <div className="col-sm-6 col-md-4 col-lg-3">
             <PlaceCard />

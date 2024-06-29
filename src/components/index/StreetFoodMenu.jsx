@@ -6,23 +6,11 @@ const StreetFoodMenu = () => {
   return (
     <div>
       <div className="container my-5">
-        <p class="fs-3 fw-semibold">
-          <span className="brown">STREET FOOD MENU</span>
+        <p class="fs-3 fw-semibold brown gfs-didot-regular ">
+          Street Food Menu
         </p>
 
         <div className="row">
-          <div className="col-sm-6 col-md-4 col-lg-3">
-            <StreetFoodCard />
-          </div>
-          <div className="col-sm-6 col-md-4 col-lg-3">
-            <StreetFoodCard />
-          </div>
-          <div className="col-sm-6 col-md-4 col-lg-3">
-            <StreetFoodCard />
-          </div>
-          <div className="col-sm-6 col-md-4 col-lg-3">
-            <StreetFoodCard />
-          </div>
           <div className="col-sm-6 col-md-4 col-lg-3">
             <StreetFoodCard />
           </div>

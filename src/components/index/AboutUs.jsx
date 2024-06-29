@@ -8,10 +8,10 @@ const AboutUs = () => {
           <div className="row">
             <div className="col-sm-7">
               <div className=" text-right mt-3">
-                <p className="fs-3 fw-semibold brown hind-siliguri-semibold">
+                <p className="fs-3 fw-semibold brown gfs-didot-regular">
                   About Us
                 </p>
-                <p className="fs-4 fw-medium dark">
+                <p className="fs-4 fw-medium dark roboto-regular">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Beatae, quibusdam, libero dignissimos totam molestiae ea velit
                   voluptates doloremque vitae tenetur magnam quos. Libero,

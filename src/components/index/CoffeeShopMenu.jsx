@@ -6,9 +6,7 @@ const CoffeeShopMenu = () => {
   return (
     <div>
       <div className="container my-5">
-        <p class="fs-3 fw-semibold">
-          <span className="brown">COFFEE SHOP MENU</span>
-        </p>
+        <p class="fs-3 fw-bold brown gfs-didot-regular">Coffee Shop Menu</p>
 
         <div className="row my-3">
           <div className="col-sm-6 col-md-4 col-lg-3">

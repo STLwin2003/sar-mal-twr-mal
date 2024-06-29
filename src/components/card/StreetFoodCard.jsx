@@ -11,7 +11,7 @@ const StreetFoodCard = () => {
         />
         <div class="card-body">
           <p class="card-title mt-2 mb-4 brown ">
-            <span className="fw-medium fs-5">Street food</span>
+            <span className="fw-medium fs-5 roboto-regular">Street food</span>
           </p>{" "}
         </div>
       </div>

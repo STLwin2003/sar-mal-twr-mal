@@ -11,7 +11,7 @@ const CoffeeShopCard = () => {
         />
         <div className="card-body">
           <p className="card-title mt-2 mb-5 ">
-            <span className="fw-medium fs-5">Coffee</span>
+            <span className="fw-medium fs-5 roboto-regular">Coffee</span>
           </p>{" "}
         </div>
       </div>

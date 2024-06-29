@@ -9,7 +9,7 @@ const PlaceCard = () => {
           className="rounded mb-3 card-img-top shadow-lg"
           alt=""
         />
-        <p className="fs-5 mb-5 fw-medium">
+        <p className="fs-5 mb-5 fw-medium roboto-regular">
           <span>Pathein Park</span>
         </p>
       </div>

@@ -7,7 +7,7 @@ const ContactUs = () => {
         <div className=" bg-light-gray p-2">
           <div className="row">
             <div className="text-center my-2">
-              <p className="fs-2 fw-semibold brown hind-siliguri-semibold">
+              <p className="fs-2 fw-semibold brown gfs-didot-regular">
                 Contact Us
               </p>
             </div>
