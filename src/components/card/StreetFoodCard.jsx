@@ -10,9 +10,25 @@ const StreetFoodCard = () => {
           alt="img"
         />
         <div class="card-body">
-          <p class="card-title mt-2 mb-5 brown">
+          <p class="card-title mt-2 brown">
             <span className="brown fs-5">Street food</span>
           </p>{" "}
+            <div className="row">
+              <i className="fa-regular fa-star mb-4"></i>
+             
+
+              {/* <div className="col-md-8 col-lg-6 col-xl-4">
+                <div className="rating-card">
+                  <div className="text mb-4">
+                  <div className=" fa fa-star rating-stars d-inline-block position-relative onclick brown">
+                      <div className="filled-star"></div>
+                    </div>
+                    <span className="rating-number">4.3</span>
+                  </div>
+                </div>
+              </div> */}
+            </div>
+        
         </div>
       </div>
     </div>
