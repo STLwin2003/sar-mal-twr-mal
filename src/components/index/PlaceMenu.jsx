@@ -1,5 +1,6 @@
 import React from "react";
 import PlaceCard from "../card/PlaceCard";
+import { Link } from "react-router-dom";
 
 const PlaceMenu = () => {
   return (
@@ -21,13 +22,14 @@ const PlaceMenu = () => {
           </div>
         </div>
         <div className="d-grid gap-2 d-md-flex justify-content-md-end ">
-          <button
-            className="btn"
+          <Link
+            to="/place_list"
+            className="btn px-4"
             type="button"
             style={{ background: "#b46c14", color: "white" }}
           >
             See More
-          </button>
+          </Link>
         </div>
       </div>
     </div>
