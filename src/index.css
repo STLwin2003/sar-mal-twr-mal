@@ -5,6 +5,7 @@
 .brown-bg {
   background-color: #b46c14;
 }
+ 
 
 .btn-brown {
   background-color: #b46c14;
@@ -25,4 +26,9 @@
   font-family: "Hind Siliguri", sans-serif;
   font-weight: 600;
   font-style: normal;
+}
+
+
+.bg-light-gray{
+  background-color: rgb(229, 228, 228);
 }
