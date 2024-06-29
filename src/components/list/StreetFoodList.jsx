@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import StreetFoodCard from "../card/StreetFoodCard";
 
@@ -52,36 +51,6 @@ const StreetFoodList = () => {
         </div>
 
         {/* card area end */}
-
-        {/* pagination start */}
-
-        <div className="">
-          <nav aria-label="Page navigation ">
-            <ul className="pagination  justify-content-center ">
-              <li className="page-item ">
-                <a className="page-link  px-4 py-3" href="#">
-                  <span className="brown fs-5">1</span>
-                </a>
-              </li>
-              <li className="page-item">
-                <a className="page-link  px-4 py-3" href="#">
-                  <span className="brown fs-5">2</span>
-                </a>
-              </li>
-              <li className="page-item">
-                <a className="page-link  px-4 py-3" href="#">
-                  <span className="brown fs-5">3</span>
-                </a>
-              </li>
-              <li className="page-item">
-                <a className="page-link  px-2 py-3" href="#">
-                  <span className="brown fs-5">Next</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        {/* pagination end */}
       </div>
     </div>
   );
