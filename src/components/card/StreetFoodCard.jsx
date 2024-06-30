@@ -10,9 +10,9 @@ const StreetFoodCard = () => {
           alt="img"
         />
         <div class="card-body">
-          <p class="card-title mt-2 mb-4 brown ">
-            <span className="fw-medium fs-5 roboto-regular">Street food</span>
-          </p>{" "}
+          <p class="card-title mt-2 brown">
+            <span className=" fs-5 roboto-regular">Street food</span>
+          </p>
         </div>
       </div>
     </div>

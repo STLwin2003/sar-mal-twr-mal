@@ -10,7 +10,7 @@ const CoffeeShopCard = () => {
           alt="img"
         />
         <div className="card-body">
-          <p className="card-title mt-2 mb-5 ">
+          <p className="card-title mt-2 ">
             <span className="fw-medium fs-5 roboto-regular">Coffee</span>
           </p>{" "}
         </div>
