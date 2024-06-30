@@ -64,6 +64,74 @@ const PlaceDetail = () => {
             />
           </div>
         </div>
+        {/* comment section start */}
+        <div className="row mb-5">
+          <section className="my-3">
+            <div className="col-2">
+              <button className="btn btn-warning rounded-circle ">
+                <i class="fa-regular fa-user"></i>
+              </button>
+              <span className="fs-6 roboto-regular mx-2">User</span>
+            </div>
+            <div className="col-8">
+              <div className="border bg-light-gray rounded-5">
+                <p className="fs-5 roboto-regular p-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
+                </p>
+              </div>
+            </div>
+          </section>
+          <section className="my-3">
+            <div className="col-2">
+              <button className="btn btn-warning rounded-circle ">
+                <i class="fa-regular fa-user"></i>
+              </button>
+              <span className="fs-6 roboto-regular mx-2">User</span>
+            </div>
+            <div className="col-8">
+              <div className="border bg-light-gray rounded-5">
+                <p className="fs-5 roboto-regular p-3">
+                  Lorem ipsum dolor sit amet consectetur
+                </p>
+              </div>
+            </div>
+          </section>
+          <section className="my-3">
+            <div className="col-2">
+              <button className="btn btn-warning rounded-circle ">
+                <i class="fa-regular fa-user"></i>
+              </button>
+              <span className="fs-6 roboto-regular mx-2">User</span>
+            </div>
+            <div className="col-8">
+              <div className="border bg-light-gray rounded-5">
+                <p className="fs-5 roboto-regular p-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
+                  quam ex ut id ipsam facere recusandae est nihil fugiat
+                  laboriosam maxime. Explicabo, nisi? Aliquid vel perferendis
+                  illum deserunt nemo repellendus!
+                </p>
+              </div>
+            </div>
+          </section>
+          <section className="my-3">
+            <div className="col-2">
+              <button className="btn btn-warning rounded-circle ">
+                <i class="fa-regular fa-user"></i>
+              </button>
+              <span className="fs-6 roboto-regular mx-2">User</span>
+            </div>
+            <div className="col-8">
+              <div className="border bg-light-gray rounded-5">
+                <p className="fs-5 roboto-regular p-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
+                  quam ex ut id ipsam facere recusandae est nihil fugiat
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+        {/* comment section end */}
       </div>
     </div>
   );
