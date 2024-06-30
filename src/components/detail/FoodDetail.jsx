@@ -29,23 +29,31 @@ const Detail = () => {
             <div className="row">
               <div className="col-2"></div>
               <div className="col-10 text-start ">
-                <p className="fs-3 brown fw-semibold">This is Title</p>
+                <p className="fs-2 brown fw-bold noto-serif-display-subtitle">
+                  This is Title
+                </p>
                 <p>
                   <i class="fa-solid fa-location-dot fs-4 me-4"></i>
                   {"   "} <span className="fs-5">Pathein, 10011</span>
                 </p>
                 <p>
-                  <i className="fas fa-envelope me-4 fs-4"></i>
+                  <i className="fa-solid fa-clock me-4 fs-4"></i>
                   <span className="fs-5"> Opening Hours:</span>
                 </p>
                 <p>
-                  <i className="fas fa-phone me-4 fs-4"></i>{" "}
+                  <i className="fas fa-phone me-4 fs-4"></i>
                   <span className="fs-5">+ 959 765 514 319</span>
                 </p>
                 <p>
                   <i className="fas fa-star text-warning me-4 fs-4"></i>
                   <span className="fs-4 fw-semibold">9.4</span>
                 </p>
+                <div className="mb-2">
+                  <button className="btn-brown">
+                    <span className="fs-5 ps-2">Add Favorite</span>
+                    <i class="fa-solid fa-heart fs-4 mx-3"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
