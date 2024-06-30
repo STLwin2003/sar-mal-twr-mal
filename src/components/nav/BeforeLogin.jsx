@@ -1,16 +1,13 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
-// import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const BeforeLogin = () => {
   return (
     <div>
-      {console.log("reach this page")}
       <NavLink to="/signup">
         <button
-          className="btn-brown  rounded-3  "
-          type="submit"
-          data-bs-toggle="dropdown"
+          className="btn-brown  rounded-3  px-3"
+          type="button"
           aria-expanded="false"
         >
           Sign Up

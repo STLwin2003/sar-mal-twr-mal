@@ -6,13 +6,15 @@ const AfterLogin = () => {
     <div>
       <div className="dropstart">
         <button
-          className="  btn-outline-none  rounded-circle border p-2"
-          type="submit"
+          className="btn border rounded-circle p-2  "
+          type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          <i className="fa-solid fa-address-card fs-3  brown"></i>
+          {/* <i className="fa-solid fa-address-card fs-3  brown"></i> */}
+          <i class="fa-solid fa-user fs-3 brown"></i>
         </button>
+
         <ul className="dropdown-menu bg-secondary ">
           <li>
             <Link to="/user_profile" className="dropdown-item" type="button">
