@@ -14,6 +14,7 @@ const App = () => {
   let arrPath = [
     "/",
     "/home",
+
     "/street_food_list",
     "/coffee_shop_list",
     "/place_list",
