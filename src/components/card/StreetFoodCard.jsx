@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const StreetFoodCard = () => {
   return (
-    <div>
+    <div className="mb-4">
       <Link
         to="/street_food/food_detail"
         style={{ textDecoration: "none", color: "inherit" }}

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const PlaceCard = () => {
   return (
-    <div>
+    <div className="mb-4">
       <Link
         to="/place/place_detail"
         style={{ textDecoration: "none", color: "inherit" }}
