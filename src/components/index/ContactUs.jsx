@@ -7,11 +7,11 @@ const ContactUs = () => {
         <div className=" bg-light-gray p-2">
           <div className="row">
             <div className="text-center my-2">
-              <p className="fs-2 fw-semibold brown gfs-didot-regular">
+              <p className="fs-2 fw-bold brown noto-serif-display-subtitle">
                 Contact Us
               </p>
             </div>
-            <div className="col-lg-6 col-sm-12  text-center my-4">
+            <div className="col-lg-6 col-sm-12  text-center my-lg-4 my-sm-0">
               <div>
                 <img
                   src="https://images.unsplash.com/photo-1654166597239-616b92051fd9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fGZvb2QlMjBwb3J0cmFpdHxlbnwwfHwwfHx8MA%3D%3D"
@@ -21,7 +21,7 @@ const ContactUs = () => {
               </div>
             </div>
 
-            <div className="col-lg-6 col-sm-12 my-5 pt-5">
+            <div className="col-lg-6 col-sm-12 pt-5">
               <form className="w-75 mx-auto text-center ">
                 <div className="form-floating ">
                   <input
@@ -62,7 +62,7 @@ const ContactUs = () => {
                 </div>
               </form>
               <div className=" m-6 mt-5 d-flex justify-content-center">
-                <button className="btn-brown px-5 py-2 w-40 mb-5" type="button">
+                <button className="btn-brown px-5 py-2 w-40 mb-3" type="button">
                   <span className="fs-5">Send</span>
                 </button>
               </div>

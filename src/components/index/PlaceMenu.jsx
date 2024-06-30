@@ -6,7 +6,9 @@ const PlaceMenu = () => {
   return (
     <div>
       <div className="container mt-5">
-        <p className="brown fs-3 fw-semibold gfs-didot-regular">Place Menu</p>
+        <p className="brown fs-2 fw-bold noto-serif-display-subtitle my-4">
+          Place Menu
+        </p>
         <div className="row">
           <div className="col-sm-6 col-md-4 col-lg-3">
             <PlaceCard />
@@ -21,7 +23,7 @@ const PlaceMenu = () => {
             <PlaceCard />
           </div>
         </div>
-        <div className="d-grid gap-2 d-md-flex justify-content-md-end ">
+        <div className="d-grid gap-2 d-md-flex justify-content-md-end my-4">
           <Link
             to="/place_list"
             className="btn px-4"

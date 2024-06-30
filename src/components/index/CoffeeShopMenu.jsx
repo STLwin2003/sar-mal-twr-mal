@@ -6,9 +6,11 @@ const CoffeeShopMenu = () => {
   return (
     <div>
       <div className="container my-5">
-        <p class="fs-3 fw-bold brown gfs-didot-regular">Coffee Shop Menu</p>
+        <p class="fs-2 fw-bold brown noto-serif-display-subtitle my-4">
+          Coffee Shop Menu
+        </p>
 
-        <div className="row my-3">
+        <div className="row">
           <div className="col-sm-6 col-md-4 col-lg-3">
             <CoffeeShopCard />
           </div>
@@ -22,7 +24,7 @@ const CoffeeShopMenu = () => {
             <CoffeeShopCard />
           </div>
 
-          <div className="d-grid gap-2 d-md-flex justify-content-md-end ">
+          <div className="d-grid gap-2 d-md-flex justify-content-md-end my-4">
             <Link
               to="/coffee_shop_list"
               className="btn px-4"

@@ -4,11 +4,11 @@ const AboutUs = () => {
   return (
     <div>
       <div className="container">
-        <div className=" my-5 pt-5 bg-light-gray p-5">
+        <div className=" my-5 px-5 py-sm-3 py-lg-5 bg-light-gray ">
           <div className="row">
             <div className="col-sm-7">
               <div className=" text-right mt-3">
-                <p className="fs-3 fw-semibold brown gfs-didot-regular">
+                <p className="fs-2 fw-bold brown noto-serif-display-subtitle">
                   About Us
                 </p>
                 <p className="fs-4 fw-medium dark roboto-regular">

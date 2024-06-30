@@ -6,7 +6,7 @@ const StreetFoodMenu = () => {
   return (
     <div>
       <div className="container my-5">
-        <p class="fs-3 fw-semibold brown gfs-didot-regular ">
+        <p class="fs-2 fw-bold brown noto-serif-display-subtitle my-4">
           Street Food Menu
         </p>
 
@@ -24,7 +24,7 @@ const StreetFoodMenu = () => {
             <StreetFoodCard />
           </div>
         </div>
-        <div className="d-grid  d-md-flex justify-content-md-end ">
+        <div className="d-grid  d-md-flex justify-content-md-end my-4">
           <Link
             to="/street_food_list"
             className="btn brown px-4"

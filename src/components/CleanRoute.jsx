@@ -2,13 +2,12 @@ import { Route, Routes } from "react-router";
 
 import React from "react";
 import Header from "../components/nav/Header.jsx";
+import Footer from "../components/nav/Footer.jsx";
 import StreetFoodList from "./list/StreetFoodList";
 import PlaceList from "./list/PlaceList";
 import CoffeeShopList from "./list/CoffeeShopList";
-import Footer from "./Footer";
 import FoodDetail from "./detail/FoodDetail.jsx";
 import PlaceDetail from "./detail/PlaceDetail.jsx";
-
 import UserProfile from "./user/UserProfile.jsx";
 import Login from "./user/Login.jsx";
 import SignUp from "./user/SignUp.jsx";
