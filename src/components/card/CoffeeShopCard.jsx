@@ -8,17 +8,28 @@ const CoffeeShopCard = () => {
         to="/coffee_shop/food_detail"
         style={{ textDecoration: "none", color: "inherit" }}
       >
-        <div className="">
+        <div className=" position-relative">
           <img
             src="https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg?auto=compress&cs=tinysrgb&w=600"
             class="card-img-top shadow-lg rounded"
             alt="img"
           />
-          <div className="card-body">
-            <p className="card-title mt-2 ">
-              <span className="fw-medium fs-5 roboto-regular">Coffee</span>
-            </p>{" "}
-          </div>
+          <Link
+            className="fa-solid fa-heart fs-3 text-light position-absolute top-0 end-0 mt-2 me-2 "
+            style={{ textDecoration: "none", color: "inherit" }}
+          ></Link>
+        </div>
+        <div className="card-body">
+          <p className="card-title mt-2 ">
+            <span className="fw-medium fs-5 roboto-regular">Coffee</span>
+
+            <div className=" float-end">
+              <i class="fa-solid fa-star fs-5 text-warning ms-3"></i>
+              <sppan className="fs-5 fw-semibold  roboto-regular ms-2">
+                9.4
+              </sppan>
+            </div>
+          </p>
         </div>
       </Link>
     </div>

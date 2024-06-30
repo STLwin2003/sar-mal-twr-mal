@@ -9,14 +9,25 @@ const PlaceCard = () => {
         style={{ textDecoration: "none", color: "inherit" }}
       >
         <div>
-          <img
-            src="https://jayscotts.com/wp-content/uploads/2022/03/restaurant-patio-design-6-821x1024.jpg"
-            className="rounded card-img-top shadow-lg"
-            alt=""
-          />
-          <p className="fs-5 mt-2 fw-medium roboto-regular">
-            <span>Pathein Park</span>
-          </p>
+          <div className=" position-relative">
+            <img
+              src="https://jayscotts.com/wp-content/uploads/2022/03/restaurant-patio-design-6-821x1024.jpg"
+              className="rounded card-img-top shadow-lg"
+              alt=""
+            />
+            <Link
+              className="fa-solid fa-heart fs-3 text-light position-absolute top-0 end-0 mt-2 me-2 "
+              style={{ textDecoration: "none", color: "inherit" }}
+            ></Link>
+          </div>
+
+          <span className="fs-5 mt-2 fw-medium roboto-regular">
+            Pathein Park
+          </span>
+          <div className=" float-end">
+            <i class="fa-solid fa-star fs-5 text-warning ms-3"></i>
+            <sppan className="fs-5 fw-semibold  roboto-regular ms-2">9.4</sppan>
+          </div>
         </div>
       </Link>
     </div>
