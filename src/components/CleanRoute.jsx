@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router";
 
 import React from "react";
-import Header from "./Header";
+import Header from "../components/nav/Header.jsx";
 import StreetFoodList from "./list/StreetFoodList";
 import PlaceList from "./list/PlaceList";
 import CoffeeShopList from "./list/CoffeeShopList";
