@@ -5,8 +5,10 @@ const PlaceList = () => {
   return (
     <div>
       <div className="container my-5">
-        <p className="fs-2 text-center my-4">
-          <span className="brown hind-siliguri-semibold">STREET FOOD MENU</span>
+        <p className="fs-2 text-center my-5">
+          <span className="brown  noto-serif-display-subtitle">
+            STREET FOOD MENU
+          </span>
         </p>
 
         {/* card area start */}

@@ -5,8 +5,10 @@ const CoffeeShopList = () => {
   return (
     <div>
       <div className="container my-5">
-        <p className="fs-2 text-center my-4">
-          <span className="brown hind-siliguri-semibold">COFFEE SHOP MENU</span>
+        <p className="fs-2 text-center my-5">
+          <span className="brown  noto-serif-display-subtitle">
+            COFFEE SHOP MENU
+          </span>
         </p>
 
         {/* card area start */}

@@ -12,7 +12,7 @@ const Trending = () => {
           Trending Right Now
         </p>
         <div className="row">
-          <div className="col-sm-6 col-md-4 col-lg-4">
+          <div className="col-sm-6 col-md-4 col-lg-4 mb-4">
             <CoffeeShopCard />
           </div>
           <div className="col-sm-6 col-md-4 col-lg-4">

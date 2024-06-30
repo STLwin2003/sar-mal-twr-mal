@@ -24,7 +24,7 @@ const CoffeeShopMenu = () => {
             <CoffeeShopCard />
           </div>
 
-          <div className="d-grid gap-2 d-md-flex justify-content-md-end my-4">
+          <div className="d-grid gap-2 d-md-flex justify-content-md-end">
             <Link
               to="/coffee_shop_list"
               className="btn px-4"
