@@ -34,6 +34,7 @@ const StreetFoodMenu = () => {
             See More
           </Link>
         </div>
+        <hr />
       </div>
     </div>
   );

@@ -33,6 +33,7 @@ const PlaceMenu = () => {
             See More
           </Link>
         </div>
+        <hr />
       </div>
     </div>
   );

@@ -35,6 +35,7 @@ const CoffeeShopMenu = () => {
             </Link>
           </div>
         </div>
+        <hr />
       </div>
     </div>
   );

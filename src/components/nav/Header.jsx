@@ -4,7 +4,7 @@ import BeforeLogin from "./BeforeLogin";
 import AfterLogin from "./AfterLogin";
 
 const Header = () => {
-  let userStatus = "login";
+  let userStatus = "signup";
 
   let AccountStatus = () => {
     if (userStatus === "signup") {
@@ -25,41 +25,41 @@ const Header = () => {
           </NavLink>
 
           <div
-            className="offcanvas offcanvas-end  "
+            className="offcanvas offcanvas-top  "
             id="offcanvasRight"
             aria-labelledby="offcanvasRightLabel"
           >
             <div className="offcanvas-header">
-              <p class="offcanvas-title fs-4 fw-semibold dancing-script-main brown">
+              <p class="offcanvas-title fs-2 fw-semibold dancing-script-main brown">
                 SarMalTwrMal
               </p>
               <button
                 type="button"
-                className="btn-close"
+                className="btn-close me-2 mt-2"
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
               ></button>
             </div>
             <div className="offcanvas-body">
-              <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+              <ul className="navbar-nav mx-auto  mb-lg-0">
                 <li className="nav-item">
                   <NavLink to="/home" className="nav-link active me-3">
-                    <span className="brown ">Home</span>
+                    <span className="brown fs-5">Home</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to="/street_food_list" className="nav-link me-3">
-                    <span className="brown">Street Food</span>
+                    <span className="brown fs-5">Street Food</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to="/coffee_shop_list" className="nav-link me-3">
-                    <span className="brown">Coffee Shop</span>
+                    <span className="brown fs-5">Coffee Shop</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to="/place_list" className="nav-link me-3">
-                    <span className="brown">Place</span>
+                    <span className="brown fs-5">Place</span>
                   </NavLink>
                 </li>
               </ul>
