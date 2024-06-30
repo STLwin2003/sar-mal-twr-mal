@@ -19,7 +19,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top py-2 ">
         <div className="container">
           <NavLink to="/" className="navbar-brand ">
-            <span className="brown  fs-1  dancing-script-main">
+            <span className="brown fs-1 fw-bold dancing-script-main">
               SarMalTwrMal
             </span>
           </NavLink>
@@ -30,6 +30,9 @@ const Header = () => {
             aria-labelledby="offcanvasRightLabel"
           >
             <div className="offcanvas-header">
+              <p class="offcanvas-title fs-4 fw-semibold dancing-script-main brown">
+                SarMalTwrMal
+              </p>
               <button
                 type="button"
                 className="btn-close"
@@ -40,26 +43,22 @@ const Header = () => {
             <div className="offcanvas-body">
               <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <NavLink
-                    to="/home"
-                    className="nav-link active me-3 "
-                    aria-current="page"
-                  >
-                    <span className="brown">Home</span>
+                  <NavLink to="/home" className="nav-link active me-3">
+                    <span className="brown ">Home</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/street_food_list" className="nav-link me-3 ">
+                  <NavLink to="/street_food_list" className="nav-link me-3">
                     <span className="brown">Street Food</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/coffee_shop_list" className="nav-link me-3 ">
+                  <NavLink to="/coffee_shop_list" className="nav-link me-3">
                     <span className="brown">Coffee Shop</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/place_list" className="nav-link me-3 ">
+                  <NavLink to="/place_list" className="nav-link me-3">
                     <span className="brown">Place</span>
                   </NavLink>
                 </li>
@@ -67,19 +66,21 @@ const Header = () => {
             </div>
           </div>
 
-          <form className="d-flex ">
-            <div
-              className="my-auto fs-3 me-4 "
-              data-bs-toggle="offcanvas"
-              data-bs-target="#searchBar"
-            >
-              <i className="fa-solid fa-magnifying-glass"></i>
-            </div>
+          <div className="text-end">
+            <div className="d-flex justify-content-end align-content-end">
+              <div
+                className="my-auto fs-3 me-4 "
+                data-bs-toggle="offcanvas"
+                data-bs-target="#searchBar"
+              >
+                <i className="fa-solid fa-magnifying-glass"></i>
+              </div>
 
-            {/* acc status section */}
-            {AccountStatus()}
-            {/* acc status section */}
-          </form>
+              {/* acc status section */}
+              {AccountStatus()}
+              {/* acc status section */}
+            </div>
+          </div>
           <button
             className="navbar-toggler"
             type="button"
