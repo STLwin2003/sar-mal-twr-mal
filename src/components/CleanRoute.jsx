@@ -25,7 +25,7 @@ const CleanRoute = () => {
         <Route path="/place_list" element={<PlaceList />} />
         <Route path="/street_food/food_detail" element={<FoodDetail />} />
         <Route path="/coffee_shop/food_detail" element={<FoodDetail />} />
-        <Route path="/place/detail" element={<PlaceDetail />} />
+        <Route path="/place/place_detail" element={<PlaceDetail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/user_profile" element={<UserProfile />} />
