@@ -22,15 +22,15 @@ const StreetFoodCard = () => {
 
         <div className="card-body">
           <p className="card-title mt-2 brown">
-            <span className=" fs-5 roboto-regular text-decoration-none">
-              Street food
-            </span>
-            <div className=" float-end">
-              <i class="fa-solid fa-star fs-5 text-warning ms-3"></i>
+            <div className="">
+              <i class="fa-solid fa-star fs-5 text-warning "></i>
               <sppan className="fs-5 fw-semibold  roboto-regular ms-2">
                 9.4
               </sppan>
             </div>
+            <span className=" fs-5 roboto-regular text-decoration-none">
+              Street food
+            </span>
           </p>
         </div>
       </Link>

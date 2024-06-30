@@ -21,14 +21,13 @@ const CoffeeShopCard = () => {
         </div>
         <div className="card-body">
           <p className="card-title mt-2 ">
-            <span className="fw-medium fs-5 roboto-regular">Coffee</span>
-
-            <div className=" float-end">
-              <i class="fa-solid fa-star fs-5 text-warning ms-3"></i>
+            <div className="">
+              <i class="fa-solid fa-star fs-5 text-warning"></i>
               <sppan className="fs-5 fw-semibold  roboto-regular ms-2">
                 9.4
               </sppan>
             </div>
+            <span className="fw-medium fs-5 roboto-regular">Coffee</span>
           </p>
         </div>
       </Link>
