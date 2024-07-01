@@ -43,23 +43,23 @@ const Header = () => {
             <div className="offcanvas-body">
               <ul className="navbar-nav mx-auto  mb-lg-0">
                 <li className="nav-item">
-                  <NavLink to="/home" className="nav-link active me-3">
-                    <span className="brown fs-5">Home</span>
+                  <NavLink to="/home" className="nav-link  me-3">
+                    <span className="dark fs-6">Home</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to="/street_food_list" className="nav-link me-3">
-                    <span className="brown fs-5">Street Food</span>
+                    <span className="dark fs-6">Street Food</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to="/coffee_shop_list" className="nav-link me-3">
-                    <span className="brown fs-5">Coffee Shop</span>
+                    <span className="dark fs-6">Coffee Shop</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to="/place_list" className="nav-link me-3">
-                    <span className="brown fs-5">Place</span>
+                    <span className="dark fs-6">Place</span>
                   </NavLink>
                 </li>
               </ul>

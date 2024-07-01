@@ -114,7 +114,7 @@ const PlaceDetail = () => {
               </div>
             </div>
           </section>
-          <section className="my-3">
+          <section className="mt-3">
             <div className="col-2">
               <button className="btn btn-warning rounded-circle ">
                 <i class="fa-regular fa-user"></i>
@@ -132,7 +132,24 @@ const PlaceDetail = () => {
           </section>
         </div>
         {/* comment section end */}
+        <div className="row mb-5">
+          <div className="col-lg-5 col-sm-0"></div>
+          <div className="col-lg-7 col-sm-12">
+            <div className="float-end d-flex">
+              <textarea
+                rows={3}
+                className="form-control-lg rounded-3 border-2 px-4"
+                placeholder="Enter your comment"
+              ></textarea>
+              <button className="btn-brown px-5 m-3">
+                <span className="fs-5">Submit</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="row mb-5"></div>
       </div>
+      <hr />
     </div>
   );
 };

@@ -22,7 +22,7 @@ const Detail = () => {
             <img
               src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt=""
-              className="w-100"
+              className="w-100 rounded-4"
             />
           </div>
           <div className="col my-auto">
@@ -61,55 +61,66 @@ const Detail = () => {
         {/* first row end */}
 
         {/* second row start */}
-        <div className="row my-5"></div>
+
         <div className="row g-5 mb-5">
-          <div className="col my-auto">
+          <div className="col-lg-7 col-sm-6 my-auto">
             <div className="">
-              <h1 className="fs-3 py-3 text-center brown">2nd Title</h1>
-              <p className="fs-5 roboto-regular">
+              <h1 className="fs-2 py-3 text-center brown noto-serif-display-subtitle">
+                2nd Title
+              </h1>
+              <p className="fs-5 roboto-regular text-sm-center text-lg-start">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Adipisci voluptates natus ullam, cumque reiciendis recusandae
                 quidem rem eos ut magni saepe, eum quos labore inventore sunt?
-                Expedita commodi consequatur iusto.
+                Expedita commodi consequatur iusto. Adipisci voluptates natus
+                ullam, cumque reiciendis recusandae quidem rem eos ut magni
+                saepe, eum quos labore inventore sunt? Expedita commodi
+                consequatur iusto.
               </p>
             </div>
           </div>
-          <div className="col text-end">
-            <img
-              src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt=""
-              className="w-100 "
-            />
+          <div className="col-lg-5 col-sm-6 ">
+            <div className="float-end">
+              <img
+                src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt=""
+                className="w-100 rounded-4"
+              />
+            </div>
           </div>
         </div>
-        <div className="row my-5"></div>
 
         {/* second row end */}
 
         {/* third row start */}
         <div className="row g-5 mb-5">
-          <div className="col text-start">
+          <div className="col-lg-7 col-sm-6">
             <img
               src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt=""
-              className="w-100"
+              className="w-100 rounded-4 "
             />
           </div>
-          <div className="col my-auto">
-            <h1 className="fs-3 mx-auto brown text-center py-3">3rd Title</h1>
+          <div className="col-lg-5 col-sm-6 my-auto">
+            <h1 className="fs-2  brown  text-center py-3 noto-serif-display-subtitle">
+              3rd Title
+            </h1>
 
-            <p className="fs-5 roboto-regular text-end">
+            <p className="fs-5 roboto-regular text-lg-end text-sm-center ">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
               voluptates natus ullam, cumque reiciendis recusandae quidem rem
               eos ut magni saepe, eum quos labore inventore sunt? Expedita
-              commodi consequatur iusto.
+              commodi consequatur iusto. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Adipisci voluptates natus ullam, cumque
+              reiciendis recusandae quidem rem eos ut magni saepe, eum quos
+              labore inventore sunt? Expedita commodi consequatur iusto.
             </p>
           </div>
         </div>
-
         {/* third row end */}
 
         {/* comment section start */}
+
         <div className="row mb-5">
           <section className="my-3">
             <div className="col-2">
@@ -176,8 +187,27 @@ const Detail = () => {
             </div>
           </section>
         </div>
+
+        <div className="row mb-5">
+          <div className="col-lg-5 col-sm-0"></div>
+          <div className="col-lg-7 col-sm-12">
+            <div className="float-end d-flex">
+              <textarea
+                rows={3}
+                className="form-control-lg rounded-3 border-2 px-4"
+                placeholder="Enter your comment"
+              ></textarea>
+              <button className="btn-brown px-5 m-3">
+                <span className="fs-5">Submit</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="row mb-5"></div>
+
         {/* comment section end */}
       </section>
+      <hr />
     </div>
   );
 };
