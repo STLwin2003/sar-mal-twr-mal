@@ -16,7 +16,7 @@ const PlaceCard = () => {
               alt=""
             />
             <Link
-              className="fa-solid fa-heart fs-3 text-light position-absolute top-0 end-0 mt-2 me-2 "
+              className="fa-solid fa-heart fs-1 text-light position-absolute top-0 end-0 mt-2 me-2 "
               style={{ textDecoration: "none", color: "inherit" }}
             ></Link>
           </div>
