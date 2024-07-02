@@ -6,13 +6,18 @@ const Detail = () => {
     <div className="mt-5">
       <section className="container ">
         <div className="row mb-4">
-          <div className="d-flex align-items-center  mb-2 ">
-            <Link to="/">
-              <button className="btn-brown justify-content-start me-3 rounded-5">
-                Back
-              </button>
-            </Link>
-          </div>
+          <nav aria-label="breadcrumb ">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <Link to="/">
+                  <span className="fs-5">Home</span>
+                </Link>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                <span className="fs-5">Detail</span>
+              </li>
+            </ol>
+          </nav>
         </div>
 
         {/* first row start */}

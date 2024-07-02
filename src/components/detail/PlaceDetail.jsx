@@ -1,9 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PlaceDetail = () => {
   return (
     <div>
       <div className="container">
+        <div className="row mb-4">
+          <nav aria-label="breadcrumb ">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <Link to="/">
+                  <span className="fs-5">Home</span>
+                </Link>
+              </li>
+              <li class="breadcrumb-item">
+                <Link to="/place_list">
+                  <span className="fs-5">Place List</span>
+                </Link>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                <span className="fs-5">Detail</span>
+              </li>
+            </ol>
+          </nav>
+        </div>
         <div className="row my-3">
           <div className="col-lg-6">
             <p className="fs-2 fw-bold brown noto-serif-display-subtitle">
