@@ -14,7 +14,12 @@ const App = () => {
     "/admin_dashboard",
     "/admin_login",
     "/admin_signup",
-    "/add_post",
+    "/admin/add_post",
+    "/admin/event",
+    "/admin/user_list",
+    "/admin/post_list",
+    "/admin/rating_list",
+    "/admin/comment_list",
   ];
 
   let arrPath = [
