@@ -1,10 +1,9 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 
-const Dashboard = () => {
+const QuickStarts = () => {
   return (
     <div>
-      <div className="container-fluid mt-3">
+      <div className="container-fluid mt-3 p-4">
         <div className="row flex-column flex-lg-row">
           <h2 className="h6 text-white-50">Quick Starts</h2>
           <div className="col">
@@ -89,33 +88,6 @@ const Dashboard = () => {
                   <td>Pyae Pyae</td>
                   <td>pyaepyae@gmail.com</td>
                 </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Shin Thant Lwin</td>
-                  <td>shinthantlwin@gmail.com</td>
-                  <td>2/7/2024 08:00pm</td>
-                </tr>
-
-                <tr>
-                  <td>2</td>
-                  <td>Thwe Gyi</td>
-                  <td>thwegyi@gmail.com</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Ei Pyae</td>
-                  <td>eipyae@gmail.com</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Ei Po</td>
-                  <td>eipo@gmail.com</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>Pyae Pyae</td>
-                  <td>pyaepyae@gmail.com</td>
-                </tr>
               </table>
             </div>
           </div>
@@ -125,4 +97,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default QuickStarts;
