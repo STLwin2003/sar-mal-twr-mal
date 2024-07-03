@@ -4,7 +4,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import { useLocation } from "react-router-dom";
 import Error from "./components/Error";
 import CleanRoute from "./components/CleanRoute.jsx";
-import AdminRoute from "./AdminRoute.jsx";
+import AdminRoute from "./components/AdminRoute.jsx";
 
 const App = () => {
   let location = useLocation();

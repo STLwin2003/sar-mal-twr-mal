@@ -1,17 +1,17 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import Nav from "./components/admin/dashboard/Nav";
+import Nav from "./admin/dashboard/Nav";
 import { Route, Routes } from "react-router";
-import AdminLogin from "./components/admin/AdminLogin";
-import AdminSignup from "./components/admin/AdminSignup";
-import AddPost from "./components/admin/action/AddPost";
-import Event from "./components/admin/action/Event";
+import AdminLogin from "./admin/AdminLogin";
+import AdminSignup from "./admin/AdminSignup";
+import AddPost from "./admin/action/AddPost";
+import Event from "./admin/action/Event";
 
-import Dashboard from "./components/admin/Dashboard";
-import UserList from "./components/admin/control/UserList";
-import PostList from "./components/admin/control/PostList";
-import RatingList from "./components/admin/control/RatingList";
-import CommentList from "./components/admin/control/CommentList";
+import Dashboard from "./admin/Dashboard";
+import UserList from "./admin/control/UserList";
+import PostList from "./admin/control/PostList";
+import RatingList from "./admin/control/RatingList";
+import CommentList from "./admin/control/CommentList";
 import { Link } from "react-router-dom";
 
 const AdminRoute = () => {

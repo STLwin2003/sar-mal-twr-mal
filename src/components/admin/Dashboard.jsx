@@ -6,7 +6,7 @@ const Dashboard = () => {
     <div>
       <div className="container-fluid mt-3">
         <div className="row flex-column flex-lg-row">
-          <h2 className="h6 text-white-50">Quick Starts</h2>
+          <h2 className="h6 text-white">Quick Starts</h2>
           <div className="col">
             <div className="card mb-3">
               <div className="card-body">
@@ -52,7 +52,7 @@ const Dashboard = () => {
 
         <div className="row flex-column flex-lg-row mt-4">
           <div className="col">
-            <h1 className="h6 text-white">Rating</h1>
+            <h1 className="h6 text-white">Current Users</h1>
             <div className=" bg-light-gray rounded p-3">
               <table className=" table fw-medium">
                 <tr>
