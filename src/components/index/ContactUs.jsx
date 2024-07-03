@@ -22,7 +22,7 @@ const ContactUs = () => {
             </div>
 
             <div className="col-lg-6 col-sm-12 pt-5">
-              <form className="w-75 mx-auto text-center ">
+              <form className="w-75 mx-auto text-center pt-5">
                 <div className="form-floating ">
                   <input
                     type="text"
