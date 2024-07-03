@@ -25,7 +25,7 @@ const AdminRoute = () => {
           <main className="col-10 position-absolute top-0 end-0">
             {/* top nav start */}
 
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light-gray">
               <div className="flex-fill"></div>
 
               <ul className="navbar-nav">
@@ -49,7 +49,7 @@ const AdminRoute = () => {
                 </li>
               </ul>
             </nav>
-            <section className="bg-secondary p-3">
+            <section className="p-3">
               <Routes>
                 <Route path="/admin_dashboard" element={<Dashboard />} />
                 <Route path="/admin_login" element={<AdminLogin />} />

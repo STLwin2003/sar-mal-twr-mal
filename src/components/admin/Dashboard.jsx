@@ -4,14 +4,14 @@ import React from "react";
 const Dashboard = () => {
   return (
     <div>
-      <div className="container-fluid mt-3">
+      <div className="container-fluid">
         <div className="row flex-column flex-lg-row">
           <h2 className="h6 text-white">Quick Starts</h2>
           <div className="col">
-            <div className="card mb-3">
+            <div className="card bg-success">
               <div className="card-body">
                 <h3 className="card-title h2">32</h3>
-                <span className="text-success h5">
+                <span className="text-white h5">
                   <i className="fa-solid fa-chart-line "></i>
                   Total posts
                 </span>
@@ -19,30 +19,30 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="col">
-            <div className="card mb-3">
+            <div className="card bg-warning">
               <div className="card-body">
                 <h3 className="card-title h2">82</h3>
-                <span className="text-warning h5">
+                <span className="text-white h5">
                   <i className="fa-solid fa-chart-line"></i> Total Users
                 </span>
               </div>
             </div>
           </div>
           <div className="col">
-            <div className="card mb-3">
+            <div className="card bg-secondary">
               <div className="card-body">
                 <h3 className="card-title h2">142</h3>
-                <span className="text-dark h5">
+                <span className="text-white h5">
                   <i className="fa-solid fa-chart-line"></i>Total Food Post
                 </span>
               </div>
             </div>
           </div>
           <div className="col">
-            <div className="card mb-3">
+            <div className="card bg-primary">
               <div className="card-body">
                 <h3 className="card-title h2">56</h3>
-                <span className="text-primary h5">
+                <span className="text-white h5">
                   <i className="fa-solid fa-chart-line"></i>Total Place Post
                 </span>
               </div>
