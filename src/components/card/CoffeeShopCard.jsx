@@ -15,7 +15,7 @@ const CoffeeShopCard = () => {
             alt="img"
           />
           <Link
-            className="fa-solid fa-heart fs-1 text-light position-absolute top-0 end-0 mt-2 me-2 "
+            className="fa-solid fa-heart fs-3 text-light position-absolute top-0 end-0 mt-2 me-2 "
             style={{ textDecoration: "none", color: "inherit" }}
           ></Link>
         </div>
@@ -23,11 +23,9 @@ const CoffeeShopCard = () => {
           <p className="card-title mt-2 ">
             <div className="">
               <i class="fa-solid fa-star fs-5 text-warning"></i>
-              <sppan className="fs-5 fw-semibold  roboto-regular ms-2">
-                9.4
-              </sppan>
+              <span className="fs-5 fw-semibold  roboto-regular m-2">9.4</span>
             </div>
-            <span className="fw-medium fs-5 roboto-regular">Coffee</span>
+            <span className="fw-medium fs-5 roboto-regular ">Coffee</span>
           </p>
         </div>
       </Link>
