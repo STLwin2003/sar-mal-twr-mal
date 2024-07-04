@@ -22,4 +22,7 @@ normal-text => fs-4
 
 for admin
 
+> > localhost:3000/admin_login
+> > localhost:3000/admin_signup
+
 > > localhost:3000/admin_dashboard
