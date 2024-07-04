@@ -18,6 +18,17 @@ const Header = () => {
     <div className="mb-5">
       <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top py-2 ">
         <div className="container">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRightLabel"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
           <NavLink to="/" className="navbar-brand ">
             <span className="brown fs-1 fw-bold dancing-script-main">
               SarMalTwrMal
@@ -81,17 +92,6 @@ const Header = () => {
               {/* acc status section */}
             </div>
           </div>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasRight"
-            aria-controls="offcanvasRightLabel"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
         </div>
       </nav>
       <div className="row my-5">
