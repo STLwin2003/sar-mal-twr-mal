@@ -44,7 +44,7 @@ const Slider = () => {
               />
                <div class="container">
                <div class="carousel-caption text-center">
-               <p className="opacity-75 fs-3 fw-bold"><i>
+               <p className="opacity-75 fs-3 fw-semi bold fst-italic"><i>
                "One cannot think well, love well, sleep well, if one has not dined well"</i></p>
         </div>
       </div>

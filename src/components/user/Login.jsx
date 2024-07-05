@@ -33,7 +33,7 @@ const login = () => {
                   </div>
 
                   <div className="d-flex justify-content-center mx-5 mb-3 mb-lg-4">
-                    <button  type="button" className="btn btn-lg " style={{background:"#b46c14",color:"white"}}>Login</button>
+                    <button className="btn btn-lg btn-rounded" type="button"  style={{background:"#b46c14",color:"white;"}}>Login</button>
                   </div>
                   <div className="d-flex justify-content-center mx-5 mb-3 mb-lg-4">
                   <p className="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
