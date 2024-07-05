@@ -5,7 +5,7 @@ const RatingItem = ({ e, id }) => {
   return (
     <div>
       <div className="row  rounded-4">
-        <div className="col-4 my-auto d-flex">
+        <div className="col-3 my-auto d-flex">
           <span className="my-auto fs-6 fw-bold">{id + 1}</span>
           <div className="p-2 text-start">
             <img
@@ -16,18 +16,18 @@ const RatingItem = ({ e, id }) => {
             <span className="fs-6 ms-3 roboto-regular">{e}</span>
           </div>
         </div>
-        <div className="col-3 my-auto">
+        <div className="col-4 my-auto">
           <div className="border border-dark-subtle rounded-5 p-1">
-            <i class="fa-solid fa-star fs-6 mx-1"></i>
-            <i class="fa-solid fa-star fs-6 me-1"></i>
-            <i class="fa-solid fa-star fs-6 me-1"></i>
-            <i class="fa-solid fa-star fs-6 me-1"></i>
-            <i class="fa-solid fa-star fs-6 me-1"></i>
-            <i class="fa-solid fa-star fs-6 me-1"></i>
-            <i class="fa-solid fa-star fs-6 me-1"></i>
-            <i class="fa-solid fa-star fs-6 me-1"></i>
-            <i class="fa-solid fa-star fs-6 me-1"></i>
-            <i class="fa-solid fa-star fs-6 me-1"></i>
+            <i class="fa-solid fa-star fs-6 mx-2"></i>
+            <i class="fa-solid fa-star fs-6 me-2"></i>
+            <i class="fa-solid fa-star fs-6 me-2"></i>
+            <i class="fa-solid fa-star fs-6 me-2"></i>
+            <i class="fa-solid fa-star fs-6 me-2"></i>
+            <i class="fa-solid fa-star fs-6 me-2"></i>
+            <i class="fa-solid fa-star fs-6 me-2"></i>
+            <i class="fa-solid fa-star fs-6 me-2"></i>
+            <i class="fa-solid fa-star fs-6 me-2"></i>
+            <i class="fa-solid fa-star fs-6 me-2"></i>
           </div>
         </div>
         <div className=" col-4 my-auto">
