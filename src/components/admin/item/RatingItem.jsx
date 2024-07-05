@@ -11,23 +11,23 @@ const RatingItem = ({ e, id }) => {
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_1bpO0XDD8fbmRvnbnkCoQNFFoH3AqofVTg&s"
               alt=""
-              className=" rounded-circle w-25 shadow-lg"
+              className=" rounded-circle w-25 shadow-lg ms-2"
             />
             <span className="fs-6 ms-3 roboto-regular">{e}</span>
           </div>
         </div>
-        <div className="col-4 my-auto">
-          <div className="border border-dark-subtle rounded-5 p-3">
-            <i class="fa-solid fa-star fs-5 me-1"></i>
-            <i class="fa-solid fa-star fs-5 me-1"></i>
-            <i class="fa-solid fa-star fs-5 me-1"></i>
-            <i class="fa-solid fa-star fs-5 me-1"></i>
-            <i class="fa-solid fa-star fs-5 me-1"></i>
-            <i class="fa-solid fa-star fs-5 me-1"></i>
-            <i class="fa-solid fa-star fs-5 me-1"></i>
-            <i class="fa-solid fa-star fs-5 me-1"></i>
-            <i class="fa-solid fa-star fs-5 me-1"></i>
-            <i class="fa-solid fa-star fs-5 me-1"></i>
+        <div className="col-3 my-auto">
+          <div className="border border-dark-subtle rounded-5 p-1">
+            <i class="fa-solid fa-star fs-6 mx-1"></i>
+            <i class="fa-solid fa-star fs-6 me-1"></i>
+            <i class="fa-solid fa-star fs-6 me-1"></i>
+            <i class="fa-solid fa-star fs-6 me-1"></i>
+            <i class="fa-solid fa-star fs-6 me-1"></i>
+            <i class="fa-solid fa-star fs-6 me-1"></i>
+            <i class="fa-solid fa-star fs-6 me-1"></i>
+            <i class="fa-solid fa-star fs-6 me-1"></i>
+            <i class="fa-solid fa-star fs-6 me-1"></i>
+            <i class="fa-solid fa-star fs-6 me-1"></i>
           </div>
         </div>
         <div className=" col-4 my-auto">
