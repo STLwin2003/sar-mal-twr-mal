@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import Error from "./components/Error";
 import CleanRoute from "./components/CleanRoute.jsx";
 import AdminRoute from "./components/AdminRoute.jsx";
+import AuthSection from "./components/AuthSection.jsx";
 
 const App = () => {
   let location = useLocation();
@@ -12,15 +13,17 @@ const App = () => {
 
   let adminPath = [
     "/admin_dashboard",
-    "/admin_login",
-    "/admin_signup",
     "/admin/add_post",
     "/admin/event",
     "/admin/user_list",
     "/admin/post_list",
     "/admin/rating_list",
     "/admin/comment_list",
+    "/admin/food_detail",
+    "/admin/place_detail",
   ];
+
+  let authPath = ["/login", "/signup", "/admin_login", "/admin_signup"];
 
   let arrPath = [
     "/",
@@ -31,14 +34,14 @@ const App = () => {
     "/street_food/food_detail",
     "/coffee_shop/food_detail",
     "/place/place_detail",
-    "/login",
-    "/signup",
     "/user_profile",
   ];
   if (arrPath.includes(location.pathname)) {
     return <CleanRoute />;
   } else if (adminPath.includes(location.pathname)) {
     return <AdminRoute />;
+  } else if (authPath.includes(location.pathname)) {
+    return <AuthSection />;
   } else {
     return <Error />;
   }
