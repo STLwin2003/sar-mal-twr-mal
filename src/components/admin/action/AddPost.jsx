@@ -22,15 +22,15 @@ const AddPost = () => {
               <div className="mb-4">
                 <input
                   type="text"
-                  name="name"
+                  name="address"
                   className="form-control border"
                   placeholder="Enter address"
                 />
               </div>
               <div className="mb-4">
                 <input
-                  type="text"
-                  name="name"
+                  type="number"
+                  name="phone no"
                   className="form-control border"
                   placeholder="Enter Phone no:"
                 />
@@ -39,38 +39,19 @@ const AddPost = () => {
                 <div className="d-flex gap-3">
                   <input
                     type="text"
-                    name="name"
                     className="form-control border"
                     placeholder="Enter Opening Hour"
                   />
                   <input
                     type="text"
-                    name="name"
                     className="form-control border"
                     placeholder="Enter Close Hour"
                   />
                 </div>
               </div>
               <div className="mb-4 ">
-                <div className="d-flex gap-3">
-                  <input
-                    type="image"
-                    name="name"
-                    className="form-control border"
-                    placeholder="Enter 1st Image"
-                  />
-                  <input
-                    type="image"
-                    name="name"
-                    className="form-control border"
-                    placeholder="Enter 2nd Image"
-                  />
-                  <input
-                    type="image"
-                    name="name"
-                    className="form-control border"
-                    placeholder="Enter 3rd Image"
-                  />
+                <div className="">
+                  <input type="image" />
                 </div>
               </div>
             </div>
@@ -95,6 +76,9 @@ const AddPost = () => {
                   className=" rounded p-2"
                 ></textarea>
               </div>
+            </div>
+            <div>
+              <button className="btn btn-warning px-5">Add</button>
             </div>
           </div>
         </div>
