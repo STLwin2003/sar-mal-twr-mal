@@ -6,8 +6,6 @@ import CoffeeShopList from "./list/CoffeeShopList";
 import FoodDetail from "./detail/FoodDetail.jsx";
 import PlaceDetail from "./detail/PlaceDetail.jsx";
 import UserProfile from "./user/UserProfile.jsx";
-import Login from "./user/Login.jsx";
-import SignUp from "./user/SignUp.jsx";
 import Index from "./Index";
 import Error from "./Error.jsx";
 const CleanRoute = () => {
