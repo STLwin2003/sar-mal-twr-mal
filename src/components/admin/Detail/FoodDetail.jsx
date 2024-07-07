@@ -1,24 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Detail = () => {
   return (
     <div className="mt-5">
       <section className="container ">
-        <div className="row mb-4">
-          <nav aria-label="breadcrumb ">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <Link to="/">
-                  <span className="fs-5">Home</span>
-                </Link>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                <span className="fs-5">Detail</span>
-              </li>
-            </ol>
-          </nav>
-        </div>
+        <div className="row mb-4"></div>
 
         {/* first row start */}
 
@@ -58,21 +44,6 @@ const Detail = () => {
                     <span className="fs-5 ps-2">Add Favorite</span>
                     <i class="fa-solid fa-heart fs-4 mx-3"></i>
                   </button>
-                </div>
-                <div className="mb-2">
-                  {/* <button
-                    className="btn btn-outline-warning"
-                    data-bs-toggle="modal"
-                    data-bs-target="#rating"
-                  >
-                    <i class="fa-solid fa-star me-2 fs-4"></i>
-                    <i class="fa-solid fa-star me-2 fs-4"></i>
-                    <i class="fa-solid fa-star me-2 fs-4"></i>
-                    <i class="fa-solid fa-star me-2 fs-4"></i>
-
-                    <i class="fa-solid fa-star me-2 fs-4"></i>
-                  </button> */}
-                  <form action=""></form>
                 </div>
               </div>
             </div>
@@ -208,21 +179,6 @@ const Detail = () => {
           </section>
         </div>
 
-        <div className="row mb-5">
-          <div className="col-lg-5 col-sm-0"></div>
-          <div className="col-lg-7 col-sm-12">
-            <div className="float-end d-flex">
-              <textarea
-                rows={3}
-                className="form-control-lg rounded-3 border-2 px-4"
-                placeholder="Enter your comment"
-              ></textarea>
-              <button className="btn-brown px-5 m-3">
-                <span className="fs-5">Submit</span>
-              </button>
-            </div>
-          </div>
-        </div>
         <div className="row mb-5"></div>
 
         {/* comment section end */}

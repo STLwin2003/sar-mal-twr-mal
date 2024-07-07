@@ -1,29 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const PlaceDetail = () => {
   return (
     <div>
       <div className="container">
-        <div className="row mb-4">
-          <nav aria-label="breadcrumb ">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <Link to="/">
-                  <span className="fs-5">Home</span>
-                </Link>
-              </li>
-              <li class="breadcrumb-item">
-                <Link to="/place_list">
-                  <span className="fs-5">Place List</span>
-                </Link>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                <span className="fs-5">Detail</span>
-              </li>
-            </ol>
-          </nav>
-        </div>
+        <div className="row mb-4"></div>
         <div className="row my-3">
           <div className="col-lg-6">
             <p className="fs-2 fw-bold brown noto-serif-display-subtitle">
@@ -45,16 +26,6 @@ const PlaceDetail = () => {
               <button className="btn-brown">
                 <span className="fs-5 ps-2">Add Favorite</span>
                 <i class="fa-solid fa-heart fs-4 mx-3"></i>
-              </button>
-            </div>
-            <div className="mb-2">
-              <button
-                className="btn btn-warning"
-                data-bs-toggle="modal"
-                data-bs-target="#rating"
-              >
-                <span className="fs-5 ps-2">Give Rating</span>
-                <i class="fa-solid fa-star mx-3 fs-4"></i>
               </button>
             </div>
             <p className="fs-5 roboto-regular">
@@ -162,21 +133,7 @@ const PlaceDetail = () => {
           </section>
         </div>
         {/* comment section end */}
-        <div className="row mb-5">
-          <div className="col-lg-5 col-sm-0"></div>
-          <div className="col-lg-7 col-sm-12">
-            <div className="float-end d-flex">
-              <textarea
-                rows={3}
-                className="form-control-lg rounded-3 border-2 px-4"
-                placeholder="Enter your comment"
-              ></textarea>
-              <button className="btn-brown px-5 m-3">
-                <span className="fs-5">Submit</span>
-              </button>
-            </div>
-          </div>
-        </div>
+
         <div className="row mb-5"></div>
       </div>
       <hr />
