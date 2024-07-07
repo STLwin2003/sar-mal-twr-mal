@@ -1,5 +1,5 @@
 import React from "react";
-import StreetFoodCard from "../../card/CoffeeShopCard";
+import AdminFoodCard from "../card/AdminFoodCard";
 
 const Event = () => {
   return (
@@ -17,18 +17,24 @@ const Event = () => {
             </div>
           </div>
 
-          <div className="row ">
-            <div className="col-3">
-              <StreetFoodCard />
+          <div className="row bg-light-gray rounded">
+            <div className="col-4">
+              <AdminFoodCard />
             </div>
-            <div className="col-3">
-              <StreetFoodCard />
+            <div className="col-4">
+              <AdminFoodCard />
             </div>
-            <div className="col-3">
-              <StreetFoodCard />
+            <div className="col-4">
+              <AdminFoodCard />
             </div>
-            <div className="col-3">
-              <StreetFoodCard />
+            <div className="col-4">
+              <AdminFoodCard />
+            </div>
+            <div className="col-4">
+              <AdminFoodCard />
+            </div>
+            <div className="col-4">
+              <AdminFoodCard />
             </div>
           </div>
           <hr />
@@ -36,30 +42,45 @@ const Event = () => {
           <div>
             <h1>Post List here</h1>
             <div className="row">
-              <div className="col-3">
-                <StreetFoodCard />
+              <div className="col-4">
+                <AdminFoodCard />
+                <button className="btn btn-warning mb-2">Add Event</button>
               </div>
-              <div className="col-3">
-                <StreetFoodCard />
+              <div className="col-4">
+                <AdminFoodCard />
+                <button className="btn btn-warning mb-2">Add Event</button>
               </div>
-              <div className="col-3">
-                <StreetFoodCard />
+              <div className="col-4">
+                <AdminFoodCard />
+                <button className="btn btn-warning mb-2">Add Event</button>
               </div>
-              <div className="col-3">
-                <StreetFoodCard />
+              <hr />
+              <div className="col-4">
+                <AdminFoodCard />
+                <button className="btn btn-warning mb-2">Add Event</button>
               </div>
-              <div className="col-3">
-                <StreetFoodCard />
+              <div className="col-4">
+                <AdminFoodCard />
+                <button className="btn btn-warning mb-2">Add Event</button>
               </div>
-              <div className="col-3">
-                <StreetFoodCard />
+              <div className="col-4">
+                <AdminFoodCard />
+                <button className="btn btn-warning mb-2">Add Event</button>
               </div>
-              <div className="col-3">
-                <StreetFoodCard />
+              <hr />
+              <div className="col-4">
+                <AdminFoodCard />
+                <button className="btn btn-warning mb-2">Add Event</button>
               </div>
-              <div className="col-3">
-                <StreetFoodCard />
+              <div className="col-4">
+                <AdminFoodCard />
+                <button className="btn btn-warning mb-2">Add Event</button>
               </div>
+              <div className="col-4">
+                <AdminFoodCard />
+                <button className="btn btn-warning mb-2">Add Event</button>
+              </div>
+              <hr />
             </div>
           </div>
         </div>
