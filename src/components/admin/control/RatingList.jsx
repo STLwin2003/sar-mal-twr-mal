@@ -7,7 +7,7 @@ const RatingList = () => {
   return (
     <div>
       <section>
-        <h1>Rating List for Admin</h1>
+        <h1 className="mb-3">Rating List for Admin</h1>
         {name.map((e, id) => (
           <RatingItem e={e} id={id} />
         ))}
