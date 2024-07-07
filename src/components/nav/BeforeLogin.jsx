@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 const BeforeLogin = () => {
   return (
     <div>
-      <NavLink to="/signup">
+      <NavLink to="/login">
         <button
           className="btn-brown  rounded-3  px-3"
           type="button"
           aria-expanded="false"
         >
-          Sign Up
+          Login
         </button>
       </NavLink>
     </div>

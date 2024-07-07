@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const login = () => {
   return (
@@ -12,7 +13,7 @@ const login = () => {
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center fw-semibold mb-5 mx-1 mx-md-4 mt-4">
-                        <span className="brown fs-2">
+                        <span className=" fs-3">
                           <i>Please Login to your account</i>
                         </span>
                       </p>
@@ -44,7 +45,7 @@ const login = () => {
                           </div>
                         </div>
 
-                        <div className="d-flex justify-content-center mx-5 mb-3 mb-lg-4">
+                        <div className="d-flex justify-content-center mx-5 mb-2 ">
                           <button
                             className=" btn-brown btn-rounded px-5 fs-5"
                             type="button"
@@ -52,12 +53,17 @@ const login = () => {
                             Login
                           </button>
                         </div>
+                        <div className="d-flex justify-content-center mx-5">
+                          <Link to="/home" className="link-success">
+                            <p className="fs-6 fw-medium">Back to Home</p>
+                          </Link>
+                        </div>
                         <div className="d-flex justify-content-center mx-5 mb-3 mb-lg-4">
-                          <p className="small fw-bold mt-2 pt-1 mb-0">
+                          <p className="small fw-bold mb-0">
                             Don't have an account?
-                            <a href="#!" className="link-danger">
+                            <Link to="/signup" className="link-danger">
                               Register
-                            </a>
+                            </Link>
                           </p>
                         </div>
                       </form>

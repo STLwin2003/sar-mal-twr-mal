@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const signup = () => {
   return (
@@ -11,8 +12,8 @@ const signup = () => {
                 <div className="card-body p-md-5">
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                      <p className="text-center fw-semibold mb-5 mx-1 mx-md-4 mt-4">
-                        <span className="brown fs-2">Sign up</span>
+                      <p className="text-center fw-semibold mb-4 mx-1 mx-md-4">
+                        <span className="dark fs-2">Sign up</span>
                       </p>
 
                       <form className="mx-1 mx-md-4">
@@ -81,7 +82,11 @@ const signup = () => {
                             Register
                           </button>
                         </div>
-
+                        <div className="d-flex  mx-5">
+                          <Link to="/home" className="link-success">
+                            <p className="fs-6 fw-medium">Back to Home</p>
+                          </Link>
+                        </div>
                         <a
                           data-mdb-ripple-init
                           class="btn-sm mx-3"
@@ -89,7 +94,8 @@ const signup = () => {
                           href="#!"
                           role="button"
                         >
-                          <i class="fab fa-google me-2"></i>Continue with Google
+                          <i class="fa-solid fa-google me-2"></i>Continue with
+                          Google
                         </a>
                       </form>
                     </div>
