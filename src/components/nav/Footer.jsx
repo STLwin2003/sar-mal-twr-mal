@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -20,50 +21,50 @@ const Footer = () => {
                 </div>
 
                 <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-lg-2 mb-sm-0">
-                  <h6 className=" fw-bold mb-lg-2  mb-sm-0">Street Food</h6>
+                  <h6 className=" fw-bold mb-lg-2  mb-sm-0">Foods</h6>
                   <p>
-                    <a href="#!" className="text-reset">
-                      Angular
-                    </a>
+                    <Link to="" className="text-reset">
+                      Food 1
+                    </Link>
                   </p>
                   <p>
-                    <a href="#!" className="text-reset">
-                      React
-                    </a>
+                    <Link to="" className="text-reset">
+                      Food 2
+                    </Link>
                   </p>
                   <p>
-                    <a href="#!" className="text-reset">
-                      Vue
-                    </a>
+                    <Link to="" className="text-reset">
+                      Food 3
+                    </Link>
                   </p>
                   <p>
-                    <a href="#!" className="text-reset">
-                      Laravel
-                    </a>
+                    <Link to="" className="text-reset">
+                      Food 4
+                    </Link>
                   </p>
                 </div>
 
                 <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-lg-2 mb-sm-0">
-                  <h6 className=" fw-bold mb-lg-2 mb-sm-0 ">Coffee Shop</h6>
+                  <h6 className=" fw-bold mb-lg-2 mb-sm-0 ">Places</h6>
                   <p>
-                    <a href="#!" className="text-reset">
-                      Pricing
-                    </a>
+                    <Link to="" className="text-reset">
+                      Place 1
+                    </Link>
                   </p>
                   <p>
-                    <a href="#!" className="text-reset">
-                      Settings
-                    </a>
+                    <Link to="" className="text-reset">
+                      Place 2
+                    </Link>
                   </p>
                   <p>
-                    <a href="#!" className="text-reset">
-                      Orders
-                    </a>
+                    <Link to="" className="text-reset">
+                      Place 3
+                    </Link>
                   </p>
                   <p>
-                    <a href="#!" className="text-reset">
-                      Help
-                    </a>
+                    <Link to="" className="text-reset">
+                      Place 4
+                    </Link>
                   </p>
                 </div>
 
