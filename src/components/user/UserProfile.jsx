@@ -12,25 +12,30 @@ const UserProfile = () => {
 
           <div className="bg-light-gray">
             <div className="row py-2">
-              <div className="col-lg-2 col-sm-4">
+              <div className="col-lg-2 col-sm-4 mx-auto">
                 <div className="">
                   <img
                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKIAAACUCAMAAAAnDwKZAAAAMFBMVEXk5ueutLenrrHn6eqrsbWxt7rZ3N3e4eLJzc+/xMbS1dfGysy2u765vsHO0dPq7O2qiZVgAAADy0lEQVR4nO2cWa7dIAxACQYSIMP+d1vITe88YDsxeRLn46mtKvXI2MQQp0o1Go1Go9FoNBqNRqPRaLwHIP9Q/3+cjaTXhzn6TByC6+FkmgAuTrYzV+w4DWo5jWWK39Dp7hmjx3CSFYfed+ZFcEVP8ykk4yfBHEljXW1HcPaz4CWSvq8qCfG73xrJsWog/WuVvJMM1QT76cciXxd7rhVHWyaY4zhUcezHYsMUxyqOE8Iw56O4I5RVyh3SdQ2hsFJuYbSyhqovL5WrYxQNI5RuNw+OkukIDpuIK5OcoVKY/eaGlgsjzIRlzli5laZkYkYsG4mZmJHKxoUaxIQTcqQbmigiSC6WjEzBgGco6l5CEdWEPSPTODqGYarp5XhDfI/zgEi/E1mKEtsOq1o6kc4WONWSkDgM4pvZe0RKmhdEkd6bl4pN8c8osgxlFHmbjkRFk86nd0icDc7/dFEDr40QaBi5nY5Iv8h6AnqBfhF7sfiIzEkaPENR5uzCSsZJ5joC6IZmEDFUC2NnlLqN6MmKXuxqjBpGI3YlD4EYRMH7ReIp0EhlYqan3DAaL2iogHLel+gg7iDcPUm/TgX05ZMRerDcOc7IdByFBRW6qkWr+QrKsc58BCaO8m+jN0oddb0ZEyg6apmx5qQOhF+TROssUT3B7AgfB8a2ENpqaXiTDNPnHdJ0se441uaogn0vabSvshu+ARbnR2MeFjz9bhxOMRm4AdCHYeq0XkdAtdbWz+5MgiurjwvzMM/hLMv7DCSWC/mXtXUeyGLQpwDGy0ByHkme80xy/vPqcqCS2uBtTj9zK5gtIbWd8vi0qhZSABfiWsnfZmm1sVOcK0x5p3/QxXHdWgpIf8lGJxnMvMP4TuMOWEZ3PjgZy7xP27LovQTT+nB8AcHbQfhydDcf2/dAH383X79imdLysEh+mdTHSXYHdZDgIrJCvkgav38kAQb2Ej9I2r3fBULYZYkfJHedmU9Vwqnij5L7fSDx+2sMquNO5xpQh4Rwk/Q79L1AHvksc5zYi33YIl8duVf05It3jCQrISUMkyPj+pY174mAfsXMfDmOgBpHmVXeHEn5iL9wZzlS6hoO3m2eoLyUOXTHfsWgB+fL7l93dcR2Z/RXznRw6cidRqWAW2qY5Q2RuyPh46890IggitfKBUTFwHE97HeKN8daQcSM8VQo543CN8KS7cMzpZ/hMb9z4GAKvzWpt87JsciQNOCym2LJSkudBj5QsjUunAlKPiUP6qWqYTeW7N5V17noAePqKhYMYULQdan3P3U0Go3GH+EfReUvYx8xj5gAAAAASUVORK5CYII="
-                    className="card-image rounded w-75 my-auto ms-3"
+                    className="card-image rounded-circle w-75 my-3 ms-3 "
                     alt=""
                   />
+                  <i class="fa-solid fa-pen-to-square fs-3"></i>
                 </div>
               </div>
 
               <div className="col-lg-8 col-sm-8 my-auto">
                 <div className="text start ms-3 ">
-                  <p className="fs-3 fw-semibold ">User Name Here</p>
+                  <p className="fs-3 fw-semibold ">
+                    <span>User Name Here</span>
+                    <i class="fa-solid fa-pen-to-square ms-2"></i>
+                  </p>
                   <p className="fs-4 fw-medium roboto-regular">
-                    sample@gmail.com
+                    <span>sample@gmail.com</span>
+                    <i class="fa-solid fa-pen-to-square ms-2"></i>
                   </p>
                 </div>
               </div>
-              <div className="col-lg-2 col-sm-12">
+              {/* <div className="col-lg-2 col-sm-12">
                 <div className=" mt-2 mx-3">
                   <button
                     className="btn px-4"
@@ -40,7 +45,7 @@ const UserProfile = () => {
                     Edit Profile
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -60,19 +65,13 @@ const UserProfile = () => {
               <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
                 <div className="">
                   <div className="mb-3">
-                    <span className="fs-5 roboto-regular">Current Rating</span>
+                    <span className="fs-5 roboto-regular">Your Rating</span>
                     <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
                     <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
                       9.4
                     </sppan>
                   </div>
-                  {/* <p className="fs-5 roboto-regular">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sunt amet veritatis rem possimus. Voluptatem exercitationem
-                    nulla necessitatibus architecto, modi corporis nostrum
-                    nesciunt! Aliquid expedita minima maiores corrupti hic
-                    debitis ducimus!
-                  </p> */}
+
                   <p>
                     <i class="fa-solid fa-location-dot me-4 fs-4"></i>
                     <span className="fs-5">Pathein, 10011</span>
@@ -96,7 +95,7 @@ const UserProfile = () => {
                 <div className="">
                   <div className="mb-3">
                     {" "}
-                    <span className="fs-5 roboto-regular">Current Rating</span>
+                    <span className="fs-5 roboto-regular">Your Rating</span>
                     <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
                     <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
                       9.4
@@ -124,7 +123,7 @@ const UserProfile = () => {
               <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
                 <div className="">
                   <div className="mb-3">
-                    <span className="fs-5 roboto-regular">Current Rating</span>
+                    <span className="fs-5 roboto-regular">Your Rating</span>
 
                     <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
                     <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
@@ -153,7 +152,7 @@ const UserProfile = () => {
               <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
                 <div className="">
                   <div className="mb-3">
-                    <span className="fs-5 roboto-regular">Current Rating</span>
+                    <span className="fs-5 roboto-regular">Your Rating</span>
 
                     <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
                     <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
@@ -205,7 +204,7 @@ const UserProfile = () => {
                 <div className="col-sm-6 col-md-8 col-lg-9 my-auto">
                   <div className="mb-3">
                     {" "}
-                    <span className="fs-5 roboto-regular">Current Rating</span>
+                    <span className="fs-5 roboto-regular">Your Rating</span>
                     <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
                     <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
                       9.4
@@ -231,7 +230,7 @@ const UserProfile = () => {
                 <div className="col-sm-6 col-md-8 col-lg-9 my-auto">
                   <div className="mb-3">
                     {" "}
-                    <span className="fs-5 roboto-regular">Current Rating</span>
+                    <span className="fs-5 roboto-regular">Your Rating</span>
                     <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
                     <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
                       9.4
@@ -258,7 +257,7 @@ const UserProfile = () => {
                 <div className="col-sm-6 col-md-8 col-lg-9 my-auto">
                   <div className="mb-3">
                     {" "}
-                    <span className="fs-5 roboto-regular">Current Rating</span>
+                    <span className="fs-5 roboto-regular">Your Rating</span>
                     <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
                     <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
                       9.4
@@ -303,17 +302,6 @@ const UserProfile = () => {
                   </div>
                   <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
                     <div className="">
-                      <div className="mb-2">
-                        <span className="fs-5 roboto-regular">
-                          Current Rating
-                        </span>
-
-                        <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
-                        <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
-                          9.4
-                        </sppan>
-                      </div>
-
                       <p>
                         <i class="fa-solid fa-location-dot me-4 fs-5"></i>
                         <span className="fs-6">Pathein, 10011</span>
@@ -336,17 +324,6 @@ const UserProfile = () => {
                   </div>
                   <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
                     <div className="">
-                      <div className="mb-2">
-                        <span className="fs-5 roboto-regular">
-                          Current Rating
-                        </span>
-
-                        <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
-                        <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
-                          9.4
-                        </sppan>
-                      </div>
-
                       <p>
                         <i class="fa-solid fa-location-dot me-4 fs-5"></i>
                         <span className="fs-6">Pathein, 10011</span>
@@ -369,17 +346,6 @@ const UserProfile = () => {
                   </div>
                   <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
                     <div className="">
-                      <div className="mb-2">
-                        <span className="fs-5 roboto-regular">
-                          Current Rating
-                        </span>
-
-                        <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
-                        <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
-                          9.4
-                        </sppan>
-                      </div>
-
                       <p>
                         <i class="fa-solid fa-location-dot me-4 fs-5"></i>
                         <span className="fs-6">Pathein, 10011</span>
@@ -402,17 +368,6 @@ const UserProfile = () => {
                   </div>
                   <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
                     <div className="">
-                      <div className="mb-2">
-                        <span className="fs-5 roboto-regular">
-                          Current Rating
-                        </span>
-
-                        <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
-                        <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
-                          9.4
-                        </sppan>
-                      </div>
-
                       <p>
                         <i class="fa-solid fa-location-dot me-4 fs-5"></i>
                         <span className="fs-6">Pathein, 10011</span>
