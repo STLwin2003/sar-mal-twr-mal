@@ -90,7 +90,7 @@ const Nav = () => {
                 to="/admin/event"
                 className="list-group-item list-group-item-action"
               >
-                <i className="fa-solid fa-calender-alt"></i>
+                <i class="fa-solid fa-calendar-day pe-2"></i>
                 <span className="d-none d-lg-inline">Add Events</span>
               </Link>
             </div>
