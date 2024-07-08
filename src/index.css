@@ -23,11 +23,10 @@
 }
 
 .noto-serif-display-subtitle {
-  font-family: "Noto Serif Display", serif;
+  font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 900;
+  font-weight: 700;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
 .roboto-regular {
   font-family: "Roboto", sans-serif;

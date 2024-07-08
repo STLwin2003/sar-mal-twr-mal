@@ -18,16 +18,16 @@ const RatingItem = ({ e, id }) => {
         </div>
         <div className="col-4 my-auto">
           <div className="border border-dark-subtle rounded-5 p-1">
-            <i class="fa-solid fa-star fs-6 mx-2"></i>
-            <i class="fa-solid fa-star fs-6 me-2"></i>
-            <i class="fa-solid fa-star fs-6 me-2"></i>
-            <i class="fa-solid fa-star fs-6 me-2"></i>
-            <i class="fa-solid fa-star fs-6 me-2"></i>
-            <i class="fa-solid fa-star fs-6 me-2"></i>
-            <i class="fa-solid fa-star fs-6 me-2"></i>
-            <i class="fa-solid fa-star fs-6 me-2"></i>
-            <i class="fa-solid fa-star fs-6 me-2"></i>
-            <i class="fa-solid fa-star fs-6 me-2"></i>
+            <i class="fa-solid fa-star fs-6 mx-2 text-warning"></i>
+            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
+            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
+            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
+            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
+            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
+            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
+            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
+            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
+            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
           </div>
         </div>
         <div className=" col-4 my-auto">

@@ -47,6 +47,16 @@ const PlaceDetail = () => {
                 <i class="fa-solid fa-heart fs-4 mx-3"></i>
               </button>
             </div>
+            <div className="mb-2">
+              <button
+                className="btn btn-warning"
+                data-bs-toggle="modal"
+                data-bs-target="#rating"
+              >
+                <span className="fs-5 ps-2">Give Rating</span>
+                <i class="fa-solid fa-star mx-3 fs-4"></i>
+              </button>
+            </div>
             <p className="fs-5 roboto-regular">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
               sequi id autem perspiciatis fugit ipsum cumque dolor nulla, ut

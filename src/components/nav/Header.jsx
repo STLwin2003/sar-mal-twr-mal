@@ -4,7 +4,7 @@ import BeforeLogin from "./BeforeLogin";
 import AfterLogin from "./AfterLogin";
 
 const Header = () => {
-  let userStatus = "signup";
+  let userStatus = "login";
 
   let AccountStatus = () => {
     if (userStatus === "signup") {
@@ -16,8 +16,8 @@ const Header = () => {
 
   return (
     <div className="mb-5">
-      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top py-2 ">
-        <div className="container">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top py-2">
+        <div className="container ">
           <button
             className="navbar-toggler"
             type="button"
@@ -36,7 +36,7 @@ const Header = () => {
           </NavLink>
 
           <div
-            className="offcanvas offcanvas-top  "
+            className="offcanvas offcanvas-top"
             id="offcanvasRight"
             aria-labelledby="offcanvasRightLabel"
           >
@@ -51,40 +51,52 @@ const Header = () => {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="offcanvas-body">
-              <ul className="navbar-nav mx-auto  mb-lg-0">
+            <div className="offcanvas-body mx-auto">
+              <ul className="navbar-nav mb-lg-0">
                 <li className="nav-item">
-                  <NavLink to="/home" className="nav-link  me-3">
-                    <span className="dark fs-6">Home</span>
+                  <NavLink to="/home" className="nav-link active me-3">
+                    <span className="dark fs-6 fw-medium">Home</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to="/street_food_list" className="nav-link me-3">
-                    <span className="dark fs-6">Street Food</span>
+                    <span className="dark fs-6 fw-medium">Street Food</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to="/coffee_shop_list" className="nav-link me-3">
-                    <span className="dark fs-6">Coffee Shop</span>
+                    <span className="dark fs-6 fw-medium">Coffee Shop</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to="/place_list" className="nav-link me-3">
-                    <span className="dark fs-6">Place</span>
+                    <span className="dark fs-6 fw-medium">Place</span>
                   </NavLink>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div className="text-end">
-            <div className="d-flex justify-content-end align-content-end">
-              <div
-                className="my-auto fs-3 me-4 "
-                data-bs-toggle="offcanvas"
-                data-bs-target="#searchBar"
+          <div className="text-end ">
+            <div className="d-flex position-relative">
+              <a
+                className="fs-3 me-2 my-auto "
+                type="button"
+                data-bs-toggle="collapse"
+                href="#search"
+                aria-expanded="false"
+                aria-controls="collapseExample"
               >
-                <i className="fa-solid fa-magnifying-glass"></i>
+                <i className="fa-solid fa-magnifying-glass text-warning fs-3 me-2 my-auto "></i>
+              </a>
+              <div className="collapse my-auto" id="search">
+                <div>
+                  <input
+                    type="text"
+                    className="rounded-3 form-control"
+                    placeholder="Search . . ."
+                  />
+                </div>
               </div>
 
               {/* acc status section */}
