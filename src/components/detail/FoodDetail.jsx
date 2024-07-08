@@ -78,10 +78,52 @@ const Detail = () => {
                       </span>
                     </p>
                     <div className="mb-2">
-                      <button className="btn-brown">
-                        <span className="fs-5 ps-2">Add Favorite</span>
-                        <i className="fa-solid fa-heart fs-4 mx-3"></i>
+                      <button
+                        className="btn btn-warning"
+                        data-bs-toggle="modal"
+                        data-bs-target="#rating"
+                      >
+                        <span className="fs-5 ps-2">Give Rating</span>
+                        <i class="fa-solid fa-star mx-3 fs-4"></i>
                       </button>
+                      <div
+                        class="modal fade"
+                        id="rating"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog modal-sm modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1
+                                class="modal-title fs-5"
+                                id="exampleModalLabel"
+                              >
+                                Your Rating
+                              </h1>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              <div>
+                                <i class="fa-solid fa-star me-2 fs-1"></i>
+                                <i class="fa-solid fa-star me-2 fs-1"></i>
+                                <i class="fa-solid fa-star me-2 fs-1"></i>
+                                <i class="fa-solid fa-star me-2 fs-1"></i>
+                                <i class="fa-solid fa-star me-2 fs-1"></i>
+                              </div>
+                              <p className="text-center fw-bold dark mt-2">
+                                Very Bad,Bad,Good,Great,Very Good
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     <div className="mb-2">
                       <form action=""></form>
