@@ -54,7 +54,7 @@ const Header = () => {
             <div className="offcanvas-body mx-auto">
               <ul className="navbar-nav mb-lg-0">
                 <li className="nav-item">
-                  <NavLink to="/home" className="nav-link active me-3">
+                  <NavLink to="/home" className="nav-link me-3">
                     <span className="dark fs-6 fw-medium">Home</span>
                   </NavLink>
                 </li>

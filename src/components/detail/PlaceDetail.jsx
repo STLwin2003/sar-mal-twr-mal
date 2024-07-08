@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Header from "../nav/Header";
+import Footer from "../nav/Footer";
 
 const PlaceDetail = () => {
   return (
     <div>
+      <Header />
       <div className="container">
         <div className="row mb-4">
           <nav aria-label="breadcrumb ">
@@ -180,6 +183,7 @@ const PlaceDetail = () => {
         <div className="row mb-5"></div>
       </div>
       <hr />
+      <Footer />
     </div>
   );
 };
