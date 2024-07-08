@@ -1,53 +1,145 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import StreetFoodCard from "../card/StreetFoodCard";
-import CoffeeShopCard from "../card/CoffeeShopCard";
 import PlaceCard from "../card/PlaceCard";
+import Header from "../nav/Header";
+import Footer from "../nav/Footer";
 
 const UserProfile = () => {
   return (
     <div>
+      <Header />
       <section>
         <div className="container">
-          {/* profile start */}
+          <section className="w-100 px-4 py-2">
+            <div className="row d-flex justify-content-center">
+              <div className="col col-md-9 col-lg-9 col-xl-8">
+                <div className="rounded-3">
+                  <div className="card-body p-4">
+                    <div className="d-flex">
+                      <div className="flex-shrink-0 ">
+                        <img
+                          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                          alt="Generic placeholder image"
+                          className="img-fluid rounded-circle"
+                          style={{ width: "180px" }}
+                        />
+                      </div>
+                      <div className="flex-grow-2 ms-5">
+                        <h3 className="mb-3">
+                          User Name Here and
+                          <button
+                            data-bs-toggle="modal"
+                            data-bs-target="#name"
+                            className="border-0 bg-white"
+                          >
+                            <i class="fa-solid fa-pen-to-square text-warning ms-2"></i>
+                          </button>
+                          <div
+                            class="modal fade"
+                            id="name"
+                            tabindex="-1"
+                            aria-labelledby="exampleModalLabel"
+                            aria-hidden="true"
+                          >
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h6
+                                    class="modal-title fs-5"
+                                    id="exampleModalLabel"
+                                  >
+                                    Enter your new name
+                                  </h6>
+                                  <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                  ></button>
+                                </div>
 
-          <div className="bg-light-gray">
-            <div className="row py-2">
-              <div className="col-lg-2 col-sm-4 mx-auto">
-                <div className="">
-                  <img
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKIAAACUCAMAAAAnDwKZAAAAMFBMVEXk5ueutLenrrHn6eqrsbWxt7rZ3N3e4eLJzc+/xMbS1dfGysy2u765vsHO0dPq7O2qiZVgAAADy0lEQVR4nO2cWa7dIAxACQYSIMP+d1vITe88YDsxeRLn46mtKvXI2MQQp0o1Go1Go9FoNBqNRqPRaLwHIP9Q/3+cjaTXhzn6TByC6+FkmgAuTrYzV+w4DWo5jWWK39Dp7hmjx3CSFYfed+ZFcEVP8ykk4yfBHEljXW1HcPaz4CWSvq8qCfG73xrJsWog/WuVvJMM1QT76cciXxd7rhVHWyaY4zhUcezHYsMUxyqOE8Iw56O4I5RVyh3SdQ2hsFJuYbSyhqovL5WrYxQNI5RuNw+OkukIDpuIK5OcoVKY/eaGlgsjzIRlzli5laZkYkYsG4mZmJHKxoUaxIQTcqQbmigiSC6WjEzBgGco6l5CEdWEPSPTODqGYarp5XhDfI/zgEi/E1mKEtsOq1o6kc4WONWSkDgM4pvZe0RKmhdEkd6bl4pN8c8osgxlFHmbjkRFk86nd0icDc7/dFEDr40QaBi5nY5Iv8h6AnqBfhF7sfiIzEkaPENR5uzCSsZJ5joC6IZmEDFUC2NnlLqN6MmKXuxqjBpGI3YlD4EYRMH7ReIp0EhlYqan3DAaL2iogHLel+gg7iDcPUm/TgX05ZMRerDcOc7IdByFBRW6qkWr+QrKsc58BCaO8m+jN0oddb0ZEyg6apmx5qQOhF+TROssUT3B7AgfB8a2ENpqaXiTDNPnHdJ0se441uaogn0vabSvshu+ARbnR2MeFjz9bhxOMRm4AdCHYeq0XkdAtdbWz+5MgiurjwvzMM/hLMv7DCSWC/mXtXUeyGLQpwDGy0ByHkme80xy/vPqcqCS2uBtTj9zK5gtIbWd8vi0qhZSABfiWsnfZmm1sVOcK0x5p3/QxXHdWgpIf8lGJxnMvMP4TuMOWEZ3PjgZy7xP27LovQTT+nB8AcHbQfhydDcf2/dAH383X79imdLysEh+mdTHSXYHdZDgIrJCvkgav38kAQb2Ej9I2r3fBULYZYkfJHedmU9Vwqnij5L7fSDx+2sMquNO5xpQh4Rwk/Q79L1AHvksc5zYi33YIl8duVf05It3jCQrISUMkyPj+pY174mAfsXMfDmOgBpHmVXeHEn5iL9wZzlS6hoO3m2eoLyUOXTHfsWgB+fL7l93dcR2Z/RXznRw6cidRqWAW2qY5Q2RuyPh46890IggitfKBUTFwHE97HeKN8daQcSM8VQo543CN8KS7cMzpZ/hMb9z4GAKvzWpt87JsciQNOCym2LJSkudBj5QsjUunAlKPiUP6qWqYTeW7N5V17noAePqKhYMYULQdan3P3U0Go3GH+EfReUvYx8xj5gAAAAASUVORK5CYII="
-                    className="card-image rounded-circle w-75 my-3 ms-3 "
-                    alt=""
-                  />
-                  <i class="fa-solid fa-pen-to-square fs-3"></i>
+                                <input
+                                  type="text"
+                                  className="form-control form-control-lg w-75 mx-auto"
+                                  value="user name here"
+                                />
+                                <div class="modal-body"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </h3>
+                        <p className="mb-2 fs-5 pb-1">
+                          Sample123455556djjhf@gmail.com
+                          <button
+                            data-bs-toggle="modal"
+                            data-bs-target="#email"
+                            className="border-0 bg-white"
+                          >
+                            {" "}
+                            <i class="fa-solid fa-pen-to-square text-warning ms-2"></i>
+                          </button>
+                          <div
+                            class="modal fade"
+                            id="email"
+                            tabindex="-1"
+                            aria-labelledby="exampleModalLabel"
+                            aria-hidden="true"
+                          >
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1
+                                    class="modal-title fs-5"
+                                    id="exampleModalLabel"
+                                  >
+                                    Enter your new email
+                                  </h1>
+                                  <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                  ></button>
+                                </div>
+
+                                <input
+                                  type="text"
+                                  className="form-control form-control-lg w-75 mx-auto"
+                                  value="user name here"
+                                />
+                                <div class="modal-body"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </p>
+                        <div className="d-flex justify-content-start rounded-3 p-2 mb-2 bg-body-tertiary"></div>
+                        <div className="d-flex pt-1">
+                          <button
+                            type="button"
+                            data-mdb-button-init
+                            data-mdb-ripple-init
+                            className="btn btn-outline-warning me-1 flex-grow-1"
+                          >
+                            Upload <i class="fa-regular fa-user"></i>
+                          </button>
+                          <button
+                            type="button"
+                            data-mdb-button-init
+                            data-mdb-ripple-init
+                            className="btn btn-warning flex-grow-1"
+                          >
+                            Logout
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <div className="col-lg-8 col-sm-8 my-auto">
-                <div className="text start ms-3 ">
-                  <p className="fs-3 fw-semibold ">
-                    <span>User Name Here</span>
-                    <i class="fa-solid fa-pen-to-square ms-2"></i>
-                  </p>
-                  <p className="fs-4 fw-medium roboto-regular">
-                    <span>sample@gmail.com</span>
-                    <i class="fa-solid fa-pen-to-square ms-2"></i>
-                  </p>
-                </div>
-              </div>
-              {/* <div className="col-lg-2 col-sm-12">
-                <div className=" mt-2 mx-3">
-                  <button
-                    className="btn px-4"
-                    type="button"
-                    style={{ background: "#b46c14", color: "white" }}
-                  >
-                    Edit Profile
-                  </button>
-                </div>
-              </div> */}
             </div>
-          </div>
+          </section>
 
           {/*  profile end */}
 
@@ -55,11 +147,9 @@ const UserProfile = () => {
           {/* rating list start*/}
 
           <div className="">
-            <p className="fs-3 fw-semibold brown hind-siliguri-semibold mt-5">
-              Your Rating Lists
-            </p>
+            <p className="fs-3 fw-semibold brown  mt-5">Your Rating Lists</p>
             <div className="row my-3 ">
-              <div className="col-sm-6 col-md-4 col-lg-3 ">
+              <div className="col-sm-6 col-md-4 col-lg-2 col-xl-2 ">
                 <StreetFoodCard />
               </div>
               <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
@@ -88,7 +178,7 @@ const UserProfile = () => {
             </div>
             <hr />
             <div className="row my-3 ">
-              <div className="col-sm-6 col-md-4 col-lg-3 ">
+              <div className="col-sm-6 col-md-4 col-lg-2 col-xl-2">
                 <PlaceCard />
               </div>
               <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
@@ -116,73 +206,6 @@ const UserProfile = () => {
               </div>
             </div>
             <hr />
-            <div className="row my-3 ">
-              <div className="col-sm-6 col-md-4 col-lg-3 ">
-                <CoffeeShopCard />
-              </div>
-              <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
-                <div className="">
-                  <div className="mb-3">
-                    <span className="fs-5 roboto-regular">Your Rating</span>
-
-                    <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
-                    <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
-                      9.4
-                    </sppan>
-                  </div>
-                  <p>
-                    <i class="fa-solid fa-location-dot me-4 fs-4"></i>
-                    <span className="fs-5">Pathein, 10011</span>
-                  </p>
-                  <p>
-                    <i className="fas fa-phone me-4 fs-4"></i>
-                    <span className="fs-5">+ 959 765 514 319</span>
-                  </p>
-                  <div className="fs-6 roboto-regular">
-                    <span>29th June, 2024</span> <span>09:23 pm</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <hr />
-            <div className="row my-3">
-              <div className="col-sm-6 col-md-4 col-lg-3 ">
-                <StreetFoodCard />
-              </div>
-              <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
-                <div className="">
-                  <div className="mb-3">
-                    <span className="fs-5 roboto-regular">Your Rating</span>
-
-                    <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
-                    <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
-                      9.4
-                    </sppan>
-                  </div>
-                  <p>
-                    <i class="fa-solid fa-location-dot me-4 fs-4"></i>
-                    <span className="fs-5">Pathein, 10011</span>
-                  </p>
-                  <p>
-                    <i className="fas fa-phone me-4 fs-4"></i>
-                    <span className="fs-5">+ 959 765 514 319</span>
-                  </p>
-                  <div className="fs-6 roboto-regular">
-                    <span>29th June, 2024</span> <span>09:23 pm</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="d-grid gap-2 d-md-flex justify-content-md-end mb-5">
-              <button
-                className="btn px-4"
-                type="button"
-                style={{ background: "#b46c14", color: "white" }}
-              >
-                See More
-              </button>
-            </div>
           </div>
 
           {/* rating list end */}
@@ -193,23 +216,13 @@ const UserProfile = () => {
 
           <div>
             <div className="row">
-              <p className="fs-3 fw-semibold brown hind-siliguri-semibold mt-5">
-                Your Comment Lists
-              </p>
+              <p className="fs-3 fw-semibold brown mt-3">Your Comment Lists</p>
 
-              <div className="row my-3">
-                <div className="col-sm-6 col-md-4 col-lg-3">
+              <div className="row my-2">
+                <div className="col-sm-6 col-md-4 col-lg-2 col-xl-2">
                   <PlaceCard />
                 </div>
                 <div className="col-sm-6 col-md-8 col-lg-9 my-auto">
-                  <div className="mb-3">
-                    {" "}
-                    <span className="fs-5 roboto-regular">Your Rating</span>
-                    <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
-                    <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
-                      9.4
-                    </sppan>
-                  </div>
                   <div className="bg-light-gray rounded-5">
                     <p className="fs-4 roboto-regular p-3">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -223,67 +236,6 @@ const UserProfile = () => {
                 </div>
               </div>
               <hr />
-              <div className="row my-3">
-                <div className="col-sm-6 col-md-4 col-lg-3">
-                  <CoffeeShopCard />
-                </div>
-                <div className="col-sm-6 col-md-8 col-lg-9 my-auto">
-                  <div className="mb-3">
-                    {" "}
-                    <span className="fs-5 roboto-regular">Your Rating</span>
-                    <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
-                    <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
-                      9.4
-                    </sppan>
-                  </div>
-                  <div className="bg-light-gray rounded-5">
-                    <p className="fs-4 roboto-regular p-3">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Facere temporibus quia, exercitationem alias omnis ad
-                      nobis
-                    </p>
-                  </div>
-
-                  <div className="fs-6 roboto-regular">
-                    <p>29th June, 2024</p> <p>09:23 pm</p>
-                  </div>
-                </div>
-              </div>
-              <hr />
-              <div className="row my-3">
-                <div className="col-sm-6 col-md-4 col-lg-3">
-                  <StreetFoodCard />
-                </div>
-                <div className="col-sm-6 col-md-8 col-lg-9 my-auto">
-                  <div className="mb-3">
-                    {" "}
-                    <span className="fs-5 roboto-regular">Your Rating</span>
-                    <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
-                    <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
-                      9.4
-                    </sppan>
-                  </div>
-                  <div className="bg-light-gray rounded-5">
-                    <p className="fs-4 roboto-regular p-3">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Facere temporibus quia, exercitationem alias omnis ad
-                      nobis
-                    </p>
-                  </div>
-                  <div className="fs-6 roboto-regular">
-                    <p>29th June, 2024</p> <p>09:23 pm</p>
-                  </div>
-                </div>
-              </div>
-              <div className="d-grid gap-2 d-md-flex justify-content-md-end mb-5">
-                <button
-                  className="btn px-4"
-                  type="button"
-                  style={{ background: "#b46c14", color: "white" }}
-                >
-                  See More
-                </button>
-              </div>
             </div>
           </div>
           {/* comment list end */}
@@ -400,6 +352,7 @@ const UserProfile = () => {
           <hr />
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

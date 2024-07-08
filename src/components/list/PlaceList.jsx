@@ -1,9 +1,12 @@
 import React from "react";
 import PlaceCard from "../card/PlaceCard";
+import Header from "../nav/Header";
+import Footer from "../nav/Footer";
 
 const PlaceList = () => {
   return (
     <div>
+      <Header />
       <div className="container my-5">
         <p className="fs-2 text-center my-5">
           <span className="brown  noto-serif-display-subtitle">
@@ -54,6 +57,7 @@ const PlaceList = () => {
 
         {/* card area end */}
       </div>
+      <Footer />
     </div>
   );
 };

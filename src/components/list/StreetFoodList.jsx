@@ -1,9 +1,12 @@
 import React from "react";
 import StreetFoodCard from "../card/StreetFoodCard";
+import Header from "../nav/Header";
+import Footer from "../nav/Footer";
 
 const StreetFoodList = () => {
   return (
     <div>
+      <Header />
       <div className="container my-5">
         <p className="fs-2 text-center my-5">
           <span className="brown  noto-serif-display-subtitle">
@@ -54,6 +57,7 @@ const StreetFoodList = () => {
 
         {/* card area end */}
       </div>
+      <Footer />
     </div>
   );
 };

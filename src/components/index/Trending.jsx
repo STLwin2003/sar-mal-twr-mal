@@ -8,7 +8,7 @@ const Trending = () => {
     <div>
       <div className="container">
         <div className="row my-5"></div>
-        <p className="fs-2 fw-semibold brown noto-serif-display-subtitle my-4">
+        <p className="fs-2 fw-bold brown noto-serif-display-subtitle my-4">
           Trending Right Now
         </p>
         <div className="row">
