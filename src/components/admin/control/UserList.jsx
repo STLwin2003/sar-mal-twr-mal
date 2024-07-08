@@ -88,7 +88,8 @@ const UserList = () => {
                         <i className="fa-solid fa-trash-can "></i>
                       </td>
                       <td className="width:20%">
-                        <span className="role">Admin</span>
+                        <span className="role">Admin
+                        </span>
                       </td>
                     </tr>
                   </tbody>
