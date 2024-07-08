@@ -15,7 +15,7 @@ const Index = () => {
   const { setPosts } = usePosts();
   useEffect(() => {
     (async () => {
-      const res = await fetch("http://localhost:4000/api/posts");
+      const res = await fetch("https://blog-api-fsw0.onrender.com/api/posts");
       const { resource } = await res.json();
       setPosts(resource);
     })();

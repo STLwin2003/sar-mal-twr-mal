@@ -9,7 +9,9 @@ const Detail = () => {
   const [post, setPost] = useState(null);
   useEffect(() => {
     (async () => {
-      const res = await fetch(`http://localhost:4000/api/posts/${pid}`);
+      const res = await fetch(
+        `https://blog-api-fsw0.onrender.com/api/posts/${pid}`
+      );
       const { resource } = await res.json();
       setPost(resource);
     })();
@@ -54,19 +56,20 @@ const Detail = () => {
                       {post.title}
                     </p>
                     <p>
-                      <i className="fa-solid fa-location-dot fs-4 me-4"></i>
-                      {"   "} <span className="fs-5">{post.address}</span>
+                      <i className="fa-solid fa-location-dot fs-4 me-4 "></i>
+                      {"   "}{" "}
+                      <span className="fs-5 fw-semibold">{post.address}</span>
                     </p>
                     <p>
                       <i className="fa-solid fa-clock me-4 fs-4"></i>
-                      <span className="fs-5">
+                      <span className="fs-5 fw-semibold">
                         {" "}
                         {post.open_hour} : {post.close_hour}
                       </span>
                     </p>
                     <p>
                       <i className="fas fa-phone me-4 fs-4"></i>
-                      <span className="fs-5">{post.phone}</span>
+                      <span className="fs-5 fw-semibold">{post.phone}</span>
                     </p>
                     <p>
                       <i className="fas fa-star text-warning me-4 fs-4"></i>
@@ -81,18 +84,6 @@ const Detail = () => {
                       </button>
                     </div>
                     <div className="mb-2">
-                      {/* <button
-                    className="btn btn-outline-warning"
-                    data-bs-toggle="modal"
-                    data-bs-target="#rating"
-                  >
-                    <i className="fa-solid fa-star me-2 fs-4"></i>
-                    <i className="fa-solid fa-star me-2 fs-4"></i>
-                    <i className="fa-solid fa-star me-2 fs-4"></i>
-                    <i className="fa-solid fa-star me-2 fs-4"></i>
-
-                    <i className="fa-solid fa-star me-2 fs-4"></i>
-                  </button> */}
                       <form action=""></form>
                     </div>
                   </div>
@@ -174,59 +165,10 @@ const Detail = () => {
                 <span className="fs-6 roboto-regular mx-2">User</span>
               </div>
               <div className="col-8">
-                <div className="border bg-light-gray rounded-5">
+                <div className="border bg-light-gray rounded-5 ms-5">
                   <p className="fs-5 roboto-regular p-3">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Modi,
-                  </p>
-                </div>
-              </div>
-            </section>
-            <section className="my-3">
-              <div className="col-2">
-                <button className="btn btn-warning rounded-circle ">
-                  <i className="fa-regular fa-user"></i>
-                </button>
-                <span className="fs-6 roboto-regular mx-2">User</span>
-              </div>
-              <div className="col-8">
-                <div className="border bg-light-gray rounded-5">
-                  <p className="fs-5 roboto-regular p-3">
-                    Lorem ipsum dolor sit amet consectetur
-                  </p>
-                </div>
-              </div>
-            </section>
-            <section className="my-3">
-              <div className="col-2">
-                <button className="btn btn-warning rounded-circle ">
-                  <i className="fa-regular fa-user"></i>
-                </button>
-                <span className="fs-6 roboto-regular mx-2">User</span>
-              </div>
-              <div className="col-8">
-                <div className="border bg-light-gray rounded-5">
-                  <p className="fs-5 roboto-regular p-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Modi, quam ex ut id ipsam facere recusandae est nihil fugiat
-                    laboriosam maxime. Explicabo, nisi? Aliquid vel perferendis
-                    illum deserunt nemo repellendus!
-                  </p>
-                </div>
-              </div>
-            </section>
-            <section className="my-3">
-              <div className="col-2">
-                <button className="btn btn-warning rounded-circle ">
-                  <i className="fa-regular fa-user"></i>
-                </button>
-                <span className="fs-6 roboto-regular mx-2">User</span>
-              </div>
-              <div className="col-8">
-                <div className="border bg-light-gray rounded-5">
-                  <p className="fs-5 roboto-regular p-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Modi, quam ex ut id ipsam facere recusandae est nihil fugiat
                   </p>
                 </div>
               </div>
