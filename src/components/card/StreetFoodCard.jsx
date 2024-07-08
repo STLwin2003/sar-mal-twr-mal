@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const StreetFoodCard = ({ pid, image, description, rating }) => {
+  let [fav, setFav] = useState(true);
+
+  let favorite = () => {
+    setFav(!fav);
+    console.log(fav);
+  };
   return (
     <div className="mb-4">
       <Link
@@ -19,8 +25,11 @@ const StreetFoodCard = ({ pid, image, description, rating }) => {
             alt="img"
           />
           <Link
-            className="fa-solid fa-heart fs-3 text-light position-absolute top-0 end-0 mt-2 me-2 "
-            style={{ textDecoration: "none", color: "inherit" }}
+            onClick={favorite}
+            className={`fa-solid fa-heart fs-3  position-absolute top-0 end-0 mt-2 me-2 ${
+              fav ? "text-light" : "text-warning"
+            }`}
+            style={{ textDecoration: "none" }}
           ></Link>
         </div>
 
