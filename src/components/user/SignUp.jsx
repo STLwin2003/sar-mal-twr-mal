@@ -37,7 +37,12 @@ const signup = () => {
                     <p className="fas fa-lock fa-lg me-3 fa-fw brown"></p>
                     <div class="form-floating form-outline flex-fill mb-0">
                     <input type="password" class="form-control" id="floatingPassword" placeholder="Password"/>
-                  <label for="floatingPassword">Password</label>
+                  <label for="floatingPassword">Password
+                  <span className="show-hide ">
+                        <i class="fa-solid fa-eye " id="icon"></i>
+                       </span>
+                  </label>
+                  
                   </div>
                   </div>
 
@@ -45,7 +50,11 @@ const signup = () => {
                     <p className="fas fa-key fa-lg me-3 fa-fw brown"></p>
                     <div class="form-floating form-outline flex-fill mb-0">
                     <input type="password" class="form-control" id="floatingPassword" placeholder="Repeat Your Password"/>
-                  <label for="floatingPassword">Repeat Your Password</label>
+                  <label for="floatingPassword">Repeat Your Password
+                  </label>
+                  <span className="show-hide justify-content-end float-right">
+                        <i class="fa-solid fa-eye " id="icon"></i>
+                       </span>
                   </div>
                   </div>
 
@@ -63,7 +72,7 @@ const signup = () => {
 
               </div>
               <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                  <img src="undraw_undraw_undraw_undraw_sign_up_ln1s_-1-_s4bc_-1-_ee41_-1-_kf4d.svg" className="img-fluid" alt="img" />
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" className="img-fluid" alt="img" />
               </div>
             </div>
           </div>
