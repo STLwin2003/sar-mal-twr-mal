@@ -56,29 +56,24 @@ const PostList = () => {
                       </p>
                     </div>
                     <div className="float-end">
-                      <div class="dropdown">
+                      <div className="dropdown">
                         <button
-                          class="btn btn-warning dropdown-toggle"
+                          className="btn btn-warning dropdown-toggle px-4"
                           type="button"
                           data-bs-toggle="dropdown"
                           aria-expanded="false"
                         >
                           Filter
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-dark">
+                        <ul className="dropdown-menu dropdown-menu-dark">
                           <li>
-                            <a class="dropdown-item" href="#">
+                            <a className="dropdown-item" href="#">
                               A to Z
                             </a>
                           </li>
                           <li>
-                            <a class="dropdown-item" href="#">
+                            <a className="dropdown-item" href="#">
                               Recent
-                            </a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">
-                              Most Rating
                             </a>
                           </li>
                         </ul>

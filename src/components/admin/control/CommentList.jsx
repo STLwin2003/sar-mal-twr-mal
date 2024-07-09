@@ -41,7 +41,22 @@ const CommentList = () => {
               </ul>
             </nav>
             <section className="p-3">
-              <h1>Comment List for Admin</h1>
+              <div className="row mb-3 ">
+                <div className="col d-flex mb-2">
+                  <div className="mx-3">
+                    <h1 className="">Comment List</h1>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className=" float-end border p-1 bg-light-gray rounded-3">
+                    <p className="fs-6 fw-semibold">
+                      Total Comments Posts -
+                      <span className="fs-5 fw-bold p-2">123</span>
+                    </p>
+                  </div>
+                </div>
+                <hr />
+              </div>
               {name.map((e, id) => (
                 <CommentItem e={e} id={id} />
               ))}
