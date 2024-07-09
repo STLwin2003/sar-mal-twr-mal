@@ -42,48 +42,46 @@ const UserList = () => {
             </nav>
             <section className="p-3">
               <div class="container">
-                
-              <div className="row my-4">
-                <div className="col-4">
-                  <input
-                    type="text"
-                    
-                    className="form-control border-2 border border-dark"
-                    placeholder="Search a post"
-                  />
-                </div>
-                <div className="col-8">
-                  <div className="float-end">
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-warning dropdown-toggle"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        Dropdown button
-                      </button>
-                      <ul class="dropdown-menu dropdown-menu-dark">
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            A to Z
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            Recent
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            Most Rating
-                          </a>
-                        </li>
-                      </ul>
+                <div className="row my-4">
+                  <div className="col-4">
+                    <input
+                      type="text"
+                      className="form-control border-2 border border-dark"
+                      placeholder="Search a post"
+                    />
+                  </div>
+                  <div className="col-8">
+                    <div className="float-end">
+                      <div class="dropdown">
+                        <button
+                          class="btn btn-warning dropdown-toggle"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Filter
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                          <li>
+                            <a class="dropdown-item" href="#">
+                              A to Z
+                            </a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">
+                              Recent
+                            </a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">
+                              Most Rating
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
                 <div class="row ">
                   <div class="col-lg-12">
                     <div class="main-box clearfix ">

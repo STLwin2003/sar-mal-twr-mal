@@ -44,7 +44,6 @@ const PostList = () => {
                 <div className="col-4">
                   <input
                     type="text"
-                    
                     className="form-control border-2 border border-dark"
                     placeholder="Search a post"
                   />
@@ -58,7 +57,7 @@ const PostList = () => {
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                       >
-                        Dropdown button
+                        Filter
                       </button>
                       <ul class="dropdown-menu dropdown-menu-dark">
                         <li>
