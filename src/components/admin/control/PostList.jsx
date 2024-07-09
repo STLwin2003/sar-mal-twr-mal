@@ -39,66 +39,73 @@ const PostList = () => {
                 </li>
               </ul>
             </nav>
-            <section className="p-3">
-              <div className="row my-4">
-                <div className="col-4">
-                  <input
-                    type="text"
-                    className="form-control border-2 border border-dark"
-                    placeholder="Search a post"
-                  />
-                </div>
-                <div className="col-8">
-                  <div className="float-end">
-                    <div class="dropdown">
-                      <button
-                        class="btn btn-warning dropdown-toggle"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        Filter
-                      </button>
-                      <ul class="dropdown-menu dropdown-menu-dark">
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            A to Z
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            Recent
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            Most Rating
-                          </a>
-                        </li>
-                      </ul>
+            <section className="p-3 ">
+              <div className="container">
+                <div className="row my-4">
+                  <div className="col-4">
+                    <input
+                      type="text"
+                      className="form-control border-2 border border-dark"
+                      placeholder="Search a post"
+                    />
+                  </div>
+                  <div className="col-8">
+                    <div className="float-start border p-1 bg-light-gray rounded-3">
+                      <p className="fs-6 fw-semibold">
+                        Total posts -<span className="fs-5 fw-bold">123</span>
+                      </p>
+                    </div>
+                    <div className="float-end">
+                      <div class="dropdown">
+                        <button
+                          class="btn btn-warning dropdown-toggle"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Filter
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                          <li>
+                            <a class="dropdown-item" href="#">
+                              A to Z
+                            </a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">
+                              Recent
+                            </a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">
+                              Most Rating
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="row">
-                <div className="col-4">
-                  <AdminFoodCard />
-                </div>
-                <div className="col-4">
-                  <AdminFoodCard />
-                </div>
-                <div className="col-4">
-                  <AdminFoodCard />
-                </div>
-                <div className="col-4">
-                  <AdminFoodCard />
-                </div>
-                <div className="col-4">
-                  <AdminFoodCard />
-                </div>
-                <div className="col-4">
-                  <AdminFoodCard />
+                <div className="row">
+                  <div className="col-4">
+                    <AdminFoodCard />
+                  </div>
+                  <div className="col-4">
+                    <AdminFoodCard />
+                  </div>
+                  <div className="col-4">
+                    <AdminFoodCard />
+                  </div>
+                  <div className="col-4">
+                    <AdminFoodCard />
+                  </div>
+                  <div className="col-4">
+                    <AdminFoodCard />
+                  </div>
+                  <div className="col-4">
+                    <AdminFoodCard />
+                  </div>
                 </div>
               </div>
             </section>

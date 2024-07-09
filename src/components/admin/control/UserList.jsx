@@ -51,6 +51,11 @@ const UserList = () => {
                     />
                   </div>
                   <div className="col-8">
+                    <div className="float-start border p-1 bg-light-gray rounded-2">
+                      <p className="fs-6 fw-semibold">
+                        Total users -<span className="fs-5 fw-bold">123</span>
+                      </p>
+                    </div>
                     <div className="float-end">
                       <div class="dropdown">
                         <button
@@ -89,6 +94,9 @@ const UserList = () => {
                         <table class="table user-list">
                           <thead>
                             <tr>
+                              <th>
+                                <span>No</span>
+                              </th>
                               <th>
                                 <span>User</span>
                               </th>

@@ -5,6 +5,9 @@ const ProfileItem = ({ e, id }) => {
     <tbody>
       <tr>
         <td>
+          <p className="fw-semibold">{id + 1}</p>
+        </td>
+        <td>
           <img
             src="https://bootdey.com/img/Content/avatar/avatar1.png"
             alt=""
