@@ -42,13 +42,22 @@ const Event = () => {
             <section>
               <div className="container-fluid">
                 <h1>Add Event from Admin</h1>
+                <hr />
                 <div className="row my-4">
                   <div className="col-5">
                     <input
                       type="text"
-                      className="form-control border-3"
+                      className="form-control border-3 border-dark mb-2"
                       placeholder="Enter Event Name"
                     />
+                  </div>
+                  <div className="col-7">
+                    <textarea
+                      rows={3}
+                      cols={55}
+                      placeholder="Add Description"
+                      className="rounded-3 p-3 border-black"
+                    ></textarea>
                   </div>
                 </div>
 
