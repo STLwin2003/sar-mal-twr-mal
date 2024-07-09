@@ -86,11 +86,36 @@ const AddPost = () => {
                     </div>
                     <div className="mb-4 ">
                       <div className="">
-                        <input type="image" />
+                        <p>Please select 3 images </p>
+                        <input type="file" accept="image/*" multiple />
                       </div>
                     </div>
                   </div>
                   <div className="col">
+                    <div className="mb-4">
+                      <div className="dropdown">
+                        <button
+                          className="btn btn-warning dropdown-toggle px-4"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Choose Category
+                        </button>
+                        <ul className="dropdown-menu dropdown-menu-dark">
+                          <li>
+                            <a className="dropdown-item" href="#">
+                              Food
+                            </a>
+                          </li>
+                          <li>
+                            <a className="dropdown-item" href="#">
+                              Place
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                     <div className="mb-4">
                       <textarea
                         name=""
