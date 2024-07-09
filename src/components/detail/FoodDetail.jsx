@@ -140,12 +140,12 @@ const Detail = () => {
           {/* second row start */}
 
           <div className="row g-5 mb-5">
-            <div className="col-lg-7 col-sm-6 my-auto">
+            <div className="col-lg-7 col-12 my-auto">
               <div className="">
                 <h1 className="fs-2 py-3 text-center brown noto-serif-display-subtitle">
                   2nd Title
                 </h1>
-                <p className="fs-5 roboto-regular text-sm-center text-lg-start">
+                <p className="fs-6 roboto-regular text-sm-center text-lg-start">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Adipisci voluptates natus ullam, cumque reiciendis recusandae
                   quidem rem eos ut magni saepe, eum quos labore inventore sunt?
@@ -156,7 +156,7 @@ const Detail = () => {
                 </p>
               </div>
             </div>
-            <div className="col-lg-5 col-sm-6 ">
+            <div className="col-lg-5 col-12">
               <div className="float-end">
                 <img
                   src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -171,19 +171,19 @@ const Detail = () => {
 
           {/* third row start */}
           <div className="row g-5 mb-5">
-            <div className="col-lg-7 col-sm-6">
+            <div className="col-lg-7 col-12">
               <img
                 src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt=""
                 className="w-100 rounded-4 "
               />
             </div>
-            <div className="col-lg-5 col-sm-6 my-auto">
+            <div className="col-lg-5 col-12 my-auto">
               <h1 className="fs-2  brown  text-center py-3 noto-serif-display-subtitle">
                 3rd Title
               </h1>
 
-              <p className="fs-5 roboto-regular text-lg-end text-sm-center ">
+              <p className="fs-6 roboto-regular text-lg-end text-sm-center ">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Adipisci voluptates natus ullam, cumque reiciendis recusandae
                 quidem rem eos ut magni saepe, eum quos labore inventore sunt?
@@ -201,14 +201,19 @@ const Detail = () => {
           <div className="row mb-5">
             <section className="my-3">
               <div className="col-2">
-                <button className="btn btn-warning rounded-circle ">
-                  <i className="fa-regular fa-user"></i>
+                <button className="btn ">
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                    alt=""
+                    className="rounded-circle"
+                    width={"50px"}
+                  />
                 </button>
                 <span className="fs-6 roboto-regular mx-2">User</span>
               </div>
               <div className="col-8">
                 <div className="border bg-light-gray rounded-5 ms-5">
-                  <p className="fs-5 roboto-regular p-3">
+                  <p className="fs-6 roboto-regular p-3">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Modi,
                   </p>
@@ -223,12 +228,14 @@ const Detail = () => {
               <div className="float-end d-flex">
                 <textarea
                   rows={3}
-                  className="form-control-lg rounded-3 border-2 px-4"
+                  className="form-control-lg rounded-4 border-2 px-4"
                   placeholder="Enter your comment"
                 ></textarea>
-                <button className="btn-brown px-5 m-3">
-                  <span className="fs-5">Submit</span>
-                </button>
+                <div>
+                  <button className="btn btn-warning px-4 mx-2 my-auto">
+                    <span className="fs-5">Submit</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

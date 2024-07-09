@@ -95,7 +95,7 @@ const PlaceDetail = () => {
                 </div>
               </div>
             </div>
-            <p className="fs-5 roboto-regular">
+            <p className="fs-6 roboto-regular">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
               sequi id autem perspiciatis fugit ipsum cumque dolor nulla, ut
               officiis temporibus laborum ea tempore! Aspernatur, dolor tenetur.
@@ -117,7 +117,7 @@ const PlaceDetail = () => {
               alt=""
               className=" w-100 rounded-3 "
             />
-            <p className="fs-5 roboto-regular my-2">
+            <p className="fs-6 roboto-regular my-2">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
               odio alias asperiores repudiandae perspiciatis, dolore enim ab
               dolor impedit veritatis a incidunt quaerat. Nesciunt pariatur
@@ -136,64 +136,20 @@ const PlaceDetail = () => {
         <div className="row mb-5">
           <section className="my-3">
             <div className="col-2">
-              <button className="btn btn-warning rounded-circle ">
-                <i class="fa-regular fa-user"></i>
+              <button className="btn ">
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                  alt=""
+                  className="rounded-circle"
+                  width={"50px"}
+                />
               </button>
               <span className="fs-6 roboto-regular mx-2">User</span>
             </div>
             <div className="col-8">
-              <div className="border bg-light-gray rounded-5">
-                <p className="fs-5 roboto-regular p-3">
+              <div className="border bg-light-gray rounded-5 ms-5">
+                <p className="fs-6 roboto-regular p-3">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
-                </p>
-              </div>
-            </div>
-          </section>
-          <section className="my-3">
-            <div className="col-2">
-              <button className="btn btn-warning rounded-circle ">
-                <i class="fa-regular fa-user"></i>
-              </button>
-              <span className="fs-6 roboto-regular mx-2">User</span>
-            </div>
-            <div className="col-8">
-              <div className="border bg-light-gray rounded-5">
-                <p className="fs-5 roboto-regular p-3">
-                  Lorem ipsum dolor sit amet consectetur
-                </p>
-              </div>
-            </div>
-          </section>
-          <section className="my-3">
-            <div className="col-2">
-              <button className="btn btn-warning rounded-circle ">
-                <i class="fa-regular fa-user"></i>
-              </button>
-              <span className="fs-6 roboto-regular mx-2">User</span>
-            </div>
-            <div className="col-8">
-              <div className="border bg-light-gray rounded-5">
-                <p className="fs-5 roboto-regular p-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
-                  quam ex ut id ipsam facere recusandae est nihil fugiat
-                  laboriosam maxime. Explicabo, nisi? Aliquid vel perferendis
-                  illum deserunt nemo repellendus!
-                </p>
-              </div>
-            </div>
-          </section>
-          <section className="mt-3">
-            <div className="col-2">
-              <button className="btn btn-warning rounded-circle ">
-                <i class="fa-regular fa-user"></i>
-              </button>
-              <span className="fs-6 roboto-regular mx-2">User</span>
-            </div>
-            <div className="col-8">
-              <div className="border bg-light-gray rounded-5">
-                <p className="fs-5 roboto-regular p-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
-                  quam ex ut id ipsam facere recusandae est nihil fugiat
                 </p>
               </div>
             </div>
@@ -206,12 +162,14 @@ const PlaceDetail = () => {
             <div className="float-end d-flex">
               <textarea
                 rows={3}
-                className="form-control-lg rounded-3 border-2 px-4"
+                className="form-control-lg rounded-4 border-2 px-4"
                 placeholder="Enter your comment"
               ></textarea>
-              <button className="btn-brown px-5 m-3">
-                <span className="fs-5">Submit</span>
-              </button>
+              <div>
+                <button className="btn btn-warning px-4 mx-2 my-auto">
+                  <span className="fs-5">Submit</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>

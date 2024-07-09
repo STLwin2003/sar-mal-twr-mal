@@ -28,7 +28,7 @@ const UserProfile = () => {
                       </div>
                       <div className="flex-grow-2 ms-5">
                         <h3 className="mb-3">
-                          User Name Here and
+                          <span className="fw-bold">User name Here</span>
                           <button
                             data-bs-toggle="modal"
                             data-bs-target="#name"
@@ -70,50 +70,48 @@ const UserProfile = () => {
                             </div>
                           </div>
                         </h3>
-                        <p className="mb-2 fs-5 pb-1">
-                          Sample123455556djjhf@gmail.com
-                          <button
-                            data-bs-toggle="modal"
-                            data-bs-target="#email"
-                            className="border-0 bg-white"
-                          >
-                            {" "}
-                            <i class="fa-solid fa-pen-to-square text-warning ms-2"></i>
-                          </button>
-                          <div
-                            class="modal fade"
-                            id="email"
-                            tabindex="-1"
-                            aria-labelledby="exampleModalLabel"
-                            aria-hidden="true"
-                          >
-                            <div class="modal-dialog modal-dialog-centered">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h1
-                                    class="modal-title fs-5"
-                                    id="exampleModalLabel"
-                                  >
-                                    Enter your new email
-                                  </h1>
-                                  <button
-                                    type="button"
-                                    class="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"
-                                  ></button>
-                                </div>
-
-                                <input
-                                  type="text"
-                                  className="form-control form-control-lg w-75 mx-auto"
-                                  value="user name here"
-                                />
-                                <div class="modal-body"></div>
+                        <p className="fs-4 fw-medium">sample@gmail.com</p>
+                        <button
+                          data-bs-toggle="modal"
+                          data-bs-target="#email"
+                          className="btn btn-secondary"
+                        >
+                          Change Password
+                        </button>
+                        <div
+                          class="modal fade"
+                          id="email"
+                          tabindex="-1"
+                          aria-labelledby="exampleModalLabel"
+                          aria-hidden="true"
+                        >
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1
+                                  class="modal-title fs-5"
+                                  id="exampleModalLabel"
+                                >
+                                  Enter your new password
+                                </h1>
+                                <button
+                                  type="button"
+                                  class="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                ></button>
                               </div>
+
+                              <input
+                                type="text"
+                                className="form-control form-control-lg w-75 mx-auto"
+                                value="current password"
+                              />
+                              <div class="modal-body"></div>
                             </div>
                           </div>
-                        </p>
+                        </div>
+
                         <div className="d-flex justify-content-start rounded-3 p-2 mb-2 bg-body-tertiary"></div>
                         <div className="d-flex pt-1">
                           <button
@@ -147,7 +145,9 @@ const UserProfile = () => {
           {/* rating list start*/}
 
           <div className="">
-            <p className="fs-3 fw-semibold brown  mt-5">Your Rating Lists</p>
+            <p className="fs-3 fw-bold brown noto-serif-display-subtitle mt-5">
+              Your Rating Lists
+            </p>
             <div className="row my-3 ">
               <div className="col-sm-6 col-md-4 col-lg-2 col-xl-2 ">
                 <StreetFoodCard />
@@ -216,7 +216,9 @@ const UserProfile = () => {
 
           <div>
             <div className="row">
-              <p className="fs-3 fw-semibold brown mt-3">Your Comment Lists</p>
+              <p className="fs-3 fw-bold brown noto-serif-display-subtitle mt-3">
+                Your Comment Lists
+              </p>
 
               <div className="row my-2">
                 <div className="col-sm-6 col-md-4 col-lg-2 col-xl-2">
@@ -244,7 +246,7 @@ const UserProfile = () => {
           {/* bookmark list start */}
           <div>
             <div className="">
-              <p className="fs-3 fw-semibold brown hind-siliguri-semibold mt-5">
+              <p className="fs-3 fw-bold brown noto-serif-display-subtitle mt-5">
                 Your Favorite
               </p>
               <div className="row">
