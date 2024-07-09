@@ -1,10 +1,16 @@
-import React from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const login = () => {
+  let [passwordShow, setPasswordShow] = useState(false);
+  function passwordShowHide() {
+    setPasswordShow(!passwordShow);
+  }
+
   return (
     <div>
-      <div className="vh-100" style={{ background: "light-gray;" }}>
+      <div className="vh-100 bg-light">
         <div className="container h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-lg-12 col-xl-11">
@@ -28,20 +34,29 @@ const login = () => {
                               className="form-control"
                               placeholder="Enter a valid email"
                             />
-                            <label for="floating email">Email</label>
+                            <label htmlFor="floating email">Email</label>
                           </div>
                         </div>
 
                         <div className="d-flex flex-row align-items-center mb-4">
                           <p className="fas fa-lock fa-lg me-3 fa-fw brown"></p>
-                          <div class="form-floating form-outline flex-fill mb-0">
+                          <div className="form-floating form-outline flex-fill mb-0 position-relative">
                             <input
-                              type="password"
-                              class="form-control"
+                              type={passwordShow ? "text" : "password"}
+                              className="form-control"
                               id="floatingPassword"
                               placeholder="Enter password"
                             />
-                            <label for="floatingPassword">Password</label>
+
+                            <span
+                              className="position-absolute top-0 end-0 border-0 bg-white mt-3 me-2 fw-semibold"
+                              onClick={passwordShowHide}
+                              type="button"
+                            >
+                              {passwordShow ? "Hide" : "Show"}
+                            </span>
+
+                            <label htmlFor="floatingPassword">Password</label>
                           </div>
                         </div>
 

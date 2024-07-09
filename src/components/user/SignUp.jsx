@@ -1,7 +1,12 @@
-import React from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const signup = () => {
+  let [passwordShow, setPasswordShow] = useState(false);
+  function passwordShowHide() {
+    setPasswordShow(!passwordShow);
+  }
   return (
     <div>
       <div className="vh-100" style={{ background: "#eee" }}>
@@ -47,11 +52,19 @@ const signup = () => {
                           <p className="fas fa-lock fa-lg me-3 fa-fw brown"></p>
                           <div class="form-floating form-outline flex-fill mb-0">
                             <input
-                              type="password"
-                              class="form-control"
+                              type={passwordShow ? "text" : "password"}
+                              className="form-control"
                               id="floatingPassword"
-                              placeholder="Password"
+                              placeholder="Enter password"
                             />
+
+                            <span
+                              className="position-absolute top-0 end-0 border-0 bg-white mt-3 me-2 fw-semibold"
+                              onClick={passwordShowHide}
+                              type="button"
+                            >
+                              {passwordShow ? "Hide" : "Show"}
+                            </span>
                             <label for="floatingPassword">Password</label>
                           </div>
                         </div>
@@ -60,11 +73,19 @@ const signup = () => {
                           <p className="fas fa-key fa-lg me-3 fa-fw brown"></p>
                           <div class="form-floating form-outline flex-fill mb-0">
                             <input
-                              type="password"
-                              class="form-control"
+                              type={passwordShow ? "text" : "password"}
+                              className="form-control"
                               id="floatingPassword"
-                              placeholder="Repeat Your Password"
+                              placeholder="Enter password"
                             />
+
+                            <span
+                              className="position-absolute top-0 end-0 border-0 bg-white mt-3 me-2 fw-semibold"
+                              onClick={passwordShowHide}
+                              type="button"
+                            >
+                              {passwordShow ? "Hide" : "Show"}
+                            </span>
                             <label for="floatingPassword">
                               Repeat Your Password
                             </label>

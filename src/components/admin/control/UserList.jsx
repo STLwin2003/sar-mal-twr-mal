@@ -5,7 +5,7 @@ import Nav from "../dashboard/Nav";
 import ProfileItem from "../item/ProfileItem";
 
 const UserList = () => {
-  const name = ["shin thant", "wyne htet ", "Thwe gyi"];
+  const name = ["shin thant lwin ", "wyne htet ", "Thwe gyi"];
   return (
     <div>
       <div className="container-fluid">
@@ -57,28 +57,28 @@ const UserList = () => {
                       </p>
                     </div>
                     <div className="float-end">
-                      <div class="dropdown">
+                      <div className="dropdown">
                         <button
-                          class="btn btn-warning dropdown-toggle"
+                          className="btn btn-warning dropdown-toggle px-4"
                           type="button"
                           data-bs-toggle="dropdown"
                           aria-expanded="false"
                         >
                           Filter
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-dark">
+                        <ul className="dropdown-menu dropdown-menu-dark">
                           <li>
-                            <a class="dropdown-item" href="#">
+                            <a className="dropdown-item" href="#">
                               A to Z
                             </a>
                           </li>
                           <li>
-                            <a class="dropdown-item" href="#">
+                            <a className="dropdown-item" href="#">
                               Recent
                             </a>
                           </li>
                           <li>
-                            <a class="dropdown-item" href="#">
+                            <a className="dropdown-item" href="#">
                               Most Rating
                             </a>
                           </li>
@@ -87,11 +87,11 @@ const UserList = () => {
                     </div>
                   </div>
                 </div>
-                <div class="row ">
-                  <div class="col-lg-12">
-                    <div class="main-box clearfix ">
-                      <div class="table-responsive ">
-                        <table class="table user-list">
+                <div className="row ">
+                  <div className="col-lg-12">
+                    <div className="main-box clearfix ">
+                      <div className="table-responsive ">
+                        <table className="table user-list">
                           <thead>
                             <tr>
                               <th>
@@ -106,7 +106,7 @@ const UserList = () => {
                               <th>
                                 <span>Email</span>
                               </th>
-                              <th class="text-center">
+                              <th className="text-center">
                                 <span>Operation</span>
                               </th>
                               <th>Status</th>
