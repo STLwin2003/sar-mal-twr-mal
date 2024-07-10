@@ -77,25 +77,37 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="text-end ">
+          <div className="text-end">
             <div className="d-flex position-relative">
               <a
                 className="fs-3 me-2 my-auto "
                 type="button"
-                data-bs-toggle="collapse"
+                data-bs-toggle="modal"
                 href="#search"
-                aria-expanded="false"
-                aria-controls="collapseExample"
               >
                 <i className="fa-solid fa-magnifying-glass text-warning fs-3 me-2 my-auto "></i>
               </a>
-              <div className="collapse my-auto" id="search">
-                <div>
-                  <input
-                    type="text"
-                    className="rounded-3 form-control"
-                    placeholder="Search . . ."
-                  />
+              <div
+                className="modal fade"
+                id="search"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+              >
+                <div className="modal-dialog">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <input type="text" placeholder="Search food or place" />
+                      <button
+                        type="button"
+                        className="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div className="modal-body"></div>
+                  </div>
                 </div>
               </div>
 
