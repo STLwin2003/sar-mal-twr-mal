@@ -16,23 +16,54 @@ const RatingItem = ({ e, id }) => {
             <span className="fs-6 ms-3 roboto-regular">{e}</span>
           </div>
         </div>
-        <div className="col-4 my-auto">
+        <div className="col-3 my-auto">
           <div className="border border-dark-subtle rounded-5 p-1">
-            <i class="fa-solid fa-star fs-6 mx-2 text-warning"></i>
-            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
-            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
-            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
-            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
-            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
-            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
-            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
-            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
-            <i class="fa-solid fa-star fs-6 me-2 text-warning"></i>
+            <i class="fa-solid fa-star fs-4 mx-2 text-warning"></i>
+            <i class="fa-solid fa-star fs-4 me-2 text-warning"></i>
+            <i class="fa-solid fa-star fs-4 me-2 text-warning"></i>
+            <i class="fa-solid fa-star fs-4 me-2 text-warning"></i>
+            <i class="fa-solid fa-star fs-4 me-2 text-warning"></i>
           </div>
         </div>
         <div className=" col-4 my-auto">
-          <div className="w-100">
+          <div className="d-flex">
             <AdminFoodCard />
+            <div className="my-auto">
+              <i
+                className="fa-solid fa-trash-can "
+                data-bs-toggle="modal"
+                data-bs-target="#delete"
+              ></i>
+
+              <div
+                class="modal fade"
+                id="delete"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <p className="fs-5 fw-semibold">Do you want to delete?</p>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Cancel
+                      </button>
+                      <button type="button" class="btn btn-primary">
+                        Yes
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <hr />

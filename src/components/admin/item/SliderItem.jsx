@@ -1,34 +1,28 @@
 import React from "react";
-import AdminFoodCard from "../card/AdminFoodCard";
 
-const CommentItem = ({ e, id }) => {
+const SliderItem = () => {
   return (
     <div>
-      <div className="row rounded-4">
-        <div className="col-3 d-flex my-auto">
-          <span className="my-auto fs-6 fw-bold">{id + 1}</span>
-          <div className="p-2">
+      <div className="bg-light-gray rounded-3 p-3 mb-2">
+        <div className="row">
+          <div className="col-6 d-flex">
+            <span className="fw-bold fs-5 me-2">1</span>
+
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_1bpO0XDD8fbmRvnbnkCoQNFFoH3AqofVTg&s"
+              src="https://www.menucool.com/slider/prod/image-slider-2.jpg"
               alt=""
-              className=" rounded-circle w-25 shadow-lg ms-2"
+              className="w-100"
             />
-            <span className="fs-6 ms-3 roboto-regular">{e}</span>
           </div>
-        </div>
-        <div className="col-5 my-auto">
-          <div className="border border-dark-subtle rounded-5 p-3 mb-1">
-            <p className="fs-6 roboto-regular fw-semibold rounded-5 ">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum
-            </p>
+          <div className="col-5 my-auto d-flex">
+            <div className="bg-warning p-2 rounded-1 ms-2">
+              <p className="fs-5 fw-bold">Post Title Here</p>
+            </div>
           </div>
-        </div>
-        <div className=" col-4 my-auto">
-          <div className="d-flex">
-            <AdminFoodCard />
-            <div className="my-auto">
+          <div className="col-1 my-auto">
+            <div className="">
               <i
-                className="fa-solid fa-trash-can "
+                className="fa-solid fa-trash-can fs-4"
                 data-bs-toggle="modal"
                 data-bs-target="#delete"
               ></i>
@@ -45,7 +39,6 @@ const CommentItem = ({ e, id }) => {
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
                     <div class="modal-body">
-                      {" "}
                       <p className="fs-5 fw-semibold">Do you want to delete?</p>
                     </div>
                     <div class="modal-footer">
@@ -66,10 +59,13 @@ const CommentItem = ({ e, id }) => {
             </div>
           </div>
         </div>
-        <hr />
+        <div className="fw-semibold mt-2 ">
+          <span>Date : 10/7/2024</span>
+          <span className="mx-3">Time : 10:24 PM</span>
+        </div>
       </div>
     </div>
   );
 };
 
-export default CommentItem;
+export default SliderItem;
