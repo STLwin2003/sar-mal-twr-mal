@@ -1,10 +1,7 @@
 import { Route, Routes } from "react-router";
 import React from "react";
-
 import Login from "./user/Login.jsx";
 import SignUp from "./user/SignUp.jsx";
-import AdminLogin from "./admin/AdminLogin";
-import AdminSignup from "./admin/AdminSignup";
 import StreetFoodList from "./list/StreetFoodList";
 import PlaceList from "./list/PlaceList";
 import CoffeeShopList from "./list/CoffeeShopList";
@@ -22,13 +19,13 @@ import RatingList from "./admin/control/RatingList";
 import CommentList from "./admin/control/CommentList";
 import AdminFoodDetail from "./admin/Detail/FoodDetail.jsx";
 import AdminPlaceDetail from "./admin/Detail/PlaceDetail";
+import AddSlider from "./admin/action/AddSlider.jsx";
+import SliderList from "./admin/control/SliderList.jsx";
 
 const CleanRoute = () => {
   return (
     <div>
       <Routes>
-        <Route path="/admin_login" element={<AdminLogin />} />
-        <Route path="/admin_signup" element={<AdminSignup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/" element={<Index />} />
@@ -42,11 +39,14 @@ const CleanRoute = () => {
         <Route path="/user_profile" element={<UserProfile />} />
         <Route path="/admin_dashboard" element={<Dashboard />} />
         <Route path="/admin/add_post" element={<AddPost />} />
+        <Route path="/admin/add_slider" element={<AddSlider />} />
         <Route path="/admin/event" element={<Event />} />
         <Route path="/admin/user_list" element={<UserList />} />
         <Route path="/admin/post_list" element={<PostList />} />
         <Route path="/admin/rating_list" element={<RatingList />} />
         <Route path="/admin/comment_list" element={<CommentList />} />
+        <Route path="/admin/slider_list" element={<SliderList />} />
+
         <Route path="/admin/food_detail" element={<AdminFoodDetail />} />
         <Route path="/admin/place_detail" element={<AdminPlaceDetail />} />
         <Route path="/*" element={<Error />} />
