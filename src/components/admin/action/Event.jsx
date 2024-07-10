@@ -28,7 +28,9 @@ const Event = () => {
                     <i className="fa-solid fa-user-circle"></i>
                   </Link>
                   <ul className="dropdown-menu dropdown-menu-end">
-                    <li className="dropdown-item">User Profile</li>
+                    <Link to="/user_profile" className="dropdown-item">
+                      Back to User
+                    </Link>
                     <li className="dropdown-item">Logout</li>
                   </ul>
                 </li>
@@ -43,11 +45,11 @@ const Event = () => {
               <div className="container-fluid">
                 <h1>Add Event from Admin</h1>
                 <hr />
-                <div className="row my-4">
+                <div className="row my-4 bg-light-gray p-3">
                   <div className="col-5">
                     <input
                       type="text"
-                      className="form-control border-3 border-dark mb-2"
+                      className="form-control border-black mb-2"
                       placeholder="Enter Event Name"
                     />
                   </div>

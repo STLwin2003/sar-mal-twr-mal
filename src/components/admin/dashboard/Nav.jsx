@@ -65,11 +65,11 @@ const Nav = () => {
                 </span>
               </Link>
               <Link
-                to="/admin_dashboard"
+                to="/admin/slider_list"
                 className="list-group-item list-group-item-action"
               >
-                <i className="fa-solid fa-flag pe-2"></i>
-                <span className="d-none d-lg-inline">Reports</span>
+                <i class="fa-solid fa-sliders me-2"></i>
+                <span className="d-none d-lg-inline">Sliders</span>
               </Link>
             </div>
 
@@ -92,6 +92,14 @@ const Nav = () => {
               >
                 <i class="fa-solid fa-calendar-day pe-2"></i>
                 <span className="d-none d-lg-inline">Add Events</span>
+              </Link>
+              <Link
+                to="/admin/add_slider"
+                className="list-group-item list-group-item-action"
+              >
+                <i class="fa-solid fa-sliders me-2"></i>
+
+                <span className="d-none d-lg-inline">Add Slider</span>
               </Link>
             </div>
           </nav>

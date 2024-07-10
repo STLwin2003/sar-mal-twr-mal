@@ -28,7 +28,9 @@ const AddPost = () => {
                     <i className="fa-solid fa-user-circle"></i>
                   </Link>
                   <ul className="dropdown-menu dropdown-menu-end">
-                    <li className="dropdown-item">User Profile</li>
+                    <Link to="/user_profile" className="dropdown-item">
+                      Back to User
+                    </Link>
                     <li className="dropdown-item">Logout</li>
                   </ul>
                 </li>
