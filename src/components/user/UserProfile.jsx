@@ -5,6 +5,7 @@ import StreetFoodCard from "../card/StreetFoodCard";
 import PlaceCard from "../card/PlaceCard";
 import Header from "../nav/Header";
 import Footer from "../nav/Footer";
+import { Link } from "react-router-dom";
 
 const UserProfile = () => {
   return (
@@ -112,8 +113,7 @@ const UserProfile = () => {
                           </div>
                         </div>
 
-                        <div className="d-flex justify-content-start rounded-3 p-2 mb-2 bg-body-tertiary"></div>
-                        <div className="d-flex pt-1">
+                        <div className="d-flex pt-1 my-2">
                           <button
                             type="button"
                             data-mdb-button-init
@@ -130,6 +130,14 @@ const UserProfile = () => {
                           >
                             Logout
                           </button>
+                        </div>
+                        <div className="d-flex justify-content-start rounded-3 bg-body-tertiary">
+                          <Link
+                            to="/admin_dashboard"
+                            className="btn btn-warning"
+                          >
+                            Change to Admin <i class="fa-solid fa-lock"></i>
+                          </Link>
                         </div>
                       </div>
                     </div>
