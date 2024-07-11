@@ -35,27 +35,27 @@ const UserProfile = () => {
                             data-bs-target="#name"
                             className="border-0 bg-white"
                           >
-                            <i class="fa-solid fa-pen-to-square text-warning ms-2"></i>
+                            <i className="fa-solid fa-pen-to-square text-warning ms-2"></i>
                           </button>
                           <div
-                            class="modal fade"
+                            className="modal fade"
                             id="name"
-                            tabindex="-1"
+                            tabIndex="-1"
                             aria-labelledby="exampleModalLabel"
                             aria-hidden="true"
                           >
-                            <div class="modal-dialog modal-dialog-centered">
-                              <div class="modal-content">
-                                <div class="modal-header">
+                            <div className="modal-dialog modal-dialog-centered">
+                              <div className="modal-content">
+                                <div className="modal-header">
                                   <h6
-                                    class="modal-title fs-5"
+                                    className="modal-title fs-5"
                                     id="exampleModalLabel"
                                   >
                                     Enter your new name
                                   </h6>
                                   <button
                                     type="button"
-                                    class="btn-close"
+                                    className="btn-close"
                                     data-bs-dismiss="modal"
                                     aria-label="Close"
                                   ></button>
@@ -66,7 +66,7 @@ const UserProfile = () => {
                                   className="form-control form-control-lg w-75 mx-auto"
                                   value="user name here"
                                 />
-                                <div class="modal-body"></div>
+                                <div className="modal-body"></div>
                               </div>
                             </div>
                           </div>
@@ -80,24 +80,24 @@ const UserProfile = () => {
                           Change Password
                         </button>
                         <div
-                          class="modal fade"
+                          className="modal fade"
                           id="email"
-                          tabindex="-1"
+                          tabIndex="-1"
                           aria-labelledby="exampleModalLabel"
                           aria-hidden="true"
                         >
-                          <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
+                          <div className="modal-dialog modal-dialog-centered">
+                            <div className="modal-content">
                               <div class="modal-header">
                                 <h1
-                                  class="modal-title fs-5"
+                                  className="modal-title fs-5"
                                   id="exampleModalLabel"
                                 >
                                   Enter your new password
                                 </h1>
                                 <button
                                   type="button"
-                                  class="btn-close"
+                                  className="btn-close"
                                   data-bs-dismiss="modal"
                                   aria-label="Close"
                                 ></button>
@@ -108,7 +108,7 @@ const UserProfile = () => {
                                 className="form-control form-control-lg w-75 mx-auto"
                                 value="current password"
                               />
-                              <div class="modal-body"></div>
+                              <div className="modal-body"></div>
                             </div>
                           </div>
                         </div>
@@ -136,7 +136,7 @@ const UserProfile = () => {
                             to="/admin_dashboard"
                             className="btn btn-warning"
                           >
-                            Change to Admin <i class="fa-solid fa-lock"></i>
+                            Switch to Admin <i className="fa-solid fa-lock"></i>
                           </Link>
                         </div>
                       </div>
@@ -164,14 +164,14 @@ const UserProfile = () => {
                 <div className="">
                   <div className="mb-3">
                     <span className="fs-5 roboto-regular">Your Rating</span>
-                    <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
-                    <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
+                    <i className="fa-solid fa-star fs-4 text-warning ms-3"></i>
+                    <span className="fs-4 fw-semibold  roboto-regular ms-2">
                       9.4
-                    </sppan>
+                    </span>
                   </div>
 
                   <p>
-                    <i class="fa-solid fa-location-dot me-4 fs-4"></i>
+                    <i className="fa-solid fa-location-dot me-4 fs-4"></i>
                     <span className="fs-5">Pathein, 10011</span>
                   </p>
                   <p>
@@ -194,13 +194,13 @@ const UserProfile = () => {
                   <div className="mb-3">
                     {" "}
                     <span className="fs-5 roboto-regular">Your Rating</span>
-                    <i class="fa-solid fa-star fs-4 text-warning ms-3"></i>
-                    <sppan className="fs-4 fw-semibold  roboto-regular ms-2">
+                    <i className="fa-solid fa-star fs-4 text-warning ms-3"></i>
+                    <span className="fs-4 fw-semibold  roboto-regular ms-2">
                       9.4
-                    </sppan>
+                    </span>
                   </div>
                   <p>
-                    <i class="fa-solid fa-location-dot me-4 fs-4"></i>
+                    <i className="fa-solid fa-location-dot me-4 fs-4"></i>
                     <span className="fs-5">Pathein, 10011</span>
                   </p>
                   <p>
@@ -265,7 +265,7 @@ const UserProfile = () => {
                   <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
                     <div className="">
                       <p>
-                        <i class="fa-solid fa-location-dot me-4 fs-5"></i>
+                        <i className="fa-solid fa-location-dot me-4 fs-5"></i>
                         <span className="fs-6">Pathein, 10011</span>
                       </p>
                       <p>
@@ -273,7 +273,7 @@ const UserProfile = () => {
                         <span className="fs-6">+ 959 765 514 319</span>
                       </p>
                       <p>
-                        <i class="fa-solid fa-clock fs-5 me-4"></i>
+                        <i className="fa-solid fa-clock fs-5 me-4"></i>
                         <span className="fs-6"> Opening Hours:</span>
                       </p>
                     </div>
@@ -287,7 +287,7 @@ const UserProfile = () => {
                   <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
                     <div className="">
                       <p>
-                        <i class="fa-solid fa-location-dot me-4 fs-5"></i>
+                        <i className="fa-solid fa-location-dot me-4 fs-5"></i>
                         <span className="fs-6">Pathein, 10011</span>
                       </p>
                       <p>
@@ -295,7 +295,7 @@ const UserProfile = () => {
                         <span className="fs-6">+ 959 765 514 319</span>
                       </p>
                       <p>
-                        <i class="fa-solid fa-clock fs-5 me-4"></i>
+                        <i className="fa-solid fa-clock fs-5 me-4"></i>
                         <span className="fs-6"> Opening Hours:</span>
                       </p>
                     </div>
@@ -309,7 +309,7 @@ const UserProfile = () => {
                   <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
                     <div className="">
                       <p>
-                        <i class="fa-solid fa-location-dot me-4 fs-5"></i>
+                        <i className="fa-solid fa-location-dot me-4 fs-5"></i>
                         <span className="fs-6">Pathein, 10011</span>
                       </p>
                       <p>
@@ -317,7 +317,7 @@ const UserProfile = () => {
                         <span className="fs-6">+ 959 765 514 319</span>
                       </p>
                       <p>
-                        <i class="fa-solid fa-clock fs-5 me-4"></i>
+                        <i className="fa-solid fa-clock fs-5 me-4"></i>
                         <span className="fs-6"> Opening Hours:</span>
                       </p>
                     </div>
@@ -331,7 +331,7 @@ const UserProfile = () => {
                   <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
                     <div className="">
                       <p>
-                        <i class="fa-solid fa-location-dot me-4 fs-5"></i>
+                        <i className="fa-solid fa-location-dot me-4 fs-5"></i>
                         <span className="fs-6">Pathein, 10011</span>
                       </p>
                       <p>
@@ -339,21 +339,13 @@ const UserProfile = () => {
                         <span className="fs-6">+ 959 765 514 319</span>
                       </p>
                       <p>
-                        <i class="fa-solid fa-clock fs-5 me-4"></i>
+                        <i className="fa-solid fa-clock fs-5 me-4"></i>
                         <span className="fs-6"> Opening Hours:</span>
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="d-grid gap-2 d-md-flex justify-content-md-end mb-5">
-                  <button
-                    className="btn px-4"
-                    type="button"
-                    style={{ background: "#b46c14", color: "white" }}
-                  >
-                    See More
-                  </button>
-                </div>
+
                 <hr />
               </div>
             </div>
