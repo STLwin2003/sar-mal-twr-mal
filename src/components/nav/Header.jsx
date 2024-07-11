@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import BeforeLogin from "./BeforeLogin";
 import AfterLogin from "./AfterLogin";
 
@@ -29,7 +29,13 @@ const Header = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <NavLink to="/" className="navbar-brand ">
+          <NavLink
+            to="/"
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+            className="navbar-brand "
+          >
             <span className="brown fs-1 fw-bold dancing-script-main">
               SarMalTwrMal
             </span>
@@ -54,22 +60,46 @@ const Header = () => {
             <div className="offcanvas-body mx-auto">
               <ul className="navbar-nav mb-lg-0">
                 <li className="nav-item">
-                  <NavLink to="/home" className="nav-link me-3">
+                  <NavLink
+                    to="/home"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                    className="nav-link me-3"
+                  >
                     <span className="dark fs-6 fw-medium">Home</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/street_food_list" className="nav-link me-3">
+                  <NavLink
+                    to="/street_food_list"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                    className="nav-link me-3"
+                  >
                     <span className="dark fs-6 fw-medium">Street Food</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/restaurant_list" className="nav-link me-3">
+                  <NavLink
+                    to="/restaurant_list"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                    className="nav-link me-3"
+                  >
                     <span className="dark fs-6 fw-medium">Restaurants</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/place_list" className="nav-link me-3">
+                  <NavLink
+                    to="/place_list"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                    className="nav-link me-3"
+                  >
                     <span className="dark fs-6 fw-medium">Place</span>
                   </NavLink>
                 </li>
@@ -79,37 +109,16 @@ const Header = () => {
 
           <div className="text-end">
             <div className="d-flex position-relative">
-              <a
+              <Link
+                to="/search"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
                 className="fs-3 me-2 my-auto "
                 type="button"
-                data-bs-toggle="modal"
-                href="#search"
               >
                 <i className="fa-solid fa-magnifying-glass text-warning fs-3 me-2 my-auto "></i>
-              </a>
-              <div
-                className="modal fade"
-                id="search"
-                data-bs-backdrop="static"
-                data-bs-keyboard="false"
-                aria-labelledby="staticBackdropLabel"
-                aria-hidden="true"
-              >
-                <div className="modal-dialog">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <input type="text" placeholder="Search food or place" />
-                      <button
-                        type="button"
-                        className="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div className="modal-body"></div>
-                  </div>
-                </div>
-              </div>
+              </Link>
 
               {/* acc status section */}
               {AccountStatus()}

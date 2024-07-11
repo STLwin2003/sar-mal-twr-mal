@@ -22,7 +22,14 @@ const AfterLogin = () => {
 
         <ul className="dropdown-menu dropdown-menu-dark ">
           <li>
-            <Link to="/user_profile" className="dropdown-item" type="button">
+            <Link
+              to="/user_profile"
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+              className="dropdown-item"
+              type="button"
+            >
               Activity
             </Link>
           </li>

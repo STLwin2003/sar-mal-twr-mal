@@ -92,7 +92,13 @@ const login = () => {
                         </div>
 
                         <div className="d-flex justify-content-center mx-5">
-                          <Link to="/home" className="link-success">
+                          <Link
+                            to="/home"
+                            onClick={() => {
+                              window.scrollTo(0, 0);
+                            }}
+                            className="link-success"
+                          >
                             <p className="fs-6 fw-medium">Back to Home</p>
                           </Link>
                         </div>

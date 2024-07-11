@@ -21,7 +21,7 @@ const PlaceCard = () => {
         <div>
           <div className=" position-relative">
             <img
-              src="https://jayscotts.com/wp-content/uploads/2022/03/restaurant-patio-design-6-821x1024.jpg"
+              src="https://images.unsplash.com/photo-1430163393927-3dab9af7ea38?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D"
               className="rounded card-img-top shadow-lg"
               alt=""
             />

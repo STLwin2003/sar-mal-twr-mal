@@ -9,6 +9,7 @@ import Trending from "./index/Trending";
 import { usePosts } from "../context/postProvider";
 import Header from "./nav/Header";
 import Footer from "./nav/Footer";
+import RestaurantMenu from "./index/RestaurantMenu";
 
 const Index = () => {
   const { setPosts } = usePosts();
@@ -25,6 +26,7 @@ const Index = () => {
       <Slider />
       <Trending />
       <StreetFoodMenu />
+      <RestaurantMenu />
       <PlaceMenu />
       <AboutUs />
       <ContactUs />
