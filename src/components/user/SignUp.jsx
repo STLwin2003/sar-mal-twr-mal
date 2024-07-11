@@ -9,7 +9,7 @@ const signup = () => {
   }
   return (
     <div>
-      <div className="vh-100" style={{ background: "#eee" }}>
+      <div className="vh-100 bg-light-gray">
         <div className="container h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-lg-12 col-xl-11">
@@ -22,7 +22,7 @@ const signup = () => {
                       </p>
 
                       <form className="mx-1 mx-md-4">
-                        <div className="d-flex flex-row align-items-center mb-4">
+                        <div className="d-flex flex-row align-items-center mb-3">
                           <p className="fas fa-user fa-lg me-3 fa-fw brown"></p>
                           <div className="form-floating form-outline flex-fill mb-0">
                             <input
@@ -31,7 +31,7 @@ const signup = () => {
                               className="form-control"
                               placeholder="Name"
                             />
-                            <label for="floating name">Name</label>
+                            <label htmlFor="floating name">Name</label>
                           </div>
                         </div>
 
@@ -44,17 +44,17 @@ const signup = () => {
                               className="form-control"
                               placeholder="Email"
                             />
-                            <label for="floating email">Email</label>
+                            <label htmlFor="floating email">Email</label>
                           </div>
                         </div>
 
                         <div className="d-flex flex-row align-items-center mb-4">
                           <p className="fas fa-lock fa-lg me-3 fa-fw brown"></p>
-                          <div class="form-floating form-outline flex-fill mb-0">
+                          <div className="form-floating form-outline flex-fill mb-0">
                             <input
                               type={passwordShow ? "text" : "password"}
                               className="form-control"
-                              id="floatingPassword"
+                              id="floatingPassword1"
                               placeholder="Enter password"
                             />
 
@@ -65,17 +65,17 @@ const signup = () => {
                             >
                               {passwordShow ? "Hide" : "Show"}
                             </span>
-                            <label for="floatingPassword">Password</label>
+                            <label htmlFor="floatingPassword1">Password</label>
                           </div>
                         </div>
 
                         <div className="d-flex flex-row align-items-center mb-4">
                           <p className="fas fa-key fa-lg me-3 fa-fw brown"></p>
-                          <div class="form-floating form-outline flex-fill mb-0">
+                          <div className="form-floating form-outline flex-fill mb-0">
                             <input
                               type={passwordShow ? "text" : "password"}
                               className="form-control"
-                              id="floatingPassword"
+                              id="floatingPassword2"
                               placeholder="Enter password"
                             />
 
@@ -86,7 +86,7 @@ const signup = () => {
                             >
                               {passwordShow ? "Hide" : "Show"}
                             </span>
-                            <label for="floatingPassword">
+                            <label htmlFor="floatingPassword2">
                               Repeat Your Password
                             </label>
                           </div>
@@ -108,16 +108,20 @@ const signup = () => {
                             <p className="fs-6 fw-medium">Back to Home</p>
                           </Link>
                         </div>
-                        <a
-                          data-mdb-ripple-init
-                          class="btn-sm mx-3"
-                          style={{ color: "#b46c14" }}
-                          href="#!"
-                          role="button"
-                        >
-                          <i class="fa-solid fa-google me-2"></i>Continue with
-                          Google
-                        </a>
+                        <button className="btn btn-warning">
+                          <a
+                            data-mdb-ripple-init
+                            className="btn-sm  fs-5 text-dark"
+                            style={{
+                              textDecoration: "none ",
+                            }}
+                            href="#!"
+                            role="button"
+                          >
+                            <i className="fa-brands fa-google me-2"></i>Sign up
+                            with Google
+                          </a>
+                        </button>
                       </form>
                     </div>
                     <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">

@@ -10,7 +10,7 @@ const login = () => {
 
   return (
     <div>
-      <div className="vh-100 bg-light">
+      <div className="vh-100 bg-light-gray">
         <div className="container h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-lg-12 col-xl-11">
@@ -68,6 +68,23 @@ const login = () => {
                             Login
                           </button>
                         </div>
+                        <div className="d-flex justify-content-center my-3">
+                          <button className="btn btn-outline-warning border-2">
+                            <a
+                              data-mdb-ripple-init
+                              className="btn-sm  fs-5 text-dark"
+                              style={{
+                                textDecoration: "none ",
+                              }}
+                              href="#!"
+                              role="button"
+                            >
+                              <i className="fa-brands fa-google me-2"></i>
+                              Continue with Google
+                            </a>
+                          </button>
+                        </div>
+
                         <div className="d-flex justify-content-center mx-5">
                           <Link to="/home" className="link-success">
                             <p className="fs-6 fw-medium">Back to Home</p>
