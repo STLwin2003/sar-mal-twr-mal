@@ -41,7 +41,7 @@ const Header = () => {
             aria-labelledby="offcanvasRightLabel"
           >
             <div className="offcanvas-header">
-              <p class="offcanvas-title fs-2 fw-semibold dancing-script-main brown">
+              <p className="offcanvas-title fs-2 fw-semibold dancing-script-main brown">
                 SarMalTwrMal
               </p>
               <button
