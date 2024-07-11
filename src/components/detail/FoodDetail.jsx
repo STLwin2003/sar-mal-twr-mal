@@ -196,6 +196,18 @@ const Detail = () => {
           </div>
           {/* third row end */}
 
+          <div className="mb-3">
+            <div className="row">
+              <div className="col-2"></div>
+              <div className="col-8">
+                <div className="bg-dark py-5 ">
+                  <span className="text-light">map is here</span>
+                </div>
+              </div>
+              <div className="col-2"></div>
+            </div>
+          </div>
+
           {/* comment section start */}
 
           <div className="row mb-5">
