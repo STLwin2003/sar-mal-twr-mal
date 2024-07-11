@@ -64,6 +64,20 @@ const AddPost = () => {
                         placeholder="Enter address"
                       />
                     </div>
+                    <div className="mb-4 ">
+                      <div className="d-flex gap-3">
+                        <input
+                          type="text"
+                          className="form-control border"
+                          placeholder="Enter place Latitude"
+                        />
+                        <input
+                          type="text"
+                          className="form-control border"
+                          placeholder="Enter place Longitude"
+                        />
+                      </div>
+                    </div>
                     <div className="mb-4">
                       <input
                         type="number"
