@@ -20,6 +20,7 @@ import AdminFoodDetail from "./admin/Detail/FoodDetail.jsx";
 import AdminPlaceDetail from "./admin/Detail/PlaceDetail";
 import AddSlider from "./admin/action/AddSlider.jsx";
 import SliderList from "./admin/control/SliderList.jsx";
+import RestaurantList from "./list/RestaurantList.jsx";
 
 const CleanRoute = () => {
   return (
@@ -30,6 +31,7 @@ const CleanRoute = () => {
         <Route path="/" element={<Index />} />
         <Route path="/home" element={<Index />} />
         <Route path="/street_food_list" element={<StreetFoodList />} />
+        <Route path="/restaurant_list" element={<RestaurantList />} />
         <Route path="/place_list" element={<PlaceList />} />
         <Route path="/street_food/food_detail/:pid" element={<FoodDetail />} />
         <Route path="/coffee_shop/food_detail" element={<FoodDetail />} />
@@ -44,7 +46,6 @@ const CleanRoute = () => {
         <Route path="/admin/rating_list" element={<RatingList />} />
         <Route path="/admin/comment_list" element={<CommentList />} />
         <Route path="/admin/slider_list" element={<SliderList />} />
-
         <Route path="/admin/food_detail" element={<AdminFoodDetail />} />
         <Route path="/admin/place_detail" element={<AdminPlaceDetail />} />
         <Route path="/*" element={<Error />} />

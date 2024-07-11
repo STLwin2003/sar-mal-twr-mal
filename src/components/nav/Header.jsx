@@ -64,8 +64,8 @@ const Header = () => {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/coffee_shop_list" className="nav-link me-3">
-                    <span className="dark fs-6 fw-medium">Coffee Shop</span>
+                  <NavLink to="/restaurant_list" className="nav-link me-3">
+                    <span className="dark fs-6 fw-medium">Restaurants</span>
                   </NavLink>
                 </li>
                 <li className="nav-item">

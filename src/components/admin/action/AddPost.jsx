@@ -121,7 +121,12 @@ const AddPost = () => {
                         <ul className="dropdown-menu dropdown-menu-dark">
                           <li>
                             <a className="dropdown-item" href="#">
-                              Food
+                              Street Food
+                            </a>
+                          </li>
+                          <li>
+                            <a className="dropdown-item" href="#">
+                              Restaurant
                             </a>
                           </li>
                           <li>
