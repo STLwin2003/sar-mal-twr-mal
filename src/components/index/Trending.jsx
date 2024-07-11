@@ -1,8 +1,6 @@
 import React from "react";
-import CoffeeShopCard from "../card/CoffeeShopCard";
+import FoodCard from "../card/FoodCard";
 import PlaceCard from "../card/PlaceCard";
-import StreetFoodCard from "../card/StreetFoodCard";
-
 const Trending = () => {
   return (
     <div>
@@ -13,13 +11,13 @@ const Trending = () => {
         </p>
         <div className="row">
           <div className="col-sm-6 col-md-4 col-lg-4 mb-4">
-            <CoffeeShopCard />
+            <FoodCard />
           </div>
           <div className="col-sm-6 col-md-4 col-lg-4">
-            <StreetFoodCard />
+            <FoodCard />
           </div>
           <div className="col-sm-6 col-md-4 col-lg-4">
-            <StreetFoodCard />
+            <FoodCard />
           </div>
           <div className="col-sm-6 col-md-4 col-lg-4">
             <PlaceCard />

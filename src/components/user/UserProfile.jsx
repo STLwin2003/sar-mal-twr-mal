@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import StreetFoodCard from "../card/StreetFoodCard";
+import FoodCard from "../card/FoodCard";
 import PlaceCard from "../card/PlaceCard";
 import Header from "../nav/Header";
 import Footer from "../nav/Footer";
@@ -158,7 +158,7 @@ const UserProfile = () => {
             </p>
             <div className="row my-3 ">
               <div className="col-sm-6 col-md-4 col-lg-2 col-xl-2 ">
-                <StreetFoodCard />
+                <FoodCard />
               </div>
               <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
                 <div className="">
@@ -260,7 +260,7 @@ const UserProfile = () => {
               <div className="row">
                 <div className="row my-3 ">
                   <div className="col-sm-6 col-md-4 col-lg-3 ">
-                    <StreetFoodCard />
+                    <FoodCard />
                   </div>
                   <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
                     <div className="">
@@ -282,7 +282,7 @@ const UserProfile = () => {
                 <hr />
                 <div className="row my-3 ">
                   <div className="col-sm-6 col-md-4 col-lg-3 ">
-                    <StreetFoodCard />
+                    <FoodCard />
                   </div>
                   <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
                     <div className="">
@@ -304,7 +304,7 @@ const UserProfile = () => {
                 <hr />
                 <div className="row my-3 ">
                   <div className="col-sm-6 col-md-4 col-lg-3 ">
-                    <StreetFoodCard />
+                    <FoodCard />
                   </div>
                   <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
                     <div className="">
@@ -326,7 +326,7 @@ const UserProfile = () => {
                 <hr />
                 <div className="row my-3 ">
                   <div className="col-sm-6 col-md-4 col-lg-3 ">
-                    <StreetFoodCard />
+                    <FoodCard />
                   </div>
                   <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
                     <div className="">

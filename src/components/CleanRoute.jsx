@@ -4,7 +4,6 @@ import Login from "./user/Login.jsx";
 import SignUp from "./user/SignUp.jsx";
 import StreetFoodList from "./list/StreetFoodList";
 import PlaceList from "./list/PlaceList";
-import CoffeeShopList from "./list/CoffeeShopList";
 import FoodDetail from "./detail/FoodDetail.jsx";
 import PlaceDetail from "./detail/PlaceDetail.jsx";
 import UserProfile from "./user/UserProfile.jsx";
@@ -31,7 +30,6 @@ const CleanRoute = () => {
         <Route path="/" element={<Index />} />
         <Route path="/home" element={<Index />} />
         <Route path="/street_food_list" element={<StreetFoodList />} />
-        <Route path="/coffee_shop_list" element={<CoffeeShopList />} />
         <Route path="/place_list" element={<PlaceList />} />
         <Route path="/street_food/food_detail/:pid" element={<FoodDetail />} />
         <Route path="/coffee_shop/food_detail" element={<FoodDetail />} />

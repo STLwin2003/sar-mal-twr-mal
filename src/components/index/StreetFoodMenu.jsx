@@ -1,5 +1,5 @@
 import React from "react";
-import StreetFoodCard from "../card/StreetFoodCard";
+import FoodCard from "../card/FoodCard";
 import { Link } from "react-router-dom";
 import { usePosts } from "../../context/postProvider";
 
@@ -15,7 +15,7 @@ const StreetFoodMenu = () => {
           {posts.map((post) => {
             return (
               <div key={post._id} className="col-sm-6 col-md-4 col-lg-3">
-                <StreetFoodCard
+                <FoodCard
                   pid={post._id}
                   image={post.image[0]}
                   description={post.title}

@@ -14,6 +14,9 @@ const PlaceCard = () => {
       <Link
         to="/place/place_detail"
         style={{ textDecoration: "none", color: "inherit" }}
+        onClick={() => {
+          window.scrollTo(0, 0);
+        }}
       >
         <div>
           <div className=" position-relative">
