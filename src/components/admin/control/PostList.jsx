@@ -70,6 +70,21 @@ const PostList = () => {
                         <ul className="dropdown-menu dropdown-menu-dark">
                           <li>
                             <a className="dropdown-item" href="#">
+                              Street Food
+                            </a>
+                          </li>
+                          <li>
+                            <a className="dropdown-item" href="#">
+                              Restaurant
+                            </a>
+                          </li>
+                          <li>
+                            <a className="dropdown-item" href="#">
+                              Place
+                            </a>
+                          </li>
+                          <li>
+                            <a className="dropdown-item" href="#">
                               A to Z
                             </a>
                           </li>
