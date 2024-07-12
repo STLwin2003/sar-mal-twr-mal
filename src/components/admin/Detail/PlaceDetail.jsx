@@ -42,7 +42,15 @@ const PlaceDetail = () => {
             </nav>
             <section>
               <div className="container">
-                <div className="row mb-4"></div>
+                <div className="row">
+                  <p className="fs-5 fw-semibold">
+                    Date : <span>12/7/2024</span>
+                  </p>
+
+                  <p className="fs-5 fw-semibold">
+                    Time : <span>10:00 pm</span>
+                  </p>
+                </div>
                 <div className="row my-3">
                   <div className="col-lg-6">
                     <p className="fs-2 fw-bold brown noto-serif-display-subtitle">
@@ -61,12 +69,52 @@ const PlaceDetail = () => {
                       <span className="fs-4 fw-semibold">9.4</span>
                     </p>
                     <div className="mb-2">
-                      <button className="btn-brown">
-                        <span className="fs-5 ps-2">Add Favorite</span>
-                        <i class="fa-solid fa-heart fs-4 mx-3"></i>
+                      <Link to="/" className="btn btn-warning me-2">
+                        <span className="fs-5 px-2">Update</span>
+                        <i className="fa-regular fa-pen-to-square"></i>
+                      </Link>
+                      <button
+                        className="btn btn-danger"
+                        data-bs-toggle="modal"
+                        data-bs-target="#delete"
+                      >
+                        <span className="fs-5 px-2">Delete</span>
+                        <i className="fa-solid fa-trash"></i>
                       </button>
+
+                      <div
+                        class="modal fade"
+                        id="delete"
+                        data-bs-backdrop="static"
+                        data-bs-keyboard="false"
+                        tabindex="-1"
+                        aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-body">
+                              <p className="fs-5 fw-semibold">
+                                Do you want to delete?
+                              </p>
+                            </div>
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-success"
+                                data-bs-dismiss="modal"
+                              >
+                                Cancel
+                              </button>
+                              <button type="button" class="btn btn-warning">
+                                Yes
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <p className="fs-5 roboto-regular">
+                    <p className="fs-6 roboto-regular">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Quasi sequi id autem perspiciatis fugit ipsum cumque dolor
                       nulla, ut officiis temporibus laborum ea tempore!
@@ -88,7 +136,7 @@ const PlaceDetail = () => {
                       alt=""
                       className=" w-100 rounded-3 "
                     />
-                    <p className="fs-5 roboto-regular my-2">
+                    <p className="fs-6 roboto-regular my-2">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Nihil, odio alias asperiores repudiandae perspiciatis,
                       dolore enim ab dolor impedit veritatis a incidunt quaerat.
@@ -103,71 +151,31 @@ const PlaceDetail = () => {
                     />
                   </div>
                 </div>
+
+                <div>
+                  <section style={{ height: "400px" }} className="bg-dark">
+                    <p className="text-white">map area</p>
+                  </section>
+                </div>
                 {/* comment section start */}
                 <div className="row mb-5">
                   <section className="my-3">
                     <div className="col-2">
-                      <button className="btn btn-warning rounded-circle ">
-                        <i class="fa-regular fa-user"></i>
+                      <button className="btn ">
+                        <img
+                          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                          alt=""
+                          className="rounded-circle"
+                          width={"50px"}
+                        />
                       </button>
                       <span className="fs-6 roboto-regular mx-2">User</span>
                     </div>
                     <div className="col-8">
-                      <div className="border bg-light-gray rounded-5">
-                        <p className="fs-5 roboto-regular p-3">
+                      <div className="border bg-light-gray rounded-5 ms-5">
+                        <p className="fs-6 roboto-regular p-3">
                           Lorem ipsum dolor sit amet consectetur adipisicing
                           elit. Modi,
-                        </p>
-                      </div>
-                    </div>
-                  </section>
-                  <section className="my-3">
-                    <div className="col-2">
-                      <button className="btn btn-warning rounded-circle ">
-                        <i class="fa-regular fa-user"></i>
-                      </button>
-                      <span className="fs-6 roboto-regular mx-2">User</span>
-                    </div>
-                    <div className="col-8">
-                      <div className="border bg-light-gray rounded-5">
-                        <p className="fs-5 roboto-regular p-3">
-                          Lorem ipsum dolor sit amet consectetur
-                        </p>
-                      </div>
-                    </div>
-                  </section>
-                  <section className="my-3">
-                    <div className="col-2">
-                      <button className="btn btn-warning rounded-circle ">
-                        <i class="fa-regular fa-user"></i>
-                      </button>
-                      <span className="fs-6 roboto-regular mx-2">User</span>
-                    </div>
-                    <div className="col-8">
-                      <div className="border bg-light-gray rounded-5">
-                        <p className="fs-5 roboto-regular p-3">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Modi, quam ex ut id ipsam facere recusandae est
-                          nihil fugiat laboriosam maxime. Explicabo, nisi?
-                          Aliquid vel perferendis illum deserunt nemo
-                          repellendus!
-                        </p>
-                      </div>
-                    </div>
-                  </section>
-                  <section className="mt-3">
-                    <div className="col-2">
-                      <button className="btn btn-warning rounded-circle ">
-                        <i class="fa-regular fa-user"></i>
-                      </button>
-                      <span className="fs-6 roboto-regular mx-2">User</span>
-                    </div>
-                    <div className="col-8">
-                      <div className="border bg-light-gray rounded-5">
-                        <p className="fs-5 roboto-regular p-3">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Modi, quam ex ut id ipsam facere recusandae est
-                          nihil fugiat
                         </p>
                       </div>
                     </div>
