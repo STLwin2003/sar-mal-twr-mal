@@ -1,10 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useState } from "react";
 import AdminFoodCard from "../card/AdminFoodCard";
 import { Link } from "react-router-dom";
 import Nav from "../dashboard/Nav";
 
 const Event = () => {
+  let [add, setAdd] = useState(false);
+
+  let Add = () => {
+    setAdd(!add);
+  };
+
   return (
     <div>
       <div className="container-fluid">
@@ -43,8 +49,6 @@ const Event = () => {
             </nav>
             <section>
               <div className="container-fluid">
-                <h1>Add Event from Admin</h1>
-                <hr />
                 <div className="row my-4 bg-light-gray p-3">
                   <div className="col-5">
                     <input
@@ -63,88 +67,29 @@ const Event = () => {
                   </div>
                 </div>
 
-                <div className="row bg-light-gray rounded">
-                  <div className="col-4">
-                    <AdminFoodCard />
-                  </div>
-                  <div className="col-4">
-                    <AdminFoodCard />
-                  </div>
-                  <div className="col-4">
-                    <AdminFoodCard />
-                  </div>
-                  <div className="col-4">
-                    <AdminFoodCard />
-                  </div>
-                  <div className="col-4">
-                    <AdminFoodCard />
-                  </div>
-                  <div className="col-4">
-                    <AdminFoodCard />
-                  </div>
-                </div>
-                <hr />
-                {/* post list here */}
-                <div>
-                  <h1>Post List here</h1>
+                <div
+                  data-bs-spy="scroll"
+                  data-bs-smooth-scroll="true"
+                  class=" overflow-scroll"
+                  style={{ height: "300px" }}
+                  tabindex="0"
+                >
                   <div className="row">
-                    <div className="col-4">
-                      <AdminFoodCard />
-                      <button className="btn btn-warning mb-2">
-                        Add Event
-                      </button>
+                    <div className="col-3">
+                      <div className="card p-1">
+                        <AdminFoodCard />
+                        <div>
+                          <button
+                            className={
+                              add ? "btn btn-warning" : "btn btn-success"
+                            }
+                            onClick={Add}
+                          >
+                            Add
+                          </button>
+                        </div>
+                      </div>
                     </div>
-                    <div className="col-4">
-                      <AdminFoodCard />
-                      <button className="btn btn-warning mb-2">
-                        Add Event
-                      </button>
-                    </div>
-                    <div className="col-4">
-                      <AdminFoodCard />
-                      <button className="btn btn-warning mb-2">
-                        Add Event
-                      </button>
-                    </div>
-                    <hr />
-                    <div className="col-4">
-                      <AdminFoodCard />
-                      <button className="btn btn-warning mb-2">
-                        Add Event
-                      </button>
-                    </div>
-                    <div className="col-4">
-                      <AdminFoodCard />
-                      <button className="btn btn-warning mb-2">
-                        Add Event
-                      </button>
-                    </div>
-                    <div className="col-4">
-                      <AdminFoodCard />
-                      <button className="btn btn-warning mb-2">
-                        Add Event
-                      </button>
-                    </div>
-                    <hr />
-                    <div className="col-4">
-                      <AdminFoodCard />
-                      <button className="btn btn-warning mb-2">
-                        Add Event
-                      </button>
-                    </div>
-                    <div className="col-4">
-                      <AdminFoodCard />
-                      <button className="btn btn-warning mb-2">
-                        Add Event
-                      </button>
-                    </div>
-                    <div className="col-4">
-                      <AdminFoodCard />
-                      <button className="btn btn-warning mb-2">
-                        Add Event
-                      </button>
-                    </div>
-                    <hr />
                   </div>
                 </div>
               </div>
