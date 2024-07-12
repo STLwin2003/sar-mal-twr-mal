@@ -22,6 +22,7 @@ const ProfileItem = ({ e, id }) => {
         <td class="text-center">
           <div className="my-auto">
             <i
+              type="button"
               className="fa-solid fa-trash-can "
               data-bs-toggle="modal"
               data-bs-target="#delete"

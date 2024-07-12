@@ -26,40 +26,42 @@ const RatingItem = ({ e, id }) => {
           </div>
         </div>
         <div className=" col-4 my-auto">
-          <div className="d-flex">
-            <AdminFoodCard />
-            <div className="my-auto">
-              <i
-                className="fa-solid fa-trash-can "
-                data-bs-toggle="modal"
-                data-bs-target="#delete"
-              ></i>
+          <p className="fs-5 fw-semibold roboto-regular text-warning-emphasis">
+            Post Title here and here
+          </p>
+        </div>
+        <div className="col-2 my-auto">
+          <div className="float-end">
+            <i
+              className="fa-solid fa-trash-can "
+              data-bs-toggle="modal"
+              data-bs-target="#delete"
+            ></i>
 
-              <div
-                class="modal fade"
-                id="delete"
-                data-bs-backdrop="static"
-                data-bs-keyboard="false"
-                tabindex="-1"
-                aria-labelledby="staticBackdropLabel"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <p className="fs-5 fw-semibold">Do you want to delete?</p>
-                    <div class="modal-body"></div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Cancel
-                      </button>
-                      <button type="button" class="btn btn-primary">
-                        Yes
-                      </button>
-                    </div>
+            <div
+              class="modal fade"
+              id="delete"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <p className="fs-5 fw-semibold">Do you want to delete?</p>
+                  <div class="modal-body"></div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Cancel
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                      Yes
+                    </button>
                   </div>
                 </div>
               </div>

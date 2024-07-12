@@ -3,6 +3,7 @@ import React from "react";
 import AdminFoodCard from "../card/AdminFoodCard";
 import { Link } from "react-router-dom";
 import Nav from "../dashboard/Nav";
+import Update from "../Detail/Update";
 
 const PostList = () => {
   return (
@@ -100,23 +101,90 @@ const PostList = () => {
                 </div>
 
                 <div className="row">
-                  <div className="col-4">
-                    <AdminFoodCard />
-                  </div>
-                  <div className="col-4">
-                    <AdminFoodCard />
-                  </div>
-                  <div className="col-4">
-                    <AdminFoodCard />
-                  </div>
-                  <div className="col-4">
-                    <AdminFoodCard />
-                  </div>
-                  <div className="col-4">
-                    <AdminFoodCard />
-                  </div>
-                  <div className="col-4">
-                    <AdminFoodCard />
+                  <div className="col-3 mb-1 ">
+                    <div className="card p-1 bg-secondary-subtle">
+                      <AdminFoodCard />
+                      <div className="d-flex justify-content-around">
+                        <button
+                          className="btn btn-warning"
+                          data-bs-toggle="modal"
+                          data-bs-target="#update"
+                        >
+                          Update
+                        </button>
+                        {/* <Update /> */}
+
+                        <div
+                          class="modal fade "
+                          id="update"
+                          aria-hidden="true"
+                          aria-labelledby="exampleModalToggleLabel"
+                          tabindex="-1"
+                        >
+                          <div className="modal-dialog  modal-fullscreen">
+                            <div className="modal-content">
+                              <div className="modal-header">
+                                <h1
+                                  className="modal-title fs-5"
+                                  id="exampleModalToggleLabel"
+                                >
+                                  Update
+                                </h1>
+                                <button
+                                  type="button"
+                                  className="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                ></button>
+                              </div>
+                              <div className="modal-body">
+                                <Update />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button
+                          className="btn btn-danger"
+                          data-bs-toggle="modal"
+                          data-bs-target="#delete"
+                        >
+                          Delete
+                        </button>
+
+                        <div
+                          class="modal fade"
+                          id="delete"
+                          data-bs-backdrop="static"
+                          data-bs-keyboard="false"
+                          tabindex="-1"
+                          aria-labelledby="staticBackdropLabel"
+                          aria-hidden="true"
+                        >
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-body">
+                                <p className="fs-5 fw-semibold">
+                                  Do you want to delete?
+                                </p>
+                              </div>
+                              <div class="modal-footer">
+                                <button
+                                  type="button"
+                                  class="btn btn-success"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Cancel
+                                </button>
+                                <button type="button" class="btn btn-warning">
+                                  Yes
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
