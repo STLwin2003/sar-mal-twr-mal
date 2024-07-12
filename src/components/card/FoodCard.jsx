@@ -10,20 +10,22 @@ const StreetFoodCard = ({ pid, image, description, rating }) => {
   };
   return (
     <div className="mb-4">
-      <Link
-        to={`/street_food/food_detail/${pid}`}
-        style={{ textDecoration: "none", color: "inherit" }}
-        onClick={() => {
-          window.scrollTo(0, 0);
-        }}
-      >
-        {/* "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" */}
+      <div>
         <div class="position-relative">
-          <img
-            src={image}
-            className="card-img-top rounded shadow-lg"
-            alt="img"
-          />
+          <Link
+            to={`/street_food/food_detail/${pid}`}
+            style={{ textDecoration: "none", color: "inherit" }}
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+          >
+            <img
+              src={image}
+              className="card-img-top rounded shadow-lg"
+              alt="img"
+            />
+          </Link>
+
           <Link
             onClick={favorite}
             className={`fa-solid fa-heart fs-3  position-absolute top-0 end-0 mt-2 me-2 ${
@@ -41,12 +43,20 @@ const StreetFoodCard = ({ pid, image, description, rating }) => {
                 {rating}
               </span>
             </div>
-            <span className=" fs-5 roboto-regular text-decoration-none">
-              {description}
-            </span>
+            <Link
+              to={`/street_food/food_detail/${pid}`}
+              style={{ textDecoration: "none", color: "inherit" }}
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+            >
+              <span className=" fs-5 roboto-regular text-decoration-none">
+                {description}
+              </span>
+            </Link>
           </p>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };
