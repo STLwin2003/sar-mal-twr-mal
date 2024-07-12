@@ -1,27 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../nav/Header";
 import Footer from "../nav/Footer";
 
 const PlaceDetail = () => {
+  let [favorite, setFavorite] = useState(false);
+
+  let fav = () => {
+    setFavorite(!favorite);
+  };
+
+  let ratingTxt = ["Very Bad", "Bad", "Good", "Great", "Very Good"];
+
+  let [rate, setRate] = useState();
+
+  let rating = (e) => {
+    console.log(ratingTxt[e]);
+
+    setRate(ratingTxt[e]);
+  };
+
   return (
     <div>
       <Header />
       <div className="container">
         <div className="row mb-4">
           <nav aria-label="breadcrumb ">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item">
                 <Link to="/">
                   <span className="fs-5">Home</span>
                 </Link>
               </li>
-              <li class="breadcrumb-item">
+              <li className="breadcrumb-item">
                 <Link to="/place_list">
                   <span className="fs-5">Place List</span>
                 </Link>
               </li>
-              <li class="breadcrumb-item active" aria-current="page">
+              <li className="breadcrumb-item active" aria-current="page">
                 <span className="fs-5">Detail</span>
               </li>
             </ol>
@@ -33,7 +49,7 @@ const PlaceDetail = () => {
               Pathein Park
             </p>
             <p>
-              <i class="fa-solid fa-location-dot fs-4 me-4"></i>{" "}
+              <i className="fa-solid fa-location-dot fs-4 me-4"></i>{" "}
               <span className="fs-5">Pathein, 10011</span>
             </p>
             <p>
@@ -45,9 +61,17 @@ const PlaceDetail = () => {
               <span className="fs-4 fw-semibold">9.4</span>
             </p>
             <div className="mb-2">
-              <button className="btn-brown">
-                <span className="fs-5 ps-2">Add Favorite</span>
-                <i class="fa-solid fa-heart fs-4 mx-3"></i>
+              <button className="btn btn-outline-warning" onClick={fav}>
+                <span className="fs-5 ps-2">
+                  {favorite ? "Favorite" : "Add Favorite"}
+                </span>
+                <i
+                  className={
+                    favorite
+                      ? "fa-solid fa-heart fs-4 mx-3"
+                      : "fa-solid fa-heart fs-4 mx-3 text-dark"
+                  }
+                ></i>
               </button>
             </div>
             <div className="mb-2">
@@ -57,39 +81,72 @@ const PlaceDetail = () => {
                 data-bs-target="#rating"
               >
                 <span className="fs-5 ps-2">Give Rating</span>
-                <i class="fa-solid fa-star mx-3 fs-4"></i>
+                <i className="fa-solid fa-star mx-3 fs-4"></i>
               </button>
               <div
-                class="modal fade"
+                className="modal fade modal-box"
                 id="rating"
-                tabindex="-1"
+                tabIndex="-1"
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
               >
-                <div class="modal-dialog modal-sm modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="exampleModalLabel">
+                <div className="modal-dialog modal-sm  modal-dialog-centered">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h1 className="modal-title fs-5" id="exampleModalLabel">
                         Your Rating
                       </h1>
                       <button
                         type="button"
-                        class="btn-close"
+                        className="btn-close"
                         data-bs-dismiss="modal"
                         aria-label="Close"
                       ></button>
                     </div>
-                    <div class="modal-body">
+                    <div className="modal-body mx-auto">
                       <div>
-                        <i class="fa-solid fa-star me-2 fs-1"></i>
-                        <i class="fa-solid fa-star me-2 fs-1"></i>
-                        <i class="fa-solid fa-star me-2 fs-1"></i>
-                        <i class="fa-solid fa-star me-2 fs-1"></i>
-                        <i class="fa-solid fa-star me-2 fs-1"></i>
+                        <i
+                          className={
+                            rate === "Very Bad"
+                              ? "fa-solid fa-star me-2 fs-1 text-warning "
+                              : "fa-solid fa-star me-2 fs-1 text-dark"
+                          }
+                          onClick={() => rating(0)}
+                        ></i>
+                        <i
+                          className={
+                            rate === "Bad"
+                              ? "fa-solid fa-star me-2 fs-1 text-warning"
+                              : "fa-solid fa-star me-2 fs-1 text-dark"
+                          }
+                          onClick={() => rating(1)}
+                        ></i>
+                        <i
+                          className={
+                            rate === "Good"
+                              ? "fa-solid fa-star me-2 fs-1 text-warning"
+                              : "fa-solid fa-star me-2 fs-1 text-dark"
+                          }
+                          onClick={() => rating(2)}
+                        ></i>
+                        <i
+                          className={
+                            rate === "Great"
+                              ? "fa-solid fa-star me-2 fs-1 text-warning"
+                              : "fa-solid fa-star me-2 fs-1 text-dark"
+                          }
+                          onClick={() => rating(3)}
+                        ></i>
+                        <i
+                          className={
+                            rate === "Very Good"
+                              ? "fa-solid fa-star me-2 fs-1 text-warning"
+                              : "fa-solid fa-star me-2 fs-1 text-dark"
+                          }
+                          onClick={() => rating(4)}
+                        ></i>
                       </div>
-                      <p className="text-center fw-bold dark mt-2">
-                        Very Bad,Bad,Good,Great,Very Good
-                      </p>
+                      <p className="text-center fw-bold dark mt-2">{rate}</p>
                     </div>
                   </div>
                 </div>
