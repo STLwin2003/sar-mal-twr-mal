@@ -35,7 +35,7 @@ const PlaceCard = () => {
           </div>
           <div className="card-body mt-2">
             <div className="">
-              <i class="fa-solid fa-star fs-5 text-warning"></i>
+              <i className="fa-solid fa-star fs-5 text-warning"></i>
               <span className="fs-5 fw-semibold  roboto-regular ms-2">9.4</span>
             </div>
             <span className="fs-5 mt-2 fw-medium roboto-regular">

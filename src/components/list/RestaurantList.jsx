@@ -17,40 +17,40 @@ const RestaurantList = () => {
         {/* card area start */}
 
         <div className="row">
-          <div className="col-sm-6 col-md-4 col-lg-3">
+          <div className="col-6 col-md-4 col-lg-3">
             <FoodCard />
           </div>
-          <div className="col-sm-6 col-md-4 col-lg-3">
+          <div className="col-6 col-md-4 col-lg-3">
             <FoodCard />
           </div>
-          <div className="col-sm-6 col-md-4 col-lg-3">
+          <div className="col-6 col-md-4 col-lg-3">
             <FoodCard />
           </div>
-          <div className="col-sm-6 col-md-4 col-lg-3">
+          <div className="col-6 col-md-4 col-lg-3">
             <FoodCard />
           </div>
-          <div className="col-sm-6 col-md-4 col-lg-3">
+          <div className="col-6 col-md-4 col-lg-3">
             <FoodCard />
           </div>
-          <div className="col-sm-6 col-md-4 col-lg-3">
+          <div className="col-6 col-md-4 col-lg-3">
             <FoodCard />
           </div>
-          <div className="col-sm-6 col-md-4 col-lg-3">
+          <div className="col-6 col-md-4 col-lg-3">
             <FoodCard />
           </div>
-          <div className="col-sm-6 col-md-4 col-lg-3">
+          <div className="col-6 col-md-4 col-lg-3">
             <FoodCard />
           </div>
-          <div className="col-sm-6 col-md-4 col-lg-3">
+          <div className="col-6 col-md-4 col-lg-3">
             <FoodCard />
           </div>
-          <div className="col-sm-6 col-md-4 col-lg-3">
+          <div className="col-6 col-md-4 col-lg-3">
             <FoodCard />
           </div>
-          <div className="col-sm-6 col-md-4 col-lg-3">
+          <div className="col-6 col-md-4 col-lg-3">
             <FoodCard />
           </div>
-          <div className="col-sm-6 col-md-4 col-lg-3">
+          <div className="col-6 col-md-4 col-lg-3">
             <FoodCard />
           </div>
         </div>
