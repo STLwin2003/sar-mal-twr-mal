@@ -1,6 +1,47 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useUser } from "../../context/UserProvider";
+import { useNavigate } from "react-router";
 
 const AdminRegister = () => {
+  const { setUser } = useUser();
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const keyRef = useRef();
+  const navigate = useNavigate();
+  const adminRegister = async () => {
+    const name = nameRef.current.value;
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    const key = keyRef.current.value;
+    if (key === process.env.REACT_APP_ADMIN_KEY) {
+      const user = await fetch(
+        `${process.env.REACT_APP_API_URL}/users/register?admin=${key}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            password,
+            image: "",
+          }),
+        }
+      );
+      const result = await user.json();
+      if (user.ok) {
+        setUser(result.resource);
+        navigate("/login");
+      } else {
+        alert(result.resource);
+      }
+    } else {
+      alert("key is not equal!");
+    }
+  };
   return (
     <div>
       <section className="vh-100 bg-light-gray">
@@ -17,6 +58,7 @@ const AdminRegister = () => {
                     <form>
                       <div data-mdb-input-init className="form-outline mb-2">
                         <input
+                          ref={nameRef}
                           type="text"
                           id="name"
                           className="form-control form-control-lg"
@@ -31,6 +73,7 @@ const AdminRegister = () => {
 
                       <div data-mdb-input-init className="form-outline mb-2">
                         <input
+                          ref={emailRef}
                           type="email"
                           id="mail"
                           className="form-control form-control-lg"
@@ -45,6 +88,7 @@ const AdminRegister = () => {
 
                       <div data-mdb-input-init className="form-outline mb-2">
                         <input
+                          ref={passwordRef}
                           type="password"
                           id="password"
                           className="form-control form-control-lg"
@@ -56,9 +100,24 @@ const AdminRegister = () => {
                           Password
                         </label>
                       </div>
+                      <div data-mdb-input-init className="form-outline mb-2">
+                        <input
+                          ref={keyRef}
+                          type="text"
+                          id="password"
+                          className="form-control form-control-lg"
+                        />
+                        <label
+                          className="form-label roboto-regular"
+                          htmlFor="password"
+                        >
+                          Key
+                        </label>
+                      </div>
 
                       <div className="d-flex justify-content-center">
                         <button
+                          onClick={adminRegister}
                           type="button"
                           data-mdb-button-init
                           data-mdb-ripple-init
