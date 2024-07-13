@@ -6,7 +6,7 @@ import PlaceMenu from "./index/PlaceMenu";
 import ContactUs from "./index/ContactUs";
 import AboutUs from "./index/AboutUs";
 import Trending from "./index/Trending";
-import { usePosts } from "../context/postProvider";
+import { usePosts } from "../context/PostProvider";
 import Header from "./nav/Header";
 import Footer from "./nav/Footer";
 import RestaurantMenu from "./index/RestaurantMenu";

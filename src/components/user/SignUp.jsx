@@ -1,13 +1,102 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useGoogleLogin } from "@react-oauth/google";
 import signupImg from "../../assets/img/welcome.svg";
+import { useUser } from "../../context/UserProvider";
 
 const signup = () => {
   let [passwordShow, setPasswordShow] = useState(false);
+  const navigate = useNavigate();
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const { setUser } = useUser();
   function passwordShowHide() {
     setPasswordShow(!passwordShow);
   }
+  const register = async (name, email, password, image, path) => {
+    const user = await fetch(
+      `${process.env.REACT_APP_API_URL}/users/register`,
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+          image,
+        }),
+      }
+    );
+    if (user.ok) {
+      navigate(path);
+      return { status: true, data: user };
+    } else {
+      return { status: false, message: "already user" };
+    }
+  };
+  const GoogleLogin = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      try {
+        const res = await fetch(
+          "https://www.googleapis.com/oauth2/v3/userinfo",
+          {
+            headers: {
+              Authorization: `${tokenResponse.token_type} ${tokenResponse.access_token}`,
+            },
+          }
+        );
+        const { name, email, sub, picture } = await res.json();
+        const user = await register(name, email, sub, picture, "/");
+        if (user.status) {
+          const { resource } = await user.json();
+          setUser(resource);
+        } else {
+          const res = await fetch(
+            `${process.env.REACT_APP_API_URL}/users/login`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: JSON.stringify({ email, password: sub }),
+            }
+          );
+          const { token } = await res.json();
+          localStorage.setItem("token", token);
+          const user = await fetch(
+            `${process.env.REACT_APP_API_URL}/users/verify`,
+            {
+              method: "GET",
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          const { data } = await user.json();
+          setUser(data.user);
+          navigate("/");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  });
+
+  const createAccount = async () => {
+    const name = nameRef.current.value;
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    const result = await register(name, email, password, "", "/login");
+    if (!result.status) {
+      alert(result.message);
+    }
+  };
   return (
     <div>
       <div className="vh-100 bg-light-gray">
@@ -27,6 +116,7 @@ const signup = () => {
                           <p className="fas fa-user fa-lg me-3 fa-fw text-warning"></p>
                           <div className="form-floating form-outline flex-fill mb-0">
                             <input
+                              ref={nameRef}
                               type="name"
                               id="floatingname"
                               className="form-control"
@@ -40,6 +130,7 @@ const signup = () => {
                           <p className="fas fa-envelope fa-lg me-3 fa-fw text-warning"></p>
                           <div className="form-floating form-outline flex-fill mb-0">
                             <input
+                              ref={emailRef}
                               type="email"
                               id="floatingemail"
                               className="form-control"
@@ -53,6 +144,7 @@ const signup = () => {
                           <p className="fas fa-lock fa-lg me-3 fa-fw text-warning"></p>
                           <div className="form-floating form-outline flex-fill mb-0">
                             <input
+                              ref={passwordRef}
                               type={passwordShow ? "text" : "password"}
                               className="form-control"
                               id="floatingPassword1"
@@ -95,6 +187,7 @@ const signup = () => {
 
                         <div className="d-flex justify-content-center mb-3">
                           <button
+                            onClick={createAccount}
                             type="button"
                             data-mdb-button-init
                             data-mdb-ripple-init
@@ -115,7 +208,10 @@ const signup = () => {
                           </Link>
                         </div>
                         <div className="d-flex justify-content-center">
-                          <button className="btn btn-warning">
+                          <button
+                            onClick={GoogleLogin}
+                            className="btn btn-warning"
+                          >
                             <a
                               data-mdb-ripple-init
                               className="btn-sm  fs-5 text-dark"

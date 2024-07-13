@@ -1,13 +1,74 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useGoogleLogin } from "@react-oauth/google";
 import loginImg from "../../assets/img/login.svg";
+import { useUser } from "../../context/UserProvider";
 
 const login = () => {
   let [passwordShow, setPasswordShow] = useState(false);
+  const navigate = useNavigate();
+  const { setUser } = useUser();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
   function passwordShowHide() {
     setPasswordShow(!passwordShow);
   }
+
+  const login = async (email, password) => {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/users/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+    const result = await res.json();
+    if (res.ok) {
+      localStorage.setItem("token", result.token);
+      const user = await fetch(
+        `${process.env.REACT_APP_API_URL}/users/verify`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${result.token}`,
+          },
+        }
+      );
+      const { data } = await user.json();
+      setUser(data.user);
+      navigate("/");
+    } else {
+      alert(result.message);
+    }
+  };
+
+  const loginGoogle = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      try {
+        const res = await fetch(
+          "https://www.googleapis.com/oauth2/v3/userinfo",
+          {
+            headers: {
+              Authorization: `${tokenResponse.token_type} ${tokenResponse.access_token}`,
+            },
+          }
+        );
+        const { email, sub } = await res.json();
+        login(email, sub);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  });
+
+  const loginAccount = () => {
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    login(email, password);
+  };
 
   return (
     <div>
@@ -27,7 +88,10 @@ const login = () => {
 
                       <form className="mx-1 mx-md-4">
                         <div className="d-flex justify-content-center justify-content-lg-end my-3 ">
-                          <button className="btn btn-outline-warning border-2 px-4">
+                          <button
+                            onClick={loginGoogle}
+                            className="btn btn-outline-warning border-2 px-4"
+                          >
                             <a
                               data-mdb-ripple-init
                               className="btn-sm  fs-5 text-dark"
@@ -51,6 +115,7 @@ const login = () => {
                           <p className="fas fa-envelope fa-lg me-3 fa-fw text-warning"></p>
                           <div className="form-floating form-outline flex-fill mb-0">
                             <input
+                              ref={emailRef}
                               type="email"
                               id="floatingemail"
                               className="form-control"
@@ -64,6 +129,7 @@ const login = () => {
                           <p className="fas fa-lock fa-lg me-3 fa-fw text-warning"></p>
                           <div className="form-floating form-outline flex-fill mb-0 position-relative">
                             <input
+                              ref={passwordRef}
                               type={passwordShow ? "text" : "password"}
                               className="form-control"
                               id="floatingPassword"
@@ -84,6 +150,7 @@ const login = () => {
 
                         <div className="d-flex justify-content-center mx-5 mb-2 ">
                           <button
+                            onClick={loginAccount}
                             className=" btn-warning btn btn-rounded px-5 fs-5"
                             type="button"
                           >

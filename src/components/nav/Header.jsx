@@ -1,16 +1,36 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import BeforeLogin from "./BeforeLogin";
 import AfterLogin from "./AfterLogin";
+import { useUser } from "../../context/UserProvider";
 
 const Header = () => {
-  let userStatus = "login";
+  const { user, setUser, logout } = useUser();
+  const token = localStorage.getItem("token");
+  useEffect(() => {
+    if (token) {
+      (async () => {
+        const user = await fetch(
+          `${process.env.REACT_APP_API_URL}/users/verify`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        const { data } = await user.json();
+        setUser(data.user);
+      })();
+    }
+  }, []);
 
   let AccountStatus = () => {
-    if (userStatus === "signup") {
-      return <BeforeLogin />;
+    if (user !== null) {
+      return <AfterLogin user={user} logout={logout} />;
     } else {
-      return <AfterLogin />;
+      return <BeforeLogin />;
     }
   };
 

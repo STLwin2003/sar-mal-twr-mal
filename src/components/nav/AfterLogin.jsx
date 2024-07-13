@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import profile from "../../assets/profile.jpeg";
 
-const AfterLogin = () => {
+const AfterLogin = ({ user, logout }) => {
   return (
     <div>
       <div className="dropstart">
@@ -13,7 +14,7 @@ const AfterLogin = () => {
         >
           {/* <i className="fa-solid fa-address-card fs-3  brown"></i> */}
           <img
-            src="https://plus.unsplash.com/premium_photo-1664870883044-0d82e3d63d99?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+            src={user.image !== "" ? user.image : profile}
             alt=""
             style={{ width: "40px", height: "40px" }}
             className="rounded-circle"
@@ -39,9 +40,9 @@ const AfterLogin = () => {
             </Link>
           </li>
           <li>
-            <Link to="/" className="dropdown-item" type="button">
+            <button onClick={logout} className="dropdown-item">
               Sign Out
-            </Link>
+            </button>
           </li>
         </ul>
       </div>

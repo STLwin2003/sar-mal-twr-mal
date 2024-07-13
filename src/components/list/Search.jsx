@@ -2,10 +2,11 @@ import React, { useRef } from "react";
 import Footer from "../nav/Footer";
 
 import PlaceCard from "../card/PlaceCard";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Search = () => {
   let searchData = useRef();
+  const navigate = useNavigate();
 
   let clearSearch = () => {
     console.log(searchData.current.value);
@@ -38,13 +39,14 @@ const Search = () => {
               </div>
             </div>
             <div className="col-lg-2 col-2 my-auto">
-              <Link to="/" className=" text-decoration-none text-dark">
-                <p className="my-auto">
-                  <span className="fs-5 fw-semibold roboto-regular">
-                    Cancel
-                  </span>
-                </p>
-              </Link>
+              <p className="my-auto">
+                <span
+                  onClick={() => navigate(-1)}
+                  className="fs-5 fw-semibold roboto-regular user-select-none"
+                >
+                  Cancel
+                </span>
+              </p>
             </div>
           </div>
 

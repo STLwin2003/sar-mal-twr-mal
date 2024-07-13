@@ -1,7 +1,7 @@
 import React from "react";
 import FoodCard from "../card/FoodCard";
 import { Link } from "react-router-dom";
-import { usePosts } from "../../context/postProvider";
+import { usePosts } from "../../context/PostProvider";
 
 const StreetFoodMenu = () => {
   const { posts } = usePosts();
