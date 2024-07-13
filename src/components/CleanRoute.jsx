@@ -22,6 +22,7 @@ import AddSlider from "./admin/action/AddSlider.jsx";
 import SliderList from "./admin/control/SliderList.jsx";
 import RestaurantList from "./list/RestaurantList.jsx";
 import Search from "./list/Search.jsx";
+import AdminRegister from "./admin/AdminRegister.jsx";
 
 const CleanRoute = () => {
   return (
@@ -39,6 +40,7 @@ const CleanRoute = () => {
         <Route path="/coffee_shop/food_detail" element={<FoodDetail />} />
         <Route path="/place/place_detail" element={<PlaceDetail />} />
         <Route path="/user_profile" element={<UserProfile />} />
+        <Route path="/admin_register" element={<AdminRegister />} />
         <Route path="/admin_dashboard" element={<Dashboard />} />
         <Route path="/admin/add_post" element={<AddPost />} />
         <Route path="/admin/add_slider" element={<AddSlider />} />
