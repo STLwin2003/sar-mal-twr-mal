@@ -18,12 +18,12 @@ const AdminRegister = () => {
                       <div data-mdb-input-init className="form-outline mb-2">
                         <input
                           type="text"
-                          id="form3Example1cg"
+                          id="name"
                           className="form-control form-control-lg"
                         />
                         <label
                           className="form-label roboto-regular"
-                          htmlFor="form3Example1cg"
+                          htmlFor="name"
                         >
                           Your Name
                         </label>
@@ -32,12 +32,12 @@ const AdminRegister = () => {
                       <div data-mdb-input-init className="form-outline mb-2">
                         <input
                           type="email"
-                          id="form3Example3cg"
+                          id="mail"
                           className="form-control form-control-lg"
                         />
                         <label
                           className="form-label roboto-regular"
-                          htmlFor="form3Example3cg"
+                          htmlFor="mail"
                         >
                           Your Email
                         </label>
@@ -46,12 +46,12 @@ const AdminRegister = () => {
                       <div data-mdb-input-init className="form-outline mb-2">
                         <input
                           type="password"
-                          id="form3Example4cg"
+                          id="password"
                           className="form-control form-control-lg"
                         />
                         <label
                           className="form-label roboto-regular"
-                          htmlFor="form3Example4cg"
+                          htmlFor="password"
                         >
                           Password
                         </label>
