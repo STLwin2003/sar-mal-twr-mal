@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useRef, useState } from "react";
@@ -69,6 +70,8 @@ const AddPost = () => {
     });
     const result = await res.json();
     console.log(result);
+
+    let [select, setSelect] = useState();
   };
   return (
     <div>
@@ -186,32 +189,25 @@ const AddPost = () => {
                   </div>
                   <div className="col">
                     <div className="mb-4">
-                      <div className="dropdown">
-                        <button
-                          className="btn btn-warning dropdown-toggle px-4"
+                      <div>
+                        <select
+                          onChange={(e) => {
+                            console.log(e.target.value);
+                          }}
+                          className="btn btn-warning px-4"
                           type="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
                         >
-                          Choose Category
-                        </button>
-                        <ul className="dropdown-menu dropdown-menu-dark">
-                          <li>
-                            <a className="dropdown-item" href="#">
-                              Street Food
-                            </a>
-                          </li>
-                          <li>
-                            <a className="dropdown-item" href="#">
-                              Restaurant
-                            </a>
-                          </li>
-                          <li>
-                            <a className="dropdown-item" href="#">
-                              Place
-                            </a>
-                          </li>
-                        </ul>
+                          <option>Select Post Type</option>
+                          <option value="street_food" className="dropdown-item">
+                            Street food
+                          </option>
+                          <option value="restaurant" className="dropdown-item">
+                            Restaurant
+                          </option>
+                          <option value="place" className="dropdown-item">
+                            Place
+                          </option>
+                        </select>
                       </div>
                     </div>
                     <div className="mb-4">
