@@ -2,12 +2,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Nav from "../dashboard/Nav";
 import firebaseService from "../../../firebase/firebaseService";
+import Loading from "../../../components/Loading";
+import { usePosts } from "../../../context/PostProvider";
 
 const AddPost = () => {
+  const { posts, setPosts } = usePosts();
   const [images, setImages] = useState([]);
+  const [selected, setSelected] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
   const titleRef = useRef();
   const addressRef = useRef();
   const latitudeRef = useRef();
@@ -17,11 +23,17 @@ const AddPost = () => {
   const closeHourRef = useRef();
   const foodRef = useRef();
   const layoutRef = useRef();
-  const selectRef = useRef();
   const imageHandler = (e) => {
+    if (e.target.files.length < 3 || e.target.files.length > 3) {
+      alert("require 3 images");
+    }
     setImages(e.target.files);
   };
   const postAddHandler = async () => {
+    if (selected === "") {
+      alert("need select type!");
+      return false;
+    }
     const token = localStorage.getItem("token");
     const title = titleRef.current.value;
     const address = addressRef.current.value;
@@ -33,18 +45,7 @@ const AddPost = () => {
     const food = foodRef.current.value;
     const layout = layoutRef.current.value;
     const imageUrl = [];
-    console.log(
-      title,
-      address,
-      latitude,
-      longitude,
-      phone,
-      openHour,
-      closeHour,
-      food,
-      layout,
-      images
-    );
+    setIsLoading(true);
     const url = await firebaseService.multiple_upload(images);
     await url.map((u) => imageUrl.push(u.src));
     const res = await fetch(`${process.env.REACT_APP_API_URL}/posts`, {
@@ -58,7 +59,7 @@ const AddPost = () => {
         title,
         address,
         phone,
-        category: "food",
+        category: selected,
         open_hour: openHour,
         close_hour: closeHour,
         longitude,
@@ -69,9 +70,13 @@ const AddPost = () => {
       }),
     });
     const result = await res.json();
-    console.log(result);
-
-    let [select, setSelect] = useState();
+    if (res.ok) {
+      setPosts([...posts, result.resource]);
+      navigate("/admin/post_list");
+    } else {
+      alert(result.message);
+    }
+    setIsLoading(false);
   };
   return (
     <div>
@@ -114,6 +119,7 @@ const AddPost = () => {
                 <div className="row">
                   <h1>Add Post from admin</h1>
                 </div>
+                {isLoading && <Loading />}
                 <div className="row">
                   <div className="col">
                     <div className="mb-4">
@@ -192,7 +198,7 @@ const AddPost = () => {
                       <div>
                         <select
                           onChange={(e) => {
-                            console.log(e.target.value);
+                            setSelected(e.target.value);
                           }}
                           className="btn btn-warning px-4"
                           type="button"

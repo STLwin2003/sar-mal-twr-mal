@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useGoogleLogin } from "@react-oauth/google";
 import signupImg from "../../assets/img/welcome.svg";
 import { useUser } from "../../context/UserProvider";
+import Loading from "../Loading";
 
 const signup = () => {
   let [passwordShow, setPasswordShow] = useState(false);
@@ -12,10 +13,12 @@ const signup = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const { setUser } = useUser();
+  const [loading, setLoading] = useState(false);
   function passwordShowHide() {
     setPasswordShow(!passwordShow);
   }
   const register = async (name, email, password, image, path) => {
+    setLoading(true);
     const user = await fetch(
       `${process.env.REACT_APP_API_URL}/users/register`,
       {
@@ -34,8 +37,10 @@ const signup = () => {
     );
     if (user.ok) {
       navigate(path);
+      setLoading(false);
       return { status: true, data: user };
     } else {
+      setLoading(false);
       return { status: false, message: "already user" };
     }
   };
@@ -50,6 +55,7 @@ const signup = () => {
             },
           }
         );
+        setLoading(true);
         const { name, email, sub, picture } = await res.json();
         const user = await register(name, email, sub, picture, "/");
         if (user.status) {
@@ -85,6 +91,7 @@ const signup = () => {
       } catch (error) {
         console.log(error);
       }
+      setLoading(false);
     },
   });
 
@@ -228,6 +235,7 @@ const signup = () => {
                         </div>
                       </form>
                     </div>
+                    {loading && <Loading />}
                     <div className="col-md-10 col-lg-6 col-xl-7 d-flex justify-content-center order-1 order-lg-2">
                       <img
                         src={signupImg}

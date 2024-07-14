@@ -1,12 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import BeforeLogin from "./BeforeLogin";
 import AfterLogin from "./AfterLogin";
 import { useUser } from "../../context/UserProvider";
+import { usePosts } from "../../context/PostProvider";
 
 const Header = () => {
   const { user, setUser, logout } = useUser();
+  const { setPosts, setComments } = usePosts();
   const token = localStorage.getItem("token");
   useEffect(() => {
     if (token) {
@@ -24,6 +26,12 @@ const Header = () => {
         setUser(data.user);
       })();
     }
+
+    (async () => {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/posts`);
+      const { resource } = await res.json();
+      setPosts(resource);
+    })();
   }, []);
 
   let AccountStatus = () => {

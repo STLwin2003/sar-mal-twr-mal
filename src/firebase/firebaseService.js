@@ -51,7 +51,7 @@ class firebaseService {
   multiple_image_delete = async (images) => {
     try {
       for (let i = 0; i < images.length; i++) {
-        const deleteRef = ref(this.store, images[i].src);
+        const deleteRef = ref(this.store, images[i]);
         await deleteObject(deleteRef);
       }
     } catch (error) {

@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useGoogleLogin } from "@react-oauth/google";
 import loginImg from "../../assets/img/login.svg";
 import { useUser } from "../../context/UserProvider";
+import Loading from "../Loading";
 
 const login = () => {
   let [passwordShow, setPasswordShow] = useState(false);
@@ -11,12 +12,14 @@ const login = () => {
   const { setUser } = useUser();
   const emailRef = useRef();
   const passwordRef = useRef();
+  const [loading, setLoading] = useState(false);
 
   function passwordShowHide() {
     setPasswordShow(!passwordShow);
   }
 
   const login = async (email, password) => {
+    setLoading(true);
     const res = await fetch(`${process.env.REACT_APP_API_URL}/users/login`, {
       method: "POST",
       headers: {
@@ -43,6 +46,7 @@ const login = () => {
     } else {
       alert(result.message);
     }
+    setLoading(false);
   };
 
   const loginGoogle = useGoogleLogin({
@@ -56,11 +60,13 @@ const login = () => {
             },
           }
         );
+        setLoading(true);
         const { email, sub } = await res.json();
         login(email, sub);
       } catch (error) {
         console.log(error);
       }
+      setLoading(false);
     },
   });
 
@@ -179,6 +185,7 @@ const login = () => {
                         </div>
                       </form>
                     </div>
+                    {loading && <Loading />}
                     <div className="col-md-10 col-lg-6 col-xl-6 d-flex align-items-center order-1 order-lg-2">
                       <img src={loginImg} className="img-fluid p-5" alt="img" />
                     </div>
