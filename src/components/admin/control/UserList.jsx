@@ -1,11 +1,20 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Nav from "../dashboard/Nav";
 import ProfileItem from "../item/ProfileItem";
+import { useAdmin } from "../../../context/AdminProvider";
 
 const UserList = () => {
-  const name = ["shin thant lwin ", "wyne htet ", "Thwe gyi"];
+  // const [users, setUsers] = useState([]);
+  const { users, setUsers } = useAdmin();
+  useEffect(() => {
+    (async () => {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/users/list`);
+      const { resource } = await res.json();
+      setUsers(resource);
+    })();
+  }, [setUsers]);
   return (
     <div>
       <div className="container-fluid">
@@ -55,7 +64,8 @@ const UserList = () => {
                   <div className="col-8">
                     <div className="float-start border p-1 bg-light-gray rounded-2">
                       <p className="fs-6 fw-semibold">
-                        Total users -<span className="fs-5 fw-bold">123</span>
+                        Total users -
+                        <span className="fs-5 fw-bold"> {users.length}</span>
                       </p>
                     </div>
                     <div className="float-end">
@@ -114,9 +124,7 @@ const UserList = () => {
                               <th>Status</th>
                             </tr>
                           </thead>
-                          {name.map((e, id) => (
-                            <ProfileItem e={e} id={id} />
-                          ))}
+                          <ProfileItem users={users} setUsers={setUsers} />
                         </table>
                       </div>
                     </div>

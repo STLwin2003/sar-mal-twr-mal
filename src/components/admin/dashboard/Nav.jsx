@@ -1,8 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAdmin } from "../../../context/AdminProvider";
+import { usePosts } from "../../../context/PostProvider";
 
 const Nav = () => {
+  const { comments, users } = useAdmin();
+  const { posts } = usePosts();
   return (
     <div>
       <div className="">
@@ -31,7 +35,7 @@ const Nav = () => {
                 <i className="fa-solid fa-users pe-2"></i>
                 <span className="d-none d-lg-inline">Users</span>
                 <span className="d-none d-lg-inline badge bg-danger rounded-pill float-end">
-                  20
+                  {users.length}
                 </span>
               </Link>
               <Link
@@ -41,7 +45,7 @@ const Nav = () => {
                 <i class="fa-regular fa-address-card pe-2"></i>
                 <span className="d-none d-lg-inline">Posts</span>
                 <span className="d-none d-lg-inline badge bg-primary rounded-pill float-end">
-                  20
+                  {posts.length}
                 </span>
               </Link>
               <Link
@@ -51,7 +55,7 @@ const Nav = () => {
                 <i class="fa-regular fa-comment pe-2"></i>
                 <span className="d-none d-lg-inline">Comments</span>
                 <span className="d-none d-lg-inline badge bg-warning rounded-pill float-end">
-                  12
+                  {comments.length}
                 </span>
               </Link>
               <Link

@@ -52,6 +52,7 @@ const login = () => {
   const loginGoogle = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       try {
+        setLoading(true);
         const res = await fetch(
           "https://www.googleapis.com/oauth2/v3/userinfo",
           {
@@ -60,7 +61,7 @@ const login = () => {
             },
           }
         );
-        setLoading(true);
+
         const { email, sub } = await res.json();
         login(email, sub);
       } catch (error) {

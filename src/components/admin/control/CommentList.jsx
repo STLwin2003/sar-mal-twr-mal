@@ -1,11 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useEffect } from "react";
 import CommentItem from "../item/CommentItem";
 import Nav from "../dashboard/Nav";
 import { Link } from "react-router-dom";
+import { useAdmin } from "../../../context/AdminProvider";
 
 const CommentList = () => {
-  let name = ["shin thant", "wyne htet", "thwe gyi"];
+  const { comments, setComments } = useAdmin();
+  useEffect(() => {
+    (async () => {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/users/comment`);
+      const { resource } = await res.json();
+      if (res.ok) {
+        setComments(resource);
+      }
+    })();
+  }, [setComments]);
   return (
     <div>
       <div className="container-fluid">
@@ -53,15 +63,16 @@ const CommentList = () => {
                   <div className=" float-end border p-1 bg-light-gray rounded-3">
                     <p className="fs-6 fw-semibold">
                       Total Comments Posts -
-                      <span className="fs-5 fw-bold p-2">123</span>
+                      <span className="fs-5 fw-bold p-2">
+                        {comments.length}
+                      </span>
                     </p>
                   </div>
                 </div>
                 <hr />
               </div>
-              {name.map((e, id) => (
-                <CommentItem e={e} id={id} />
-              ))}
+
+              <CommentItem comments={comments} setComments={setComments} />
             </section>
           </main>
         </div>
