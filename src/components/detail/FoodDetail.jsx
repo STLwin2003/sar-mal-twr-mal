@@ -350,7 +350,7 @@ const Detail = () => {
                 {post.comment.map((p) => {
                   return (
                     <section key={p._id} className="my-3">
-                      <div className="col-2">
+                      <div className="col-lg-5 col-sm-12">
                         <button className="btn ">
                           <img
                             src={

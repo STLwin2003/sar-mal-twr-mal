@@ -199,7 +199,7 @@ const PlaceDetail = () => {
         {/* comment section start */}
         <div className="row mb-5">
           <section className="my-3">
-            <div className="col-2">
+            <div className="col-lg-5 col-sm-12">
               <button className="btn ">
                 <img
                   src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
@@ -208,7 +208,7 @@ const PlaceDetail = () => {
                   width={"50px"}
                 />
               </button>
-              <span className="fs-6 roboto-regular mx-2">User</span>
+              <span className="fs-6 roboto-regular mx-2">Shin Thant Lwin</span>
             </div>
             <div className="col-8">
               <div className="border bg-light-gray rounded-5 ms-5">
