@@ -13,24 +13,69 @@ const Detail = () => {
   let [favorite, setFavorite] = useState(false);
   const commentRef = useRef();
   const [status, setStatus] = useState(false);
+  const token = localStorage.getItem("token");
+  const { pid } = useParams();
+  const [post, setPost] = useState(null);
+  const [changeRating, setChangeRating] = useState(0);
+  const [checkRating, setCheckRating] = useState(false);
+  let [rate, setRate] = useState();
+  let ratingTxt = ["Very Bad", "Bad", "Good", "Great", "Very Good"];
 
   let fav = () => {
     setFavorite(!favorite);
   };
+  useEffect(() => {
+    (async () => {
+      const token = localStorage.getItem("token");
+      const user = await fetch(
+        `${process.env.REACT_APP_API_URL}/users/verify`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      const { data } = await user.json();
+      if (user.ok) {
+        const res = await fetch(
+          `${process.env.REACT_APP_API_URL}/users/?id=${data.user._id}`
+        );
+        const { resource } = await res.json();
+        if (res.ok) {
+          const find = resource.rating_post.find((p) => p.postId === pid);
+          if (find) {
+            setCheckRating(true);
+          }
+        }
+      }
+    })();
+  }, []);
 
-  let ratingTxt = ["Very Bad", "Bad", "Good", "Great", "Very Good"];
+  let rating = async (e) => {
+    const count = Number(e + 1);
+    console.log(count);
 
-  let [rate, setRate] = useState();
-
-  let rating = (e) => {
-    console.log(ratingTxt[e]);
-
+    const res = await fetch(
+      `${process.env.REACT_APP_API_URL}/users/${pid}/give-rating`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ count }),
+      }
+    );
+    const { resource } = await res.json();
+    if (res.ok) {
+      setChangeRating(resource.total_rating);
+      setCheckRating(true);
+    }
     setRate(ratingTxt[e]);
   };
 
-  const token = localStorage.getItem("token");
-  const { pid } = useParams();
-  const [post, setPost] = useState(null);
   useEffect(() => {
     (async () => {
       const res = await fetch(`${process.env.REACT_APP_API_URL}/posts/${pid}`);
@@ -112,7 +157,9 @@ const Detail = () => {
                       <p>
                         <i className="fas fa-star text-warning me-4 fs-4"></i>
                         <span className="fs-4 fw-semibold">
-                          {post.total_rating}
+                          {changeRating === 0
+                            ? post.total_rating
+                            : changeRating}
                         </span>
                       </p>
                       <div className="mb-2">
@@ -132,7 +179,7 @@ const Detail = () => {
                           ></i>
                         </button>
                       </div>
-                      <div className="mb-2">
+                      {!checkRating && (
                         <button
                           className="btn btn-warning"
                           data-bs-toggle="modal"
@@ -141,6 +188,8 @@ const Detail = () => {
                           <span className="fs-5 ps-2">Give Rating</span>
                           <i className="fa-solid fa-star mx-3 fs-4"></i>
                         </button>
+                      )}
+                      <div className="mb-2">
                         <div
                           className="modal fade modal-box"
                           id="rating"
