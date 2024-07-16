@@ -24,13 +24,21 @@ const UserProfile = () => {
                   <div className="rounded-3">
                     <div className="card-body p-4">
                       <div className="d-flex">
-                        <div className="flex-shrink-0 ">
+                        <div className="flex-shrink-0 position-relative">
                           <img
                             src={user.image !== "" ? user.image : profile}
                             alt="Generic placeholder image"
                             className="img-fluid rounded-circle"
                             style={{ width: "180px" }}
                           />
+
+                          <div className="position-absolute">
+                            <input
+                              type="file"
+                              accept="image/*"
+                              className="btn btn-warning w-75"
+                            />
+                          </div>
                         </div>
                         <div className="flex-grow-2 ms-5">
                           <h3 className="mb-3">
@@ -69,64 +77,70 @@ const UserProfile = () => {
                                   <input
                                     type="text"
                                     className="form-control form-control-lg w-75 mx-auto"
-                                    value="user name here"
+                                    value={user.name}
                                   />
-                                  <div className="modal-body"></div>
+                                  <div className="modal-body">
+                                    <button className="btn btn-success">
+                                      Save Changes
+                                    </button>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </h3>
                           <p className="fs-4 fw-medium">{user.email}</p>
-                          <button
-                            data-bs-toggle="modal"
-                            data-bs-target="#email"
-                            className="btn btn-secondary"
-                          >
-                            Change Password
-                          </button>
-                          <div
-                            className="modal fade"
-                            id="email"
-                            tabIndex="-1"
-                            aria-labelledby="exampleModalLabel"
-                            aria-hidden="true"
-                          >
-                            <div className="modal-dialog modal-dialog-centered">
-                              <div className="modal-content">
-                                <div class="modal-header">
-                                  <h1
-                                    className="modal-title fs-5"
-                                    id="exampleModalLabel"
-                                  >
-                                    Enter your new password
-                                  </h1>
-                                  <button
-                                    type="button"
-                                    className="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"
-                                  ></button>
-                                </div>
-
-                                <input
-                                  type="text"
-                                  className="form-control form-control-lg w-75 mx-auto"
-                                  value="current password"
-                                />
-                                <div className="modal-body"></div>
-                              </div>
-                            </div>
-                          </div>
 
                           <div className="d-flex pt-1 my-2">
+                            {/* <input
+                              type="file"
+                              accept="image/*"
+                              className="w-50 btn btn-outline-warning me-1"
+                            /> */}
                             <button
-                              type="button"
-                              data-mdb-button-init
-                              data-mdb-ripple-init
-                              className="btn btn-outline-warning me-1 flex-grow-1"
+                              data-bs-toggle="modal"
+                              data-bs-target="#email"
+                              className="btn btn-secondary me-1"
                             >
-                              Upload <i class="fa-regular fa-user"></i>
+                              Change Password
                             </button>
+                            <div
+                              className="modal fade"
+                              id="email"
+                              tabIndex="-1"
+                              aria-labelledby="exampleModalLabel"
+                              aria-hidden="true"
+                            >
+                              <div className="modal-dialog modal-dialog-centered">
+                                <div className="modal-content">
+                                  <div class="modal-header">
+                                    <h1
+                                      className="modal-title fs-5"
+                                      id="exampleModalLabel"
+                                    >
+                                      Enter your new password
+                                    </h1>
+                                    <button
+                                      type="button"
+                                      className="btn-close"
+                                      data-bs-dismiss="modal"
+                                      aria-label="Close"
+                                    ></button>
+                                  </div>
+
+                                  <input
+                                    type="text"
+                                    className="form-control form-control-lg w-75 mx-auto"
+                                    value="current password"
+                                  />
+                                  <div className="modal-body">
+                                    <button className="btn btn-success">
+                                      Save Changes
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
                             <button
                               onClick={logout}
                               type="button"
