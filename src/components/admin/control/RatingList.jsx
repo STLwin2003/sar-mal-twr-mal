@@ -67,7 +67,7 @@ const RatingList = () => {
               <div className="row mb-3 ">
                 <div className="col d-flex mb-2">
                   <div className="mx-3">
-                    <h1 className="">Comment List</h1>
+                    <h1 className="">Rating List</h1>
                   </div>
                 </div>
                 <div className="col">
@@ -81,7 +81,9 @@ const RatingList = () => {
                 <hr />
               </div>
 
-              {/* <RatingItem rating={rating} posts={posts} /> */}
+              <div className="accordion accordion-flush" id="item1">
+                <RatingItem rating={rating} posts={posts} id={"item1"} />
+              </div>
             </section>
           </main>
         </div>
