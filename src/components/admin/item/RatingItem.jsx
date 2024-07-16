@@ -25,7 +25,7 @@ const RatingItem = ({ id }) => {
           data-bs-parent={`#${id}`}
         >
           <div class="accordion-body">
-            <div key="" className="row  rounded-4">
+            <div key="" className="row rounded-4">
               <div className="col-3 my-auto d-flex">
                 <span className="my-auto fs-6 fw-bold">1</span>
                 <div className="p-2 text-start">
@@ -47,7 +47,7 @@ const RatingItem = ({ id }) => {
                 </div>
               </div>
               <div className=" col-4 my-auto">
-                <p className="fs-5 fw-semibold roboto-regular text-warning-emphasis">
+                <p className="fs-6 fw-semibold roboto-regular text-warning-emphasis">
                   Post Title here and here
                 </p>
               </div>
@@ -115,7 +115,7 @@ const RatingItem = ({ id }) => {
                 </div>
               </div>
               <div className=" col-4 my-auto">
-                <p className="fs-5 fw-semibold roboto-regular text-warning-emphasis">
+                <p className="fs-6 fw-semibold roboto-regular text-warning-emphasis">
                   Post Title here and here
                 </p>
               </div>
@@ -183,7 +183,7 @@ const RatingItem = ({ id }) => {
                 </div>
               </div>
               <div className=" col-4 my-auto">
-                <p className="fs-5 fw-semibold roboto-regular text-warning-emphasis">
+                <p className="fs-6 fw-semibold roboto-regular text-warning-emphasis">
                   Post Title here and here
                 </p>
               </div>
