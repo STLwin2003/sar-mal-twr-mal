@@ -8,10 +8,12 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { ThreeDots } from "react-loader-spinner";
 import profile from "../../assets/profile.jpeg";
+import { useUser } from "../../context/UserProvider";
 
 const Detail = () => {
   let [favorite, setFavorite] = useState(false);
   const commentRef = useRef();
+  const { user, setUser } = useUser();
   const [status, setStatus] = useState(false);
   const token = localStorage.getItem("token");
   const { pid } = useParams();
@@ -21,9 +23,6 @@ const Detail = () => {
   let [rate, setRate] = useState();
   let ratingTxt = ["Very Bad", "Bad", "Good", "Great", "Very Good"];
 
-  let fav = () => {
-    setFavorite(!favorite);
-  };
   useEffect(() => {
     (async () => {
       const token = localStorage.getItem("token");
@@ -41,20 +40,53 @@ const Detail = () => {
         const res = await fetch(
           `${process.env.REACT_APP_API_URL}/users/?id=${data.user._id}`
         );
-        const { resource } = await res.json();
+        const user = await res.json();
+        setUser(user.resource);
         if (res.ok) {
-          const find = resource.rating_post.find((p) => p.postId === pid);
+          const find = user.resource.rating_post.find((p) => p.postId === pid);
           if (find) {
             setCheckRating(true);
           }
         }
+        const res2 = await fetch(
+          `${process.env.REACT_APP_API_URL}/posts/${pid}`
+        );
+        const { resource } = await res2.json();
+        if (res2.ok) {
+          const bookmark = await resource.bookmark.find(
+            (p) => p === user.resource._id
+          );
+          if (bookmark) setFavorite(true);
+        }
+        setPost(resource);
       }
     })();
-  }, []);
+  }, [status]);
+
+  let fav = async (id) => {
+    const token = localStorage.getItem("token");
+    if (!favorite) {
+      await fetch(`${process.env.REACT_APP_API_URL}/users/${id}/add-bookmark`, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+    } else {
+      // ${process.env.REACT_APP_API_URL}/users/${id}/remove-bookmark
+      // await fetch(`http://localhost:4000/api/users/${id}/remove-bookmark`, {
+      //   method: "PUT",
+      //   headers: {
+      //     Authorization: `Bearer ${token}`,
+      //   },
+      // });
+      alert("this is error");
+    }
+    // setFavorite(!favorite);
+  };
 
   let rating = async (e) => {
     const count = Number(e + 1);
-    console.log(count);
 
     const res = await fetch(
       `${process.env.REACT_APP_API_URL}/users/${pid}/give-rating`,
@@ -75,14 +107,6 @@ const Detail = () => {
     }
     setRate(ratingTxt[e]);
   };
-
-  useEffect(() => {
-    (async () => {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/posts/${pid}`);
-      const { resource } = await res.json();
-      setPost(resource);
-    })();
-  }, [status]);
 
   const commentHandler = async () => {
     const comment = commentRef.current.value;
@@ -165,7 +189,7 @@ const Detail = () => {
                       <div className="mb-2">
                         <button
                           className="btn btn-outline-warning"
-                          onClick={fav}
+                          onClick={() => fav(post._id)}
                         >
                           <span className="fs-5 ps-2">
                             {favorite ? "Favorite" : "Add Favorite"}
@@ -350,7 +374,7 @@ const Detail = () => {
                 {post.comment.map((p) => {
                   return (
                     <section key={p._id} className="my-3">
-                      <div className="col-lg-5 col-sm-12">
+                      <div className="col-2">
                         <button className="btn ">
                           <img
                             src={

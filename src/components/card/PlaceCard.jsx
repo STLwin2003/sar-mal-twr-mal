@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const PlaceCard = () => {
+const PlaceCard = ({ image, rating, title }) => {
   let [fav, setFav] = useState(true);
 
   let favorite = () => {
@@ -19,11 +19,7 @@ const PlaceCard = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img
-            src="https://images.unsplash.com/photo-1430163393927-3dab9af7ea38?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D"
-            className="rounded card-img-top shadow-lg"
-            alt=""
-          />
+          <img src={image} className="rounded card-img-top shadow-lg" alt="" />
         </Link>
 
         <Link
@@ -37,7 +33,9 @@ const PlaceCard = () => {
       <div className="card-body mt-2">
         <div className="">
           <i className="fa-solid fa-star fs-5 text-warning"></i>
-          <span className="fs-5 fw-semibold  roboto-regular ms-2">9.4</span>
+          <span className="fs-5 fw-semibold  roboto-regular ms-2">
+            {rating}
+          </span>
         </div>
         <Link
           to="/place/place_detail"
@@ -46,9 +44,7 @@ const PlaceCard = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <span className="fs-5 mt-2 fw-medium roboto-regular">
-            Pathein Park
-          </span>
+          <span className="fs-5 mt-2 fw-medium roboto-regular">{title}</span>
         </Link>
       </div>
     </div>

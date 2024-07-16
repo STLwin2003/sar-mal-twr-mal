@@ -8,7 +8,7 @@ import { usePosts } from "../../context/PostProvider";
 
 const Header = () => {
   const { user, setUser, logout } = useUser();
-  const { setPosts, setComments } = usePosts();
+  const { setPosts } = usePosts();
   const token = localStorage.getItem("token");
   useEffect(() => {
     if (token) {
@@ -23,7 +23,15 @@ const Header = () => {
           }
         );
         const { data } = await user.json();
-        setUser(data.user);
+        if (user.ok) {
+          const res = await fetch(
+            `${process.env.REACT_APP_API_URL}/users/?id=${data.user._id}`
+          );
+          const { resource } = await res.json();
+          if (res.ok) {
+            setUser(resource);
+          }
+        }
       })();
     }
 

@@ -35,7 +35,7 @@ const AfterLogin = ({ user, logout }) => {
             </Link>
           </li>
           <li>
-            <Link to="user_profile" className="dropdown-item" type="button">
+            <Link to="/user_profile" className="dropdown-item" type="button">
               Bookmark
             </Link>
           </li>
