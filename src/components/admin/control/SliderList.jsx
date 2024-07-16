@@ -1,10 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Nav from "../dashboard/Nav";
 import SliderItem from "../item/SliderItem";
+import { useAdmin } from "../../../context/AdminProvider";
 
 const SliderList = () => {
+  const { carousel, setCarousel } = useAdmin();
+  useEffect(() => {
+    (async () => {
+      const res = await fetch(
+        `${process.env.REACT_APP_API_URL}/posts/carousel/list`
+      );
+      const { resource } = await res.json();
+      setCarousel(resource);
+    })();
+  }, [setCarousel]);
   return (
     <div>
       <div className="container-fluid">
@@ -53,13 +64,15 @@ const SliderList = () => {
                     <div className=" float-end border p-1 bg-light-gray rounded-3 text-danger">
                       <p className="fs-6 fw-semibold">
                         Total Slider -
-                        <span className="fs-5 fw-bold p-2">3</span>
+                        <span className="fs-5 fw-bold p-2">
+                          {carousel.length}
+                        </span>
                       </p>
                     </div>
                   </div>
                   <hr />
                 </div>
-                <SliderItem />
+                <SliderItem carousels={carousel} setCarousels={setCarousel} />
               </div>
             </section>
           </main>

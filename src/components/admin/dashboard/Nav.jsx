@@ -1,12 +1,31 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAdmin } from "../../../context/AdminProvider";
 import { usePosts } from "../../../context/PostProvider";
 
 const Nav = () => {
-  const { comments, users } = useAdmin();
-  const { posts } = usePosts();
+  const { comments, setComments, users, setUsers } = useAdmin();
+  const { posts, setPosts } = usePosts();
+  useEffect(() => {
+    (async () => {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/users/comment`);
+      const { resource } = await res.json();
+      if (res.ok) {
+        setComments(resource);
+      }
+    })();
+    (async () => {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/users/list`);
+      const { resource } = await res.json();
+      if (res.ok) setUsers(resource);
+    })();
+    (async () => {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/posts`);
+      const { resource } = await res.json();
+      setPosts(resource);
+    })();
+  }, [setComments, setUsers, setPosts]);
   return (
     <div>
       <div className="">

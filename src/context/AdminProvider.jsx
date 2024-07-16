@@ -9,8 +9,11 @@ export function useAdmin() {
 export default function AdminProvider({ children }) {
   const [users, setUsers] = useState([]);
   const [comments, setComments] = useState([]);
+  const [carousel, setCarousel] = useState([]);
   return (
-    <createAdmin.Provider value={{ users, setUsers, comments, setComments }}>
+    <createAdmin.Provider
+      value={{ users, setUsers, comments, setComments, carousel, setCarousel }}
+    >
       {children}
     </createAdmin.Provider>
   );

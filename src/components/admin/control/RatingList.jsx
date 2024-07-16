@@ -1,11 +1,32 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import RatingItem from "../item/RatingItem";
 import { Link } from "react-router-dom";
 import Nav from "../dashboard/Nav";
+import { useAdmin } from "../../../context/AdminProvider";
+import { usePosts } from "../../../context/PostProvider";
 
 const RatingList = () => {
+  const { users } = useAdmin();
+  const { posts } = usePosts();
+  const [rating, setRating] = useState([]);
   const name = ["shin thant", "wyne htet ", "Thwe gyi"];
+
+  useEffect(() => {
+    const filterPosts = posts.filter((post) => {
+      return post.given_rating !== 0;
+    });
+    if (filterPosts) {
+      filterPosts.map((post) =>
+        console.log({
+          rate: post.given_rating,
+          title: post.title,
+          id: post._id,
+        })
+      );
+    }
+  }, []);
 
   return (
     <div>
@@ -16,7 +37,6 @@ const RatingList = () => {
           </div>
           <main className="col-10 position-absolute top-0 end-0">
             {/* top nav start */}
-
             <nav className="navbar navbar-expand-lg navbar-light bg-light-gray">
               <div className="flex-fill"></div>
 
@@ -54,16 +74,14 @@ const RatingList = () => {
                   <div className=" float-end border p-1 bg-light-gray rounded-3">
                     <p className="fs-6 fw-semibold">
                       Total Rating Posts -
-                      <span className="fs-5 fw-bold p-2">123</span>
+                      <span className="fs-5 fw-bold p-2">{0}</span>
                     </p>
                   </div>
                 </div>
                 <hr />
               </div>
 
-              {name.map((e, id) => (
-                <RatingItem e={e} id={id} />
-              ))}
+              {/* <RatingItem rating={rating} posts={posts} /> */}
             </section>
           </main>
         </div>

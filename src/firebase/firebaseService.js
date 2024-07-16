@@ -40,6 +40,17 @@ class firebaseService {
       return { error: "image upload is fail!" };
     }
   };
+  carousel_image_upload = async (image) => {
+    try {
+      const name = image.name + Date.now();
+      const storageRef = ref(this.store, `/carousel_image/${name}`);
+      const uploadTask = await uploadBytesResumable(storageRef, image);
+      const url = await getDownloadURL(uploadTask.ref);
+      return url;
+    } catch (error) {
+      return { error: "image upload is fail!" };
+    }
+  };
   image_delete = async (image) => {
     try {
       const deleteRef = ref(this.store, image);
