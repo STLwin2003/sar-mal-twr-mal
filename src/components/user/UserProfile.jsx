@@ -21,6 +21,7 @@ const UserProfile = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [profileUpdate, setProfileUpdate] = useState(false);
   const [profileUrl, setProfileUrl] = useState(null);
+  const [bookmarks, setBookmarks] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -50,6 +51,12 @@ const UserProfile = () => {
           });
           const result = results.filter((res) => res !== undefined);
           setRating(result);
+
+          const bookmarks = resource.bookmark.map((bookmark) => {
+            return posts.find((post) => post._id === bookmark);
+          });
+
+          setBookmarks(bookmarks);
           setUser(resource);
         }
       }
@@ -464,7 +471,52 @@ const UserProfile = () => {
                   Your Bookmark
                 </p>
                 <div className="row">
-                  <div className="row my-3 ">
+                  {bookmarks &&
+                    bookmarks.map((bookmark) => {
+                      return (
+                        <>
+                          <div key={bookmark._id} className="row my-3 ">
+                            <div className="col-sm-6 col-md-4 col-lg-3 ">
+                              <FoodCard
+                                pid={bookmark._id}
+                                image={bookmark.image}
+                                rating={bookmark.total_rating}
+                                description={bookmark.product_description}
+                              />
+                            </div>
+                            <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
+                              <div className="">
+                                <p>
+                                  <i className="fa-solid fa-location-dot me-4 fs-5"></i>
+                                  <span className="fs-6">
+                                    {bookmark.address}
+                                  </span>
+                                </p>
+                                <p>
+                                  <i className="fas fa-phone me-4 fs-5"></i>
+                                  <span className="fs-6">{bookmark.phone}</span>
+                                </p>
+                                <p>
+                                  <i className="fa-solid fa-clock fs-5 me-4"></i>
+                                  <span className="fs-6">
+                                    {bookmark.open_hour} : {bookmark.close_hour}
+                                  </span>
+                                </p>
+                              </div>
+                              <div className="fs-6 roboto-regular">
+                                <span>
+                                  {moment(bookmark.created).format(
+                                    "MMMM DD YYYY, h:mm:ss a"
+                                  )}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <hr />
+                        </>
+                      );
+                    })}
+                  {/* <div className="row my-3 ">
                     <div className="col-sm-6 col-md-4 col-lg-3 ">
                       <FoodCard />
                     </div>
@@ -528,31 +580,9 @@ const UserProfile = () => {
                         </p>
                       </div>
                     </div>
-                  </div>
-                  <hr />
-                  <div className="row my-3 ">
-                    <div className="col-sm-6 col-md-4 col-lg-3 ">
-                      <FoodCard />
-                    </div>
-                    <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
-                      <div className="">
-                        <p>
-                          <i className="fa-solid fa-location-dot me-4 fs-5"></i>
-                          <span className="fs-6">Pathein, 10011</span>
-                        </p>
-                        <p>
-                          <i className="fas fa-phone me-4 fs-5"></i>
-                          <span className="fs-6">+ 959 765 514 319</span>
-                        </p>
-                        <p>
-                          <i className="fa-solid fa-clock fs-5 me-4"></i>
-                          <span className="fs-6"> Opening Hours:</span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  </div> */}
 
-                  <hr />
+                  {/* <hr /> */}
                 </div>
               </div>
             </div>
