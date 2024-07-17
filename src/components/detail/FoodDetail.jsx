@@ -247,7 +247,10 @@ const Detail = () => {
                                   aria-label="Close"
                                 ></button>
                               </div>
-                              <div className="modal-body mx-auto">
+                              <div
+                                id="ratingContainer"
+                                className="modal-body mx-auto"
+                              >
                                 <div>
                                   <i
                                     className={

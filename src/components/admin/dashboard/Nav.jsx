@@ -5,7 +5,16 @@ import { useAdmin } from "../../../context/AdminProvider";
 import { usePosts } from "../../../context/PostProvider";
 
 const Nav = () => {
-  const { comments, setComments, users, setUsers } = useAdmin();
+  const {
+    comments,
+    setComments,
+    users,
+    setUsers,
+    rating,
+    setRating,
+    carousel,
+    setCarousel,
+  } = useAdmin();
   const { posts, setPosts } = usePosts();
   useEffect(() => {
     (async () => {
@@ -25,7 +34,33 @@ const Nav = () => {
       const { resource } = await res.json();
       setPosts(resource);
     })();
-  }, [setComments, setUsers, setPosts]);
+    (async () => {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/posts`);
+      const { resource } = await res.json();
+      setPosts(resource);
+      const filterPosts = resource.filter((post) => {
+        return post.given_rating !== 0;
+      });
+      let data = [];
+      if (filterPosts) {
+        await filterPosts.map((post) =>
+          data.push({
+            id: post._id,
+            rate: post.given_rating,
+            title: post.title,
+          })
+        );
+      }
+      await setRating(data);
+    })();
+    (async () => {
+      const res = await fetch(
+        `${process.env.REACT_APP_API_URL}/posts/carousel/list`
+      );
+      const { resource } = await res.json();
+      setCarousel(resource);
+    })();
+  }, [setComments, setUsers, setPosts, setRating, setCarousel]);
   return (
     <div>
       <div className="">
@@ -84,7 +119,7 @@ const Nav = () => {
                 <i className="fa-solid fa-star pe-2"></i>
                 <span className="d-none d-lg-inline">Ratings</span>
                 <span className="d-none d-lg-inline badge bg-success rounded-pill float-end">
-                  65
+                  {rating.length}
                 </span>
               </Link>
               <Link
@@ -93,6 +128,9 @@ const Nav = () => {
               >
                 <i class="fa-solid fa-sliders me-2"></i>
                 <span className="d-none d-lg-inline">Sliders</span>
+                <span className="d-none d-lg-inline badge bg-primary rounded-pill float-end">
+                  {carousel.length}
+                </span>
               </Link>
             </div>
 

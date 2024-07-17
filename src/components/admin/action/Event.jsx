@@ -1,16 +1,47 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import AdminFoodCard from "../card/AdminFoodCard";
 import { Link } from "react-router-dom";
 import Nav from "../dashboard/Nav";
+import Loading from "../../../components/Loading";
+import { usePosts } from "../../../context/PostProvider";
+import { useAdmin } from "../../../context/AdminProvider";
 
 const Event = () => {
+  const eventName = useRef();
+  const { setEvent } = useAdmin();
+  const eventDescription = useRef();
   let [add, setAdd] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const { posts } = usePosts();
+  const [postId, setPostId] = useState([]);
 
-  let Add = () => {
+  let Add = (id) => {
     setAdd(!add);
+    let pid = [...postId, id];
+    setPostId(pid);
   };
-
+  const uploadHandler = async (title, description) => {
+    const token = localStorage.getItem("token");
+    setIsLoading(true);
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/campaign`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ title, description, post: postId }),
+    });
+    const { resource } = await res.json();
+    if (res.ok) {
+      eventDescription.current.value = "";
+      eventName.current.value = "";
+      setPostId("");
+      setEvent(resource);
+      setIsLoading(false);
+    }
+  };
   return (
     <div>
       <div className="container-fluid">
@@ -52,6 +83,7 @@ const Event = () => {
                 <div className="row my-4 bg-light-gray p-3">
                   <div className="col-5">
                     <input
+                      ref={eventName}
                       type="text"
                       className="form-control border-black mb-2"
                       placeholder="Enter Event Name"
@@ -59,6 +91,7 @@ const Event = () => {
                   </div>
                   <div className="col-7">
                     <textarea
+                      ref={eventDescription}
                       rows={3}
                       cols={55}
                       placeholder="Add Description"
@@ -75,25 +108,49 @@ const Event = () => {
                   tabindex="0"
                 >
                   <div className="row">
-                    <div className="col-3">
-                      <div className="card p-1">
-                        <AdminFoodCard />
-                        <div>
-                          <button
-                            className={
-                              add ? "btn btn-warning" : "btn btn-success"
-                            }
-                            onClick={Add}
-                          >
-                            Add
-                          </button>
+                    {posts.map((post) => {
+                      return (
+                        <div key={post._id} className="col-3">
+                          <div className="card p-1">
+                            <img
+                              src={post.image}
+                              alt=""
+                              width={"fit-content"}
+                              height={100}
+                              style={{ objectFit: "contain" }}
+                            />
+                            <p className="text-center mt-1 ">{post.title}</p>
+                            <div>
+                              <button
+                                style={{ width: "100%" }}
+                                className={
+                                  add ? "btn btn-warning" : "btn btn-success"
+                                }
+                                onClick={() => Add(post._id)}
+                              >
+                                Add
+                              </button>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
+              {isLoading && <Loading />}
             </section>
+            <button
+              onClick={() =>
+                uploadHandler(
+                  eventName.current.value,
+                  eventDescription.current.value
+                )
+              }
+              className="btn btn-primary mt-3"
+            >
+              upload
+            </button>
           </main>
         </div>
       </div>

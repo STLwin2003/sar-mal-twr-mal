@@ -8,25 +8,37 @@ import { useAdmin } from "../../../context/AdminProvider";
 import { usePosts } from "../../../context/PostProvider";
 
 const RatingList = () => {
-  const { users } = useAdmin();
-  const { posts } = usePosts();
-  const [rating, setRating] = useState([]);
-  const name = ["shin thant", "wyne htet ", "Thwe gyi"];
+  const { setPosts } = usePosts();
+  // const { setTotalRating } = useAdmin();
+  const { rating, setRating } = useAdmin();
 
   useEffect(() => {
-    const filterPosts = posts.filter((post) => {
-      return post.given_rating !== 0;
-    });
-    if (filterPosts) {
-      filterPosts.map((post) =>
-        console.log({
-          rate: post.given_rating,
-          title: post.title,
-          id: post._id,
-        })
-      );
-    }
+    (async () => {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/posts`);
+      const { resource } = await res.json();
+      setPosts(resource);
+      const filterPosts = resource.filter((post) => {
+        return post.given_rating !== 0;
+      });
+      let data = [];
+      if (filterPosts) {
+        await filterPosts.map((post) =>
+          data.push({
+            id: post._id,
+            rate: post.given_rating,
+            title: post.title,
+          })
+        );
+      }
+      await setRating(data);
+      // await setTotalRating(data);
+    })();
   }, []);
+  // {
+  //   rate: post.given_rating,
+  //   title: post.title,
+  //   id: post._id,
+  // },
 
   return (
     <div>
@@ -74,7 +86,7 @@ const RatingList = () => {
                   <div className=" float-end border p-1 bg-light-gray rounded-3">
                     <p className="fs-6 fw-semibold">
                       Total Rating Posts -
-                      <span className="fs-5 fw-bold p-2">{0}</span>
+                      <span className="fs-5 fw-bold p-2">{rating.length}</span>
                     </p>
                   </div>
                 </div>
@@ -82,7 +94,7 @@ const RatingList = () => {
               </div>
 
               <div className="accordion accordion-flush" id="item1">
-                <RatingItem rating={rating} posts={posts} id={"item1"} />
+                {rating && <RatingItem rating={rating} id={"item1"} />}
               </div>
             </section>
           </main>
