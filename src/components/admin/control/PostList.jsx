@@ -21,20 +21,23 @@ const PostList = () => {
   }, []);
 
   const deleteHandler = async (pid, images) => {
-    setIsLoading(true);
-    const filter = posts.filter((post) => post._id !== pid);
-    const token = localStorage.getItem("token");
-    await firebaseService.multiple_image_delete(images);
-    const res = await fetch(`${process.env.REACT_APP_API_URL}/posts/${pid}`, {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    if (res.ok) {
-      setPosts(filter);
-      setIsLoading(false);
+    const result = window.confirm("Do you want to delete?");
+    if (result) {
+      setIsLoading(true);
+      const filter = posts.filter((post) => post._id !== pid);
+      const token = localStorage.getItem("token");
+      await firebaseService.multiple_image_delete(images);
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/posts/${pid}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (res.ok) {
+        setPosts(filter);
+      }
     }
+    setIsLoading(false);
   };
   return (
     <div>
@@ -171,9 +174,12 @@ const PostList = () => {
                               </div>
 
                               <button
+                                onClick={() =>
+                                  deleteHandler(post._id, post.image)
+                                }
                                 className="btn btn-danger"
-                                data-bs-toggle="modal"
-                                data-bs-target="#delete"
+                                // data-bs-toggle="modal"
+                                // data-bs-target="#delete"
                               >
                                 Delete
                               </button>
@@ -203,9 +209,6 @@ const PostList = () => {
                                         Cancel
                                       </button>
                                       <button
-                                        onClick={() =>
-                                          deleteHandler(post._id, post.image)
-                                        }
                                         type="button"
                                         class="btn btn-warning"
                                         data-bs-dismiss="modal"

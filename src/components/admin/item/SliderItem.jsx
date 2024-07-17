@@ -27,7 +27,6 @@ const SliderItem = ({ carousels, setCarousels }) => {
         }
       );
       if (res.ok) {
-        console.log("first");
         setCarousels(filter);
       }
     }
@@ -41,7 +40,12 @@ const SliderItem = ({ carousels, setCarousels }) => {
           return (
             <div className="bg-light-gray rounded-3 p-3 mb-2">
               <div className="row">
-                <div className="col-6 d-flex">
+                <div
+                  onClick={() => {
+                    navigate(`/street_food/food_detail/${carousel.pid}`);
+                  }}
+                  className="col-6 d-flex"
+                >
                   <span className="fw-bold fs-5 me-2">1</span>
 
                   <img src={carousel.image} alt="" className="w-100" />

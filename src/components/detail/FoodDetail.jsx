@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Header from "../nav/Header";
 import Footer from "../nav/Footer";
 import Map, { Marker } from "react-map-gl";
@@ -13,6 +13,7 @@ import { useUser } from "../../context/UserProvider";
 const Detail = () => {
   let [favorite, setFavorite] = useState(false);
   const commentRef = useRef();
+  const navigate = useNavigate();
   const { user, setUser } = useUser();
   const [status, setStatus] = useState(false);
   const token = localStorage.getItem("token");
@@ -20,6 +21,7 @@ const Detail = () => {
   const [post, setPost] = useState(null);
   const [changeRating, setChangeRating] = useState(0);
   const [checkRating, setCheckRating] = useState(false);
+  const [error, setError] = useState(false);
   let [rate, setRate] = useState();
   let ratingTxt = ["Very Bad", "Bad", "Good", "Great", "Very Good"];
 
@@ -57,14 +59,19 @@ const Detail = () => {
             (p) => p === user.resource._id
           );
           if (bookmark) setFavorite(true);
+          setPost(resource);
+        } else {
+          setError(true);
         }
-        setPost(resource);
       }
     })();
   }, [status]);
 
   let fav = async (id) => {
     const token = localStorage.getItem("token");
+
+    setFavorite(!favorite);
+
     if (!favorite) {
       await fetch(`${process.env.REACT_APP_API_URL}/users/${id}/add-bookmark`, {
         method: "PUT",
@@ -73,16 +80,16 @@ const Detail = () => {
         },
       });
     } else {
-      // ${process.env.REACT_APP_API_URL}/users/${id}/remove-bookmark
-      // await fetch(`http://localhost:4000/api/users/${id}/remove-bookmark`, {
-      //   method: "PUT",
-      //   headers: {
-      //     Authorization: `Bearer ${token}`,
-      //   },
-      // });
-      alert("this is error");
+      await fetch(
+        `${process.env.REACT_APP_API_URL}/users/${id}/remove-bookmark`,
+        {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
     }
-    // setFavorite(!favorite);
   };
 
   let rating = async (e) => {
@@ -109,7 +116,9 @@ const Detail = () => {
   };
 
   const commentHandler = async () => {
+    const btn = document.getElementById("commentBtn");
     const comment = commentRef.current.value;
+    btn.setAttribute("disabled", "true");
     const res = await fetch(
       `${process.env.REACT_APP_API_URL}/users/${pid}/comment`,
       {
@@ -125,6 +134,7 @@ const Detail = () => {
     if (res.ok) {
       setStatus(!status);
       commentRef.current.value = "";
+      btn.removeAttribute("disabled");
     }
   };
   return (
@@ -415,6 +425,7 @@ const Detail = () => {
                       <button
                         onClick={commentHandler}
                         className="btn btn-warning px-4 mx-2 my-auto"
+                        id="commentBtn"
                       >
                         <span className="fs-5">Submit</span>
                       </button>
@@ -426,7 +437,7 @@ const Detail = () => {
 
               {/* comment section end */}
             </>
-          ) : (
+          ) : !error ? (
             <div className="d-flex justify-content-center  ">
               <div>
                 <ThreeDots
@@ -441,6 +452,28 @@ const Detail = () => {
                 />
                 <p className="text-center">Loading...</p>
               </div>
+            </div>
+          ) : (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                fontSize: "24px",
+                fontWeight: 600,
+              }}
+            >
+              <p>Post Not Found!</p>
+              <button
+                onClick={() => {
+                  navigate(-1);
+                  setError(false);
+                }}
+                className="btn btn-warning"
+              >
+                Go Back
+              </button>
             </div>
           )}
         </section>

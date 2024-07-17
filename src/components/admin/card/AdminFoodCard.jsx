@@ -6,11 +6,7 @@ const AdminFoodCard = ({ id, image, title, rating }) => {
     <div key={id}>
       <div className="row my-2">
         <Link to={`/street_food/food_detail/${id}`}>
-          <img
-            src={image[0]}
-            className="w-100 rounded shadow-lg p-1"
-            alt="img"
-          />
+          <img src={image} className="w-100 rounded shadow-lg p-1" alt="img" />
         </Link>
         <div>
           <div>
