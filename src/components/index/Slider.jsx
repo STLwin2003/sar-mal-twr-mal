@@ -33,7 +33,7 @@ const Slider = ({ carousels }) => {
           </div>
 
           <div className="carousel-inner">
-            {carousels ? (
+            {carousels.length !== 0 ? (
               carousels.map((carousel) => {
                 return (
                   <Link to={`/street_food/food_detail/${carousel.pid}`}>
