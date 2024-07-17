@@ -6,7 +6,6 @@ import ProfileItem from "../item/ProfileItem";
 import { useAdmin } from "../../../context/AdminProvider";
 
 const UserList = () => {
-  // const [users, setUsers] = useState([]);
   const { users, setUsers } = useAdmin();
   useEffect(() => {
     (async () => {

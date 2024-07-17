@@ -19,8 +19,9 @@ const signup = () => {
   }
   const register = async (name, email, password, image, path) => {
     setLoading(true);
+
     const user = await fetch(
-      `${process.env.REACT_APP_API_URL}/users/register`,
+      ` ${process.env.REACT_APP_API_URL}/users/register`,
       {
         method: "POST",
         headers: {

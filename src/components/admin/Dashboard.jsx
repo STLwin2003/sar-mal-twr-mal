@@ -2,8 +2,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Nav from "./dashboard/Nav";
+import { usePosts } from "../../context/PostProvider";
+import { useAdmin } from "../../context/AdminProvider";
+import moment from "moment";
+import { useUser } from "../../context/UserProvider";
 
 const Dashboard = () => {
+  const { posts } = usePosts();
+  const { users } = useAdmin();
+  const { logout } = useUser();
   return (
     <div>
       <div className="container-fluid">
@@ -30,7 +37,9 @@ const Dashboard = () => {
                     <Link to="/user_profile" className="dropdown-item">
                       Back to User
                     </Link>
-                    <li className="dropdown-item">Logout</li>
+                    <li onClick={logout} className="dropdown-item">
+                      Logout
+                    </li>
                   </ul>
                 </li>
                 <li className="nav-item">
@@ -43,11 +52,11 @@ const Dashboard = () => {
             <section className="p-3">
               <div className="container-fluid bg-white">
                 <div className="row flex-column flex-lg-row">
-                  <h2 className="h6 text-white">Quick Starts</h2>
+                  <h2 className="h6 text-warning">Quick Starts</h2>
                   <div className="col">
                     <div className="card bg-success">
                       <div className="card-body">
-                        <h3 className="card-title h2">32</h3>
+                        <h3 className="card-title h2">{posts.length}</h3>
                         <span className="text-white h5">
                           <i className="fa-solid fa-chart-line "></i>
                           Total posts
@@ -58,7 +67,7 @@ const Dashboard = () => {
                   <div className="col">
                     <div className="card bg-warning">
                       <div className="card-body">
-                        <h3 className="card-title h2">82</h3>
+                        <h3 className="card-title h2">{users.length}</h3>
                         <span className="text-white h5">
                           <i className="fa-solid fa-chart-line"></i> Total Users
                         </span>
@@ -91,69 +100,37 @@ const Dashboard = () => {
 
                 <div className="row flex-column flex-lg-row mt-4">
                   <div className="col">
-                    <h1 className="h6 text-white">Current Users</h1>
+                    <h1 className="h6 text-warning">Current Users</h1>
                     <div className=" bg-light-gray rounded p-3">
                       <table className=" table fw-medium">
                         <tr>
                           <th>No</th>
                           <th>Name</th>
                           <th>Email</th>
-                          <th>Date and Time</th>
+                          <th>Created Date</th>
+                          <th>Login Date</th>
                         </tr>
 
-                        <tr>
-                          <td>1</td>
-                          <td>Shin Thant Lwin</td>
-                          <td>shinthantlwin@gmail.com</td>
-                          <td>2/7/2024 08:00pm</td>
-                        </tr>
+                        {users.map((user, count) => {
+                          return (
+                            <tr key={user._id}>
+                              <td>{count + 1}</td>
+                              <td>{user.name}</td>
+                              <td>{user.email}</td>
+                              <td>
+                                {moment(user.created).format(
+                                  "MMMM DD YYYY, h:mm:ss a"
+                                )}
+                              </td>
 
-                        <tr>
-                          <td>2</td>
-                          <td>Thwe Gyi</td>
-                          <td>thwegyi@gmail.com</td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>Ei Pyae</td>
-                          <td>eipyae@gmail.com</td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>Ei Po</td>
-                          <td>eipo@gmail.com</td>
-                        </tr>
-                        <tr>
-                          <td>5</td>
-                          <td>Pyae Pyae</td>
-                          <td>pyaepyae@gmail.com</td>
-                        </tr>
-                        <tr>
-                          <td>1</td>
-                          <td>Shin Thant Lwin</td>
-                          <td>shinthantlwin@gmail.com</td>
-                          <td>2/7/2024 08:00pm</td>
-                        </tr>
-
-                        <tr>
-                          <td>2</td>
-                          <td>Thwe Gyi</td>
-                          <td>thwegyi@gmail.com</td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>eipyae@gmail.com</td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>Ei Po</td>
-                          <td>eipo@gmail.com</td>
-                        </tr>
-                        <tr>
-                          <td>5</td>
-                          <td>Pyae Pyae</td>
-                          <td>pyaepyae@gmail.com</td>
-                        </tr>
+                              <td>
+                                {moment(user.login_date)
+                                  .startOf("minute")
+                                  .fromNow()}
+                              </td>
+                            </tr>
+                          );
+                        })}
                       </table>
                     </div>
                   </div>

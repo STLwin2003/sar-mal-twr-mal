@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import profile from "../../../assets/profile.jpeg";
 import Loading from "../../Loading";
+import firebaseService from "../../../firebase/firebaseService";
 
 const ProfileItem = ({ users, setUsers }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const deleteHandle = async (uid) => {
+
+  const deleteHandle = async (uid, image) => {
     const filter = users.filter((user) => user._id !== uid);
     const result = window.confirm("Do you want to delete?");
+    if (image !== "") {
+      await firebaseService.image_delete(image);
+    }
     if (result) {
       const token = localStorage.getItem("token");
       setIsLoading(true);
+
       const res = await fetch(`${process.env.REACT_APP_API_URL}/users/${uid}`, {
         method: "DELETE",
         headers: {
@@ -52,7 +58,7 @@ const ProfileItem = ({ users, setUsers }) => {
                 <td class="text-center">
                   <div className="my-auto">
                     <i
-                      onClick={() => deleteHandle(user._id)}
+                      onClick={() => deleteHandle(user._id, user.image)}
                       type="button"
                       className="fa-solid fa-trash-can "
                       // data-bs-toggle="modal"
