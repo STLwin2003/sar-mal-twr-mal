@@ -34,11 +34,6 @@ const RatingList = () => {
       // await setTotalRating(data);
     })();
   }, []);
-  // {
-  //   rate: post.given_rating,
-  //   title: post.title,
-  //   id: post._id,
-  // },
 
   return (
     <div>

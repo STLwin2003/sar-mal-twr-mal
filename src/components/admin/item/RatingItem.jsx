@@ -1,5 +1,4 @@
 import React from "react";
-import AdminFoodCard from "../card/AdminFoodCard";
 
 const RatingItem = ({ id, rating }) => {
   return (
@@ -13,7 +12,7 @@ const RatingItem = ({ id, rating }) => {
                   class="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#data1"
+                  data-bs-target={`#${post.id}`}
                   aria-expanded="false"
                   aria-controls="flush-collapseThree"
                 >
@@ -23,7 +22,7 @@ const RatingItem = ({ id, rating }) => {
                 </button>
               </h2>
               <div
-                id="data1"
+                id={post.id}
                 class="accordion-collapse collapse"
                 data-bs-parent={`#${id}`}
               >
@@ -86,49 +85,6 @@ const RatingItem = ({ id, rating }) => {
                             {pr.user.email}
                           </p>
                         </div>
-                        {/* <div className="col-2 my-auto">
-                          <div className="float-end">
-                            <i
-                              className="fa-solid fa-trash-can "
-                              data-bs-toggle="modal"
-                              data-bs-target="#delete"
-                            ></i>
-
-                            <div
-                              class="modal fade"
-                              id="delete"
-                              data-bs-backdrop="static"
-                              data-bs-keyboard="false"
-                              tabindex="-1"
-                              aria-labelledby="staticBackdropLabel"
-                              aria-hidden="true"
-                            >
-                              <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                  <p className="fs-5 fw-semibold">
-                                    Do you want to delete?
-                                  </p>
-                                  <div class="modal-body"></div>
-                                  <div class="modal-footer">
-                                    <button
-                                      type="button"
-                                      class="btn btn-secondary"
-                                      data-bs-dismiss="modal"
-                                    >
-                                      Cancel
-                                    </button>
-                                    <button
-                                      type="button"
-                                      class="btn btn-primary"
-                                    >
-                                      Yes
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div> */}
                         <hr />
                       </div>
                     );
