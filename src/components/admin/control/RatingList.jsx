@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import RatingItem from "../item/RatingItem";
 import { Link } from "react-router-dom";
 import Nav from "../dashboard/Nav";

@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useRef, useState } from "react";
-import AdminFoodCard from "../card/AdminFoodCard";
 import { Link } from "react-router-dom";
 import Nav from "../dashboard/Nav";
 import Loading from "../../../components/Loading";
@@ -17,9 +16,9 @@ const Event = () => {
   const [postId, setPostId] = useState([]);
 
   let Add = (id) => {
-    setAdd(!add);
     let pid = [...postId, id];
     setPostId(pid);
+    setAdd(!add);
   };
   const uploadHandler = async (title, description) => {
     const token = localStorage.getItem("token");
