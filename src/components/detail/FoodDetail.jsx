@@ -14,7 +14,7 @@ const Detail = () => {
   let [favorite, setFavorite] = useState(false);
   const commentRef = useRef();
   const navigate = useNavigate();
-  const { user, setUser } = useUser();
+  const { setUser } = useUser();
   const [status, setStatus] = useState(false);
   const token = localStorage.getItem("token");
   const { pid } = useParams();

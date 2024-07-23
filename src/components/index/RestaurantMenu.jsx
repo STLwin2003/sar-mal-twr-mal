@@ -2,7 +2,7 @@ import React from "react";
 import PlaceCard from "../card/PlaceCard";
 import { Link } from "react-router-dom";
 
-const RestaurantMenu = () => {
+const RestaurantMenu = ({ posts }) => {
   return (
     <div>
       <div className="container mt-5">
@@ -10,18 +10,18 @@ const RestaurantMenu = () => {
           Restaurant Menu
         </p>
         <div className="row">
-          <div className="col-6 col-md-4 col-lg-3">
-            <PlaceCard />
-          </div>
-          <div className="col-6 col-md-4 col-lg-3">
-            <PlaceCard />
-          </div>
-          <div className="col-6 col-md-4 col-lg-3">
-            <PlaceCard />
-          </div>
-          <div className="col-6 col-md-4 col-lg-3">
-            <PlaceCard />
-          </div>
+          {posts &&
+            posts.map((post) => {
+              return (
+                <div key={post._id} className="col-6 col-md-4 col-lg-3">
+                  <PlaceCard
+                    title={post.title}
+                    rating={post.total_rating}
+                    image={post.image}
+                  />
+                </div>
+              );
+            })}
         </div>
         <div className="d-grid gap-2 d-md-flex justify-content-md-end my-4">
           <Link

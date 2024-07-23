@@ -1,12 +1,48 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import LazyLoad from "react-lazy-load";
+import { useUser } from "../../context/UserProvider";
 
 const StreetFoodCard = ({ pid, image, description, rating }) => {
   let [fav, setFav] = useState(true);
+  const { user } = useUser();
 
-  let favorite = () => {
+  useEffect(() => {
+    if (user) {
+      const a = user.bookmark.find((bookmark) => bookmark === pid);
+      if (a) setFav(false);
+    }
+  }, [user, pid]);
+
+  let favorite = async (id) => {
+    const token = localStorage.getItem("token");
     setFav(!fav);
-    console.log(fav);
+    console.log(user);
+
+    if (fav) {
+      user.bookmark.push(pid);
+      await fetch(`${process.env.REACT_APP_API_URL}/users/${id}/add-bookmark`, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+    } else {
+      const filterBookmark = user.bookmark.filter(
+        (bookmark) => bookmark !== pid
+      );
+      user.bookmark = filterBookmark;
+      await fetch(
+        `${process.env.REACT_APP_API_URL}/users/${id}/remove-bookmark`,
+        {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      window.location.reload();
+    }
   };
   return (
     <div className="mb-4">
@@ -19,15 +55,22 @@ const StreetFoodCard = ({ pid, image, description, rating }) => {
               window.scrollTo(0, 0);
             }}
           >
-            <img
-              src={image}
-              className="card-img-top rounded shadow-lg"
-              alt="img"
-            />
+            <LazyLoad
+              width={`auto`}
+              offset={300}
+              height={`auto`}
+              threshold={0.95}
+            >
+              <img
+                src={image}
+                className="card-img-top rounded shadow-lg"
+                alt="img"
+              />
+            </LazyLoad>
           </Link>
 
           <Link
-            onClick={favorite}
+            onClick={() => favorite(pid)}
             className={`fa-solid fa-heart fs-3  position-absolute top-0 end-0 mt-2 me-2 ${
               fav ? "text-light" : "text-warning"
             }`}

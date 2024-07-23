@@ -1,16 +1,28 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Footer from "../nav/Footer";
 
 import PlaceCard from "../card/PlaceCard";
 import { Link, useNavigate } from "react-router-dom";
+import { usePosts } from "../../context/PostProvider";
 
 const Search = () => {
   let searchData = useRef();
   const navigate = useNavigate();
-
+  const { posts, setPosts } = usePosts();
+  const [searchValue, setSearchValue] = useState("");
+  useEffect(() => {
+    (async () => {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/posts`);
+      const { resource } = await res.json();
+      setPosts(resource);
+    })();
+  }, [setPosts]);
   let clearSearch = () => {
-    console.log(searchData.current.value);
     searchData.current.value = "";
+    setSearchValue("");
+  };
+  const searchHandler = (value) => {
+    setSearchValue(value);
   };
 
   return (
@@ -25,6 +37,7 @@ const Search = () => {
                 <input
                   type="text"
                   ref={searchData}
+                  onChange={(e) => searchHandler(e.target.value)}
                   placeholder="Search a food or place"
                   className="form-control border-2 border-black"
                 />
@@ -74,10 +87,28 @@ const Search = () => {
 
           <div className="my-3">
             <p className="fs-3 fw-bold brown noto-serif-display-subtitle my-4">
-              Most Popular StreetFood Right Now
+              All Posts
             </p>
             <div className="row">
-              <div className="col-6 col-md-4 col-lg-3">
+              {posts &&
+                posts
+                  .filter((post) => {
+                    return searchValue.toLowerCase() === ""
+                      ? post
+                      : post.title.toLowerCase().includes(searchValue);
+                  })
+                  .map((post) => {
+                    return (
+                      <div key={post._id} className="col-6 col-md-4 col-lg-3">
+                        <PlaceCard
+                          image={post.image}
+                          title={post.title}
+                          rating={post.total_rating}
+                        />
+                      </div>
+                    );
+                  })}
+              {/* <div className="col-6 col-md-4 col-lg-3">
                 <PlaceCard />
               </div>
               <div className="col-6 col-md-4 col-lg-3">
@@ -85,15 +116,11 @@ const Search = () => {
               </div>
               <div className="col-6 col-md-4 col-lg-3">
                 <PlaceCard />
-              </div>
-              <div className="col-6 col-md-4 col-lg-3">
-                <PlaceCard />
-              </div>
+              </div> */}
             </div>
-            <hr />
           </div>
 
-          <div className="my-3">
+          {/* <div className="my-3">
             <p className="fs-3 fw-bold brown noto-serif-display-subtitle my-4">
               Most Popular Places
             </p>
@@ -112,7 +139,7 @@ const Search = () => {
               </div>
             </div>
             <hr />
-          </div>
+          </div> */}
         </div>
       </div>
 

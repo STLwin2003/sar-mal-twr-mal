@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PlaceCard from "../card/PlaceCard";
 import Header from "../nav/Header";
 import Footer from "../nav/Footer";
+import { usePosts } from "../../context/PostProvider";
 
 const PlaceList = () => {
+  const { posts } = usePosts();
+  const [place, setPlace] = useState([]);
+  useEffect(() => {
+    const place = posts.filter((post) => post.category === "place");
+    setPlace(place);
+  }, [posts]);
   return (
     <div>
       <Header />
@@ -17,42 +24,18 @@ const PlaceList = () => {
         {/* card area start */}
 
         <div className="row">
-          <div className="col-6 col-md-4 col-lg-3">
-            <PlaceCard />
-          </div>
-          <div className="col-6 col-md-4 col-lg-3">
-            <PlaceCard />
-          </div>
-          <div className="col-6 col-md-4 col-lg-3">
-            <PlaceCard />
-          </div>
-          <div className="col-6 col-md-4 col-lg-3">
-            <PlaceCard />
-          </div>
-          <div className="col-6 col-md-4 col-lg-3">
-            <PlaceCard />
-          </div>
-          <div className="col-6 col-md-4 col-lg-3">
-            <PlaceCard />
-          </div>
-          <div className="col-6 col-md-4 col-lg-3">
-            <PlaceCard />
-          </div>
-          <div className="col-6 col-md-4 col-lg-3">
-            <PlaceCard />
-          </div>
-          <div className="col-6 col-md-4 col-lg-3">
-            <PlaceCard />
-          </div>
-          <div className="col-6 col-md-4 col-lg-3">
-            <PlaceCard />
-          </div>
-          <div className="col-6 col-md-4 col-lg-3">
-            <PlaceCard />
-          </div>
-          <div className="col-6 col-md-4 col-lg-3">
-            <PlaceCard />
-          </div>
+          {place &&
+            place.map((post) => {
+              return (
+                <div key={post._id} className="col-6 col-md-4 col-lg-3">
+                  <PlaceCard
+                    image={post.image}
+                    title={post.title}
+                    rating={post.total_rating}
+                  />
+                </div>
+              );
+            })}
         </div>
 
         {/* card area end */}

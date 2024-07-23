@@ -36,7 +36,10 @@ const Slider = ({ carousels }) => {
             {carousels.length !== 0 ? (
               carousels.map((carousel) => {
                 return (
-                  <Link to={`/street_food/food_detail/${carousel.pid}`}>
+                  <Link
+                    key={carousel._id}
+                    to={`/street_food/food_detail/${carousel.pid}`}
+                  >
                     <div className={`carousel-item active`}>
                       <img
                         src={carousel.image}

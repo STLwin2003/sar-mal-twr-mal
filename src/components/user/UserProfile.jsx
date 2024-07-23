@@ -56,7 +56,8 @@ const UserProfile = () => {
             return posts.find((post) => post._id === bookmark);
           });
 
-          setBookmarks(bookmarks);
+          const filter = bookmarks.filter((bookmark) => bookmark !== undefined);
+          setBookmarks(filter);
           setUser(resource);
         }
       }
@@ -470,12 +471,13 @@ const UserProfile = () => {
                 <p className="fs-3 fw-bold brown noto-serif-display-subtitle mt-5">
                   Your Bookmark
                 </p>
+
                 <div className="row">
                   {bookmarks &&
                     bookmarks.map((bookmark) => {
                       return (
-                        <>
-                          <div key={bookmark._id} className="row my-3 ">
+                        <div key={bookmark._id}>
+                          <div className="row my-3 ">
                             <div className="col-sm-6 col-md-4 col-lg-3 ">
                               <FoodCard
                                 pid={bookmark._id}
@@ -513,7 +515,7 @@ const UserProfile = () => {
                             </div>
                           </div>
                           <hr />
-                        </>
+                        </div>
                       );
                     })}
                   {/* <div className="row my-3 ">
