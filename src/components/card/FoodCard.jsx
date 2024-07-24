@@ -8,10 +8,12 @@ const StreetFoodCard = ({ pid, image, title, rating }) => {
   const { user } = useUser();
 
   useEffect(() => {
-    if (user) {
-      const a = user.bookmark.find((bookmark) => bookmark === pid);
-      if (a) setFav(false);
-    }
+    (async () => {
+      if (user) {
+        const a = await user.bookmark.find((bookmark) => bookmark === pid);
+        if (a) setFav(false);
+      }
+    })();
   }, [user, pid]);
 
   let favorite = async (id) => {

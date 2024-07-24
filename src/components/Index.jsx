@@ -19,7 +19,7 @@ const Index = () => {
   const [restaurantPosts, setRestaurantPosts] = useState([]);
   const [streetFoodPosts, setStreetFoodPosts] = useState([]);
   const [placePosts, setPlacePosts] = useState([]);
-  const [trending, setTrending] = useState([]);
+  const [event, setEvent] = useState([]);
   useEffect(() => {
     (async () => {
       const res = await fetch(
@@ -31,6 +31,9 @@ const Index = () => {
   }, [setCarousel]);
   useEffect(() => {
     (async () => {
+      const result = await fetch(`${process.env.REACT_APP_API_URL}/campaign`);
+      const data = await result.json();
+      setEvent(data.resource);
       const res = await fetch(`${process.env.REACT_APP_API_URL}/posts`);
       if (res.ok) setPageLoading(true);
       const { resource } = await res.json();
@@ -47,10 +50,10 @@ const Index = () => {
         .slice(0, 4);
       setPlacePosts(place);
 
-      const sortPosts = resource
-        .sort((a, b) => b.total_rating - a.total_rating)
-        .slice(0, 3);
-      setTrending(sortPosts);
+      // const sortPosts = resource
+      //   .sort((a, b) => b.total_rating - a.total_rating)
+      //   .slice(0, 3);
+      // setTrending(sortPosts);
       setPosts(resource);
     })();
   }, []);
@@ -60,7 +63,7 @@ const Index = () => {
         <>
           <Header />
           <Slider carousels={carousel} />
-          <Trending posts={trending} />
+          {event && <Trending posts={event} />}
           <StreetFoodMenu posts={streetFoodPosts} />
           <RestaurantMenu posts={restaurantPosts} />
           <PlaceMenu posts={placePosts} />

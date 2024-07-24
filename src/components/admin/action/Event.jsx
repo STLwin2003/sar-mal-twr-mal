@@ -39,6 +39,7 @@ const Event = () => {
       setPostId("");
       setEvent(resource);
       setIsLoading(false);
+      alert("event done");
     }
   };
   return (
