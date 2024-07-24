@@ -8,7 +8,7 @@ import { usePosts } from "../../context/PostProvider";
 
 const Header = () => {
   const { user, setUser, logout } = useUser();
-  const { setPosts } = usePosts();
+  const { setPosts, setPageLoading } = usePosts();
   const token = localStorage.getItem("token");
   useEffect(() => {
     if (token) {
@@ -37,6 +37,7 @@ const Header = () => {
 
     (async () => {
       const res = await fetch(`${process.env.REACT_APP_API_URL}/posts`);
+      if (res.ok) setPageLoading(true);
       const { resource } = await res.json();
       setPosts(resource);
     })();

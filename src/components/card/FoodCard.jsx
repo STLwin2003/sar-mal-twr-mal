@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import LazyLoad from "react-lazy-load";
 import { useUser } from "../../context/UserProvider";
 
-const StreetFoodCard = ({ pid, image, description, rating }) => {
+const StreetFoodCard = ({ pid, image, title, rating }) => {
   let [fav, setFav] = useState(true);
   const { user } = useUser();
 
@@ -94,7 +94,7 @@ const StreetFoodCard = ({ pid, image, description, rating }) => {
               }}
             >
               <span className=" fs-5 roboto-regular text-decoration-none">
-                {description}
+                {title}
               </span>
             </Link>
           </p>

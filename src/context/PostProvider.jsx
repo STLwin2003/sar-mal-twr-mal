@@ -8,6 +8,7 @@ export function usePosts() {
 export default function PostProvider({ children }) {
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
+  const [pageLoading, setPageLoading] = useState(false);
   return (
     <postsContext.Provider
       value={{
@@ -15,6 +16,8 @@ export default function PostProvider({ children }) {
         setPosts,
         comments,
         setComments,
+        pageLoading,
+        setPageLoading,
       }}
     >
       {children}

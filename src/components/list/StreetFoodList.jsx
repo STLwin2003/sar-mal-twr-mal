@@ -31,7 +31,7 @@ const StreetFoodList = () => {
                   <FoodCard
                     pid={food._id}
                     image={food.image}
-                    description={food.product_description}
+                    title={food.title}
                     rating={food.total_rating}
                   />
                 </div>

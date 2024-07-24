@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Footer from "../nav/Footer";
 
 import PlaceCard from "../card/PlaceCard";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { usePosts } from "../../context/PostProvider";
 
 const Search = () => {

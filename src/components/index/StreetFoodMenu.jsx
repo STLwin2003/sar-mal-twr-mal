@@ -15,8 +15,8 @@ const StreetFoodMenu = ({ posts }) => {
               <div key={post._id} className="col-6 col-md-4 col-lg-3">
                 <FoodCard
                   pid={post._id}
-                  image={post.image[0]}
-                  description={post.title}
+                  image={post.image}
+                  title={post.title}
                   rating={post.total_rating}
                 />
               </div>

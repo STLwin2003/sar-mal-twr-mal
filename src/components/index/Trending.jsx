@@ -1,7 +1,7 @@
 import React from "react";
 import FoodCard from "../card/FoodCard";
 import PlaceCard from "../card/PlaceCard";
-const Trending = () => {
+const Trending = ({ posts }) => {
   return (
     <div>
       <div className="container">
@@ -14,10 +14,20 @@ const Trending = () => {
           tempore debitis minus illum corrupti
         </p>
         <div className="row">
-          <div className="col-6 col-md-4 col-lg-4 mb-4">
-            <FoodCard />
-          </div>
-          <div className="col-6 col-md-4 col-lg-4">
+          {posts &&
+            posts.map((post) => {
+              return (
+                <div key={post._id} className="col-6 col-md-4 col-lg-4 mb-4">
+                  <FoodCard
+                    pid={post._id}
+                    image={post.image}
+                    title={post.title}
+                    rating={post.total_rating}
+                  />
+                </div>
+              );
+            })}
+          {/* <div className="col-6 col-md-4 col-lg-4">
             <FoodCard />
           </div>
           <div className="col-6 col-md-4 col-lg-4">
@@ -31,7 +41,7 @@ const Trending = () => {
           </div>
           <div className="col-6 col-md-4 col-lg-4">
             <PlaceCard />
-          </div>
+          </div> */}
         </div>
         <hr />
       </div>

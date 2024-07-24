@@ -483,7 +483,7 @@ const UserProfile = () => {
                                 pid={bookmark._id}
                                 image={bookmark.image}
                                 rating={bookmark.total_rating}
-                                description={bookmark.product_description}
+                                title={bookmark.title}
                               />
                             </div>
                             <div className="col-sm-6  col-md-8 col-lg-9 my-auto">
